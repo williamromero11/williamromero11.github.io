@@ -31,20 +31,18 @@ I try to bring the lessons I learn from gaming and literature—strategy, ethics
 - Secure handling of sensitive data and chain-of-custody procedures
 - Patch management and policy compliance
 - Cloud infrastructure security (AWS fundamentals, virtualization)
-- Systems & IT Administration
+
+**Systems & IT Administration**
 - User account management, group policies, and permissions
 - Linux system administration (Parrot OS, Kali Linux, Ubuntu)
 - Windows Server & Client management, Active Directory, Samba, Kerberos
+- Remote troubleshooting and technical support (Wi-Fi, Ethernet, VPN, devices)
 
-Remote troubleshooting and technical support (Wi-Fi, Ethernet, VPN, devices)
+**Programming & Scripting**
+- C, C++, Java, Python, Bash, PowerShell
 
-Programming & Scripting
-
-C, C++, Java, Python, Bash, PowerShell
-
-Languages
-
-Native Spanish, Fluent English
+**Languages**
+- Native Spanish, Fluent English
 
 ## Currently Learning
 
