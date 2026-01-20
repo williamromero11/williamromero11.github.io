@@ -32,7 +32,7 @@ author_profile: true
 - Bottom Be Quiet fans provide silent, high-airflow intake
 - Top AIO radiator with Lian Li fans (efficient heat dissipation)
 - Multi-directional exhaust (optimal component cooling)
-    
+```    
 PC AIRFLOW CONFIGURATION (TOP VIEW)
 ==================================
 
@@ -55,7 +55,7 @@ PC AIRFLOW CONFIGURATION (TOP VIEW)
 
 Legend:
 Up = Intake | Left / Right / Down = Exhaust
-
+```
 
 
 ![PC Specs](/images/pc%203.jpeg)
