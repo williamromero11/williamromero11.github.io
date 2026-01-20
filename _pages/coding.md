@@ -6,4 +6,4 @@ layout: page
 
 # Coding Portfolio
 
-Here are my programming projects, coding exercises, and technical work...
+Here are my programming projects, coding exercises, and technical work.
