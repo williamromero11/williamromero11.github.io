@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "mint" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "William Romero's / Homepage"
+title                    : "Homepage"
 title_separator          : "-"
 name                     : &name "William Romero"
 description              : &description "William Romero's academic portfolio and personal website"   # Update this with a general description of your site, this is the default if not overridden by a page
