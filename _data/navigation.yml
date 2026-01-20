@@ -11,8 +11,8 @@ main:
   - title: "Resume"
     url: "/files/William%20Romero%20Resume%20PDF.pdf"
     
-  - title: "Specs"
-    url: /talks/    
+  - title: "PC Specs"
+    url: "/specs/"    
 
   - title: "Coding"
     url: /teaching/    
