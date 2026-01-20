@@ -21,7 +21,7 @@ author_profile: true
 -**OS:** Windows | Linux
  **RGB ECOSYSTEM:** Fully synced Lian Li UNI FAN SL-INF RGB with L-Connect 3 software | Asus Armoury Crate
   
-```
+
 # COOLING: Lian Li Galahad II LCD Trinity Performance 360mm AIO (Lian Li HydroShift)
     - Bottom Intake: 2x Be Quiet Silent Wings 4 140mm PWM fans (airflow optimized)
     - Top Exhaust: 3x Lian Li UNI FAN SL-INF 120mm RGB fans on radiator
@@ -31,6 +31,7 @@ author_profile: true
     - Bottom Be Quiet fans provide silent, high-airflow intake
     - Top AIO radiator with Lian Li fans (efficient heat dissipation)
     - Multi-directional exhaust (optimal component cooling)
+```
 PC AIRFLOW CONFIGURATION (TOP VIEW)
 
 ┌──────────────────────────────────────────────┐
