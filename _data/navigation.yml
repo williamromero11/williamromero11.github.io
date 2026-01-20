@@ -11,24 +11,22 @@ main:
   - title: "Resume"
     url: "/files/William%20Romero%20Resume%20PDF.pdf"
     
-
-  - title: "Talks"
+  - title: "Specs"
     url: /talks/    
 
-  - title: "Teaching"
+  - title: "Coding"
     url: /teaching/    
     
-  - title: "Portfolio"
+  - title: "Ideas"
     url: /portfolio/
         
-  - title: "Blog Posts"
-    url: /year-archive/
+  #- title: "Blog Posts"
+   # url: /year-archive/
     
-  - title: "CV"
-    url: /cv/
+  #- title: "CV" url: /cv/
     
   # - title: "CV"
   #   url: /cv-json/
     
-  - title: "Guide"
-    url: /markdown/
+  #- title: "Guide"
+   # url: /markdown/
