@@ -26,11 +26,11 @@ author:
   avatar           : "https://williamromero11.github.io/images/mee.png"
   name             : "William Romero"
   pronouns         : # example: "she/her"  
-  bio              : "Entry-level IT and cybersecurity professional pursuing a B.S. in Information Technology with hands-on experience in IT support, network troubleshooting, and system security. Eligible for security clearance and seeking an internship or junior role in system administration or cybersecurity to support secure systems, network operations, and incident response. "
-  location         : "Orland"
-  employer         : "Re "
-  uri              : # URL
-  email            : "none@example.org" 
+  bio              : "IT and Cybersecurity student pursuing a B.S. in Information Technology. Hands-on experience in IT support, network troubleshooting, and system security. Security clearance eligible. Seeking internship or junior role in system administration or cybersecurity. "
+  location         : "Orlando"
+  employer         : "University of Central Florida (Math Department) "
+  uri              : "https://williamromero11.github.io"
+  email            : "wi424039@ucf.edu" 
 
   # Academic websites
   academia         : # URL
