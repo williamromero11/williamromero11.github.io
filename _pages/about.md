@@ -1,10 +1,10 @@
 ---
 permalink: /
-title: "William Romero - IT & Cybersecurity Portfolio"
+title: " Welcome to My Portfolio"
 author_profile: true
 ---
 
-# Welcome to My Portfolio
+
 
 Entry-level IT and cybersecurity professional pursuing a B.S. in Information Technology with hands-on experience in IT support, network troubleshooting, and system security. Eligible for security clearance and seeking an internship or junior role in system administration or cybersecurity to support secure systems, network operations, and incident response. 
 
