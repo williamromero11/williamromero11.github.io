@@ -1,5 +1,5 @@
 ---
-permalink: /teaching/
+permalink: /coding/
 title: "Coding & Projects"
 layout: page
 ---
