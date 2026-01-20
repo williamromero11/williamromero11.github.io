@@ -13,8 +13,8 @@ author_profile: true
 
 ## Specifications
 
-- **Case:** Hyte Y60 
-- **Motherboard:** ASUS ROG STRIX Z690-F GAMING WIFI 
+- **Case:**| Hyte Y60 
+- **Motherboard:** ASUS ROG STRIX Z690-F GAMING WIFI | 
 - **CPU:** Intel Core i9-12900K | **Cores:** 16 Cores (8 Performance + 8 Efficient) / 24 Threads
 - **GPU:** NVIDIA GeForce RTX 3080 Ti Founders Edition | **VRAM:** 12GB GDDR6X
 - **RAM:** 64GB Corsair DDR5 SDRAM | 4×16GB DDR5 @ 4800MHz
