@@ -124,9 +124,9 @@ div.highlighter-rouge, figure.highlight {
 .highlight .il { color: #2aa198 } /* Literal.Number.Integer.Long */
 
 /* Disable code block copy button overlay */
-pre button,
-pre .copy-button,
-pre .clipboard,
-pre .copy-to-clipboard {
+div.highlighter-rouge:before,
+figure.highlight:before {
   display: none !important;
+}content: none !important;
 }
+
