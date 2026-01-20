@@ -24,9 +24,9 @@ repository               : "williamromero11/williamromero11.github.io"
 author:
   # Biographic information
   avatar           : "https://williamromero11.github.io/images/mee.png"
-  name             : "Your Sidebar Name"
+  name             : "William Romero"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Entry-level IT and cybersecurity professional pursuing a B.S. in Information Technology with hands-on experience in IT support, network troubleshooting, and system security. Eligible for security clearance and seeking an internship or junior role in system administration or cybersecurity to support secure systems, network operations, and incident response. "
   location         : "Orland"
   employer         : "Re "
   uri              : # URL
