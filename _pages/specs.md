@@ -17,9 +17,9 @@ author_profile: true
 - **CPU**: Intel Core i9-12900K  | **Cores:** 16 Cores (8 Performance + 8 Efficient) / 24 Threads
 - **GPU:** NVIDIA GeForce RTX 3080 Ti Founders Edition | **VRAM:** 12GB GDDR6X 
 - **RAM:** 64GB Corsair DDR5 SDRAM | 4x16GB DDR5 @ 4800MHz
-- **Storage:** Samsung SSD 990 PRO 4TB (PCIe 4.0) | Samsung SSD 980 PRO 1TB (PCIe 4.0) | Seagate ST4000DM004 4TB HDD (7200 RPM)
-- **OS:** Windows | Linux
-- **RGB ECOSYSTEM:** Fully synced Lian Li UNI FAN SL-INF RGB with L-Connect 3 software and Asus Armoury Crate
+-| **Storage:** Samsung SSD 990 PRO 4TB (PCIe 4.0) | Samsung SSD 980 PRO 1TB (PCIe 4.0) | Seagate ST4000DM004 4TB HDD (7200 RPM)
+| **OS:** Windows | Linux
+ **RGB ECOSYSTEM:** Fully synced Lian Li UNI FAN SL-INF RGB with L-Connect 3 software and Asus Armoury Crate
   
 ```bash
 # COOLING: Lian Li Galahad II LCD Trinity Performance 360mm AIO (Lian Li HydroShift)
