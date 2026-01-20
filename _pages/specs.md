@@ -73,3 +73,4 @@ Up = Intake | Left / Right / Down = Exhaust
 
   
 ## Set Up
+![Set Up 1](https://williamromero11.github.io/images/Desktop%202.png)
