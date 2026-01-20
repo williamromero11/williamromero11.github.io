@@ -21,8 +21,7 @@ I try to bring the lessons I learn from gaming and literature—strategy, ethics
 - **Specialization:** Networks and Cybersecurity
 - **Expected Graduation:** This semester
 - **Future Plans:** Pursue a Master's degree in Cybersecurity after graduation
-- **Certifications:** CompTIA Security+, AWS Academy Cloud and Security Foundations, TestOut IT Fundamentals Pro
-
+- **Certifications:** [![CompTIA Security+](https://img.shields.io/badge/CompTIA-Security%2B-red)](https://www.credly.com/users/william-romero.9412f593/badges#credly) | [![AWS Cloud Security Foundations](https://img.shields.io/badge/AWS-Cloud%20Foundations-blue)](https://www.credly.com/users/william-romero.9412f593/badges#credly) | [![TestOut IT Fundamentals Pro](https://img.shields.io/badge/TestOut-IT%20Fundamentals%20Pro-yellow)](https://certification.testout.com/managecert?certificateID=6-1C6-VPU5M2) | [![AWS Cloud Foundations](https://img.shields.io/badge/AWS-Cloud%20Foundations-blue)](https://www.credly.com/users/william-romero.9412f593/badges#credly) |  
 ## Technical Skills
 **Security & Cybersecurity**
 - Network security protocols (TCP/IP, DHCP, DNS, VPN)
@@ -54,10 +53,5 @@ A scenario-based cybersecurity competition simulating real-world enterprise brea
 
 
 
----
 
-*Security clearance eligible • Orlando, FL • Available for internships*
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
