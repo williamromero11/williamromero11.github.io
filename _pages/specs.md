@@ -13,8 +13,8 @@ author_profile: true
 
 ## Specifications
 
-- **Case:** Hyte Y60 |
-- **Motherboard:** ASUS ROG STRIX Z690-F GAMING WIFI |
+- **Case:** Hyte Y60 
+- **Motherboard:** ASUS ROG STRIX Z690-F GAMING WIFI 
 - **CPU:** Intel Core i9-12900K | **Cores:** 16 Cores (8 Performance + 8 Efficient) / 24 Threads
 - **GPU:** NVIDIA GeForce RTX 3080 Ti Founders Edition | **VRAM:** 12GB GDDR6X
 - **RAM:** 64GB Corsair DDR5 SDRAM | 4×16GB DDR5 @ 4800MHz
@@ -33,29 +33,29 @@ author_profile: true
 - Top AIO radiator with Lian Li fans (efficient heat dissipation)
 - Multi-directional exhaust (optimal component cooling)
     
-╔══════════════════════════════════════════════════════════════╗
-║                   PC AIRFLOW CONFIGURATION                   ║
-║                       (TOP VIEW)                             ║
-╚══════════════════════════════════════════════════════════════╝
+PC AIRFLOW CONFIGURATION (TOP VIEW)
+==================================
 
-┌──────────────────────────────────────────────┐
-│                                              │
-│   TOP: 3× Lian Li 120mm RGB                  │
-│   360mm AIO Radiator                         │
-│   Exhaust ↓                                  │
-│                                              │
-│ ┌───────────────┐        ┌───────────────┐   │
-│ │ REAR: 1× 120mm│ ◀─────│ SIDE: 2× 120mm│   │
-│ │ Lian Li RGB   │        │ Lian Li RGB   │   │
-│ │ Exhaust ←     │        │ Exhaust →     │   │
-│ └───────────────┘        └───────────────┘   │
-│                                              │
-│   BOTTOM: 2× Be Quiet 140mm                  │
-│   High-Airflow Intake ↑                      │
-│                                              │
-└──────────────────────────────────────────────┘
++----------------------------------------------+
+|                                              |
+|   TOP: 3x Lian Li 120mm RGB                  |
+|   360mm AIO Radiator                         |
+|   Exhaust (Down)                             |
+|                                              |
+|  +---------------+        +---------------+  |
+|  | REAR: 1x 120mm| <------| SIDE: 2x 120mm|  |
+|  | Lian Li RGB   |        | Lian Li RGB   |  |
+|  | Exhaust (Left)|        | Exhaust (Right)| |
+|  +---------------+        +---------------+  |
+|                                              |
+|   BOTTOM: 2x Be Quiet 140mm                  |
+|   High-Airflow Intake (Up)                   |
+|                                              |
++----------------------------------------------+
 
-Legend: ↑ Intake  → Exhaust  ← Exhaust  ↓ Exhaust
+Legend:
+Up = Intake | Left / Right / Down = Exhaust
+
 
 
 ![PC Specs](/images/pc%203.jpeg)
