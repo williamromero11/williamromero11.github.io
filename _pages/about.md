@@ -15,7 +15,7 @@ Outside of academics and tech, I’m a big fan of deep, strategic games like Eld
 
 I try to bring the lessons I learn from gaming and literature—strategy, ethics, and attention to detail—into my IT and security work every day.
 
-### Education Journey
+### 🎓 Education Journey
 - **High School:** JP Taravella High School (9th grade), Coral Glades High School (10th-12th)
 - **University:** University of Central Florida (UCF) - Pursuing B.S. in Information Technology
 - **Specialization:** Networks and Cybersecurity
@@ -23,7 +23,8 @@ I try to bring the lessons I learn from gaming and literature—strategy, ethics
 - **Future Plans:** Pursue a Master's degree in Cybersecurity after graduation
 - **Certifications:** [![CompTIA Security+](https://img.shields.io/badge/CompTIA-Security%2B-red)](https://www.credly.com/users/william-romero.9412f593/badges#credly) | [![AWS Cloud Security Foundations](https://img.shields.io/badge/AWS-Cloud%20Foundations-blue)](https://www.credly.com/users/william-romero.9412f593/badges#credly) | [![TestOut IT Fundamentals Pro](https://img.shields.io/badge/TestOut-IT%20Fundamentals%20Pro-yellow)](https://certification.testout.com/managecert?certificateID=6-1C6-VPU5M2) | [![AWS Cloud Foundations](https://img.shields.io/badge/AWS-Cloud%20Foundations-blue)](https://www.credly.com/users/william-romero.9412f593/badges#credly) |  
 ## Technical Skills
-**Security & Cybersecurity**
+
+🛡️ **Security & Cybersecurity**
 - Network security protocols (TCP/IP, DHCP, DNS, VPN)
 - Penetration testing methodologies and CTF exercises
 - System hardening techniques and access control enforcement
@@ -31,16 +32,16 @@ I try to bring the lessons I learn from gaming and literature—strategy, ethics
 - Patch management and policy compliance
 - Cloud infrastructure security (AWS fundamentals, virtualization)
 
-**Systems & IT Administration**
+🖥️ **Systems & IT Administration**
 - User account management, group policies, and permissions
 - Linux system administration (Parrot OS, Kali Linux, Ubuntu)
 - Windows Server & Client management, Active Directory, Samba, Kerberos
 - Remote troubleshooting and technical support (Wi-Fi, Ethernet, VPN, devices)
 
-**Programming & Scripting**
+📝 **Programming & Scripting**
 - C, C++, Java, Python, Bash, PowerShell
 
-**Languages**
+🌍 **Languages**
 - Native Spanish, Fluent English
 
 ## 👨‍💻 Security Labs & Competitions
