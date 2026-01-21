@@ -27,6 +27,6 @@ The program demonstrates advanced Java concepts including event handling, file I
 
 Key technical achievements include thread-safe CSV file operations, dynamic GUI state management, proper separation of business logic from presentation layer, and comprehensive error handling for all user interaction scenarios.
 
-### [Project # 4: Nile Dot Com E-Store Simulation (Event-Driven GUI)](https://github.com/williamromero11/Project-4)
+### [Project # 4: ](https://github.com/williamromero11/Project-4)
 
 
