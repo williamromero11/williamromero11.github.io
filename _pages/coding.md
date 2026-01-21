@@ -26,3 +26,7 @@ Nile Dot Com E-Store Simulation is a Java-based standalone GUI application imple
 The program demonstrates advanced Java concepts including event handling, file I/O operations, GUI component management, and object-oriented design while solving a practical e-commerce problem. It features a complete graphical interface for managing store inventory, processing customer orders, and maintaining permanent transaction records.
 
 Key technical achievements include thread-safe CSV file operations, dynamic GUI state management, proper separation of business logic from presentation layer, and comprehensive error handling for all user interaction scenarios.
+
+### [Project # 4: Nile Dot Com E-Store Simulation (Event-Driven GUI)](https://github.com/williamromero11/Project-4)
+
+
