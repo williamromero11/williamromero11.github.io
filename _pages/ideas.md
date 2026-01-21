@@ -3,4 +3,4 @@ permalink: /ideas/
 title: "Ideas"
 layout: page
 ---
-# Coding Portfolio
+Still have to work on it nun much 
