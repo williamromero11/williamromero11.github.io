@@ -10,9 +10,8 @@ layout: page
 Modern physics has repeatedly shown that the universe does not behave in ways that align with everyday intuition. Quantum mechanics, in particular, challenges classical assumptions about reality, causality, and determinism. A key argument for this fundamental strangeness comes from **Bell’s theorem**, experimentally confirmed with increasing rigor, including landmark results in 2015. These results suggest that the universe is not merely *apparently* weird due to human misunderstanding, but *intrinsically* weird at its core.
 
 This post summarizes and analyzes Bell’s theorem, and the provocative idea that reality itself may depend on a fundamental source of randomness.
-
 ---
-
+![Atom](https://williamromero11.github.io/images/atom.jpg)
 ## Bell’s Theorem: Reality or Locality Must Fail
 
 Bell’s theorem demonstrates that no physical theory based on **local realism** can reproduce all predictions of quantum mechanics. In simple terms, the universe must give up at least one of the following assumptions:
@@ -27,8 +26,9 @@ Experiments testing Bell inequalities consistently violate the limits imposed by
 
 This conclusion does not stem from flaws in experimentation or theoretical limitations, but from the intrinsic behavior of reality at its most fundamental level.
 
----
 
+---
+![Atom2](https://williamromero11.github.io/images/sc.jpg)
 ## Schrödinger’s Equation and Probability Distributions
 
 Non-realism is evident in Schrödinger’s equation, which describes quantum systems in terms of a wavefunction rather than precise trajectories. For example, an electron in a hydrogen atom does not orbit the nucleus in a classical sense; it exists as a probability cloud. 
@@ -36,7 +36,7 @@ Physics can predict where the electron is likely to be found, but not its exact 
 
 
 ---
-
+![sc](https://williamromero11.github.io/images/sc2.png)
 ## An Informational and Computational Universe
 
 An increasingly discussed possibility is that the universe is fundamentally computational. Approaches such as Wolfram Physics suggest that reality arises from simple computational rules applied to abstract structures, with physical laws operating as algorithms and the universe progressing through discrete computational steps.
