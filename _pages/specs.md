@@ -47,7 +47,7 @@ PC AIRFLOW CONFIGURATION (TOP VIEW)
 |  +---------------+        +---------------+  |
 |  | REAR: 1x 120mm| <------| SIDE: 2x 120mm|  |
 |  | Lian Li RGB   |        | Lian Li RGB   |  |
-|  | Exhaust (Left)|        | Exhaust (Right)| |
+|  | Exhaust (Left)|        |Exhaust (Right)|  |
 |  +---------------+        +---------------+  |
 |                                              |
 |   BOTTOM: 2x Be Quiet 140mm                  |
