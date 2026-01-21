@@ -20,3 +20,9 @@ The program demonstrates advanced C programming concepts including recursive alg
 
 Key technical achievements include O(log n) average-case operations, proper recursive memory deallocation, and a modular architecture that cleanly separates tree operations, business logic, and user interaction layers.
 
+### [Project # 3: Nile Dot Com E-Store Simulation (Event-Driven GUI)](https://github.com/williamromero11/Project-3)
+Nile Dot Com E-Store Simulation is a Java-based standalone GUI application implementing a comprehensive e-commerce simulation through event-driven programming principles. Built with Swing and adhering to model-view-controller separation, the system models online retail operations including inventory management, shopping cart functionality, and transaction logging.
+
+The program demonstrates advanced Java concepts including event handling, file I/O operations, GUI component management, and object-oriented design while solving a practical e-commerce problem. It features a complete graphical interface for managing store inventory, processing customer orders, and maintaining permanent transaction records.
+
+Key technical achievements include thread-safe CSV file operations, dynamic GUI state management, proper separation of business logic from presentation layer, and comprehensive error handling for all user interaction scenarios.
