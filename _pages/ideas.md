@@ -60,12 +60,9 @@ std_dev = 1
 position = random.gauss(mean, std_dev)
 print(position)
 ```
-In this example, the Gaussian distribution constrains which values are possible and how likely they are, but randomness determines which particular value actually occurs. The structure limits outcomes; randomness selects among them.
+In this example, the Gaussian distribution constrains which values are possible and how likely they are, but randomness determines which particular value actually occurs.
+
 If the universe operates in an analogous way, this suggests that:
-Physical laws define probability spaces.
-Actual events require a source of randomness to realize specific outcomes.
-The structure of the distribution constrains possible outcomes, but **randomness determines which outcome actually occurs**.
-If the universe operates in a similar way, this suggests that:
 
 * Physical laws define probability spaces.
 * Actual events require a source of randomness to select specific outcomes.
