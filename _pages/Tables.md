@@ -358,7 +358,7 @@ layout: page
     </main>
 
     <footer>
-        <p>&copy; 2023 Pizza Ordering Form. All rights reserved.</p>
+        <p>&copy; 2026 William's Pizza Ordering Form. All rights reserved.</p>
     </footer>
 
     <script>
