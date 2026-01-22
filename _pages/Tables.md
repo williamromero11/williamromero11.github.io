@@ -3,7 +3,6 @@ permalink: /Tables/
 title: "Tables & Forms"
 layout: page
 ---
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,38 +14,48 @@ layout: page
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #f0fff4; /* Mint background color */
+            color: #2c3e50; /* Dark blue-gray for better contrast against mint */
         }
         
         h1, h2 {
-            color: #333;
+            color: #1a472a; /* Dark green for headings */
+            border-bottom: 2px solid #27ae60;
+            padding-bottom: 5px;
         }
         
         form {
             background-color: white;
             padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             margin-bottom: 30px;
+            border: 1px solid #a3d9b1;
         }
         
         fieldset {
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
             padding: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            background-color: #f9fffb;
         }
         
         legend {
             font-weight: bold;
-            color: #555;
-            padding: 0 10px;
+            color: #1a472a; /* Dark green */
+            padding: 0 15px;
+            font-size: 1.1em;
+            background-color: #d4f7df;
+            border-radius: 4px;
+            border: 1px solid #27ae60;
         }
         
         label {
             display: block;
-            margin-bottom: 8px;
-            color: #444;
+            margin-bottom: 10px;
+            color: #2c3e50; /* Dark text for good contrast */
+            font-weight: 500;
         }
         
         input[type="text"],
@@ -55,46 +64,72 @@ layout: page
         select,
         textarea {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #a3d9b1;
+            border-radius: 6px;
             box-sizing: border-box;
+            background-color: white;
+            color: #2c3e50;
+            font-size: 16px;
+        }
+        
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #27ae60;
+            box-shadow: 0 0 5px rgba(39, 174, 96, 0.3);
         }
         
         .checkbox-group {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 12px;
             margin-bottom: 15px;
         }
         
         .checkbox-item {
             display: flex;
             align-items: center;
+            padding: 8px;
+            background-color: #f0faf4;
+            border-radius: 4px;
+            border: 1px solid #d1f2e0;
         }
         
-        input[type="checkbox"] {
-            margin-right: 8px;
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
         }
         
         button {
-            background-color: #e74c3c;
+            background-color: #27ae60;
             color: white;
             border: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            border-radius: 4px;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 6px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+            display: block;
+            margin: 0 auto;
+            width: 200px;
         }
         
         button:hover {
-            background-color: #c0392b;
+            background-color: #219653;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         .required {
             color: #e74c3c;
+            font-weight: bold;
         }
         
         table {
@@ -102,47 +137,105 @@ layout: page
             border-collapse: collapse;
             margin-top: 30px;
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             border-radius: 8px;
             overflow: hidden;
+            border: 2px solid #27ae60;
         }
         
         th, td {
-            padding: 12px 15px;
+            padding: 15px;
             text-align: left;
-            border: 1px solid #ddd;
+            border: 1px solid #a3d9b1;
+            color: #2c3e50;
         }
         
         th {
-            background-color: #f2f2f2;
+            background-color: #27ae60;
+            color: white;
             font-weight: bold;
         }
         
         tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: #f0faf4;
+        }
+        
+        tr:hover {
+            background-color: #e8f5ee;
         }
         
         caption {
-            font-size: 1.2em;
+            font-size: 1.4em;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             text-align: left;
-            color: #333;
+            color: #1a472a;
+            background-color: #d4f7df;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #27ae60;
         }
         
         hr {
             border: none;
-            height: 1px;
-            background-color: #ddd;
+            height: 3px;
+            background: linear-gradient(to right, #27ae60, #a3d9b1);
             margin: 30px 0;
+            border-radius: 2px;
         }
         
         .instructions {
-            color: #666;
+            color: #34495e;
             font-style: italic;
-            margin-top: -10px;
+            margin-top: -5px;
             margin-bottom: 20px;
-            font-size: 0.9em;
+            padding: 8px;
+            background-color: #f0faf4;
+            border-radius: 4px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #1a472a;
+            background-color: #d4f7df;
+            border-radius: 8px;
+            border: 1px solid #a3d9b1;
+        }
+        
+        /* Make text more visible overall */
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            margin-top: 25px;
+        }
+        
+        /* Style for the select dropdown */
+        select {
+            background-color: white;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        /* Style for checkboxes and radio buttons labels */
+        .checkbox-item label,
+        [type="radio"] + label {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        /* Highlight required fields more */
+        label:has(+ input:required)::after,
+        label:has(+ select:required)::after {
+            content: " *";
+            color: #e74c3c;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -156,23 +249,23 @@ layout: page
             <fieldset>
                 <legend>Contact Information</legend>
                 <div>
-                    <label for="name">Name: <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
                 </div>
                 <div>
-                    <label for="phone">Phone: <span class="required">*</span></label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
                 </div>
                 <div>
-                    <label for="email">Email: <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
                 </div>
             </fieldset>
 
             <hr>
 
             <fieldset>
-                <legend>Select Pizza Size <span class="required">*</span></legend>
+                <legend>Select Pizza Size</legend>
                 <label for="size">Pizza Size:</label>
                 <select id="size" name="size" required>
                     <option value="" selected disabled>Select Size--</option>
@@ -183,7 +276,8 @@ layout: page
             </fieldset>
 
             <fieldset>
-                <legend>Select Sauce <span class="required">*</span></legend>
+                <legend>Select Sauce</legend>
+                <p class="instructions">Choose one sauce option:</p>
                 <div class="checkbox-group">
                     <div class="checkbox-item">
                         <input type="radio" id="marinara" name="sauce" value="marinara" required>
@@ -242,7 +336,7 @@ layout: page
             <fieldset>
                 <legend>Additional Instructions</legend>
                 <label for="instructions">Special requests or delivery notes:</label>
-                <textarea id="instructions" name="instructions" rows="4" placeholder="Add instructions"></textarea>
+                <textarea id="instructions" name="instructions" rows="4" placeholder="Add any special instructions here..."></textarea>
             </fieldset>
 
             <button type="submit">Submit Order</button>
@@ -294,7 +388,7 @@ layout: page
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="4">Count: 5</td>
+                        <td colspan="4" style="text-align: center; font-weight: bold; background-color: #d4f7df;">Count: 5</td>
                     </tr>
                 </tfoot>
             </table>
@@ -307,10 +401,6 @@ layout: page
 
     <script>
         document.getElementById('pizzaForm').addEventListener('submit', function(event) {
-            // Form validation is handled by HTML5 required attributes
-            // Additional custom validation could be added here if needed
-            
-            // If we wanted to add custom validation:
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
@@ -318,8 +408,12 @@ layout: page
             const sauceSelected = document.querySelector('input[name="sauce"]:checked');
             
             if (!name || !phone || !email || !size || !sauceSelected) {
-                // HTML5 validation will handle this, but we can add custom messaging
                 alert('Please fill out all required fields: Name, Phone, Email, Pizza Size, and Sauce Type.');
+                event.preventDefault();
+            } else {
+                alert('Order submitted successfully! Thank you for your order.');
+                // In a real application, you would submit the form to a server here
+                // For demo purposes, we'll just show the alert
                 event.preventDefault();
             }
         });
