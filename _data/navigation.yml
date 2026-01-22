@@ -20,10 +20,10 @@ main:
     url: "/coding/"    
     
   - title: "Ideas"
-    url: /ideas/
+    url: "/ideas/"
         
-  #- title: "Blog Posts"
-   # url: /year-archive/
+  - title: "Tables & Forms"
+    url: "/Tables/"
     
   #- title: "CV" url: /cv/
     
