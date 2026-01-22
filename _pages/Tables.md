@@ -14,12 +14,12 @@ layout: page
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f0fff4; /* Mint background color */
-            color: #2c3e50; /* Dark blue-gray for better contrast against mint */
+            background-color: #f0fff4;
+            color: #2c3e50;
         }
         
         h1, h2 {
-            color: #1a472a; /* Dark green for headings */
+            color: #1a472a;
             border-bottom: 2px solid #27ae60;
             padding-bottom: 5px;
         }
@@ -43,7 +43,7 @@ layout: page
         
         legend {
             font-weight: bold;
-            color: #1a472a; /* Dark green */
+            color: #1a472a;
             padding: 0 15px;
             font-size: 1.1em;
             background-color: #d4f7df;
@@ -54,7 +54,7 @@ layout: page
         label {
             display: block;
             margin-bottom: 10px;
-            color: #2c3e50; /* Dark text for good contrast */
+            color: #2c3e50;
             font-weight: 500;
         }
         
@@ -72,16 +72,6 @@ layout: page
             background-color: white;
             color: #2c3e50;
             font-size: 16px;
-        }
-        
-        input[type="text"]:focus,
-        input[type="tel"]:focus,
-        input[type="email"]:focus,
-        select:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #27ae60;
-            box-shadow: 0 0 5px rgba(39, 174, 96, 0.3);
         }
         
         .checkbox-group {
@@ -103,7 +93,6 @@ layout: page
         input[type="checkbox"],
         input[type="radio"] {
             margin-right: 10px;
-            transform: scale(1.2);
         }
         
         button {
@@ -114,17 +103,10 @@ layout: page
             font-size: 18px;
             border-radius: 6px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
             font-weight: bold;
             display: block;
             margin: 0 auto;
             width: 200px;
-        }
-        
-        button:hover {
-            background-color: #219653;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         .required {
@@ -144,7 +126,7 @@ layout: page
         }
         
         th, td {
-            padding: 15px;
+            padding: 12px 15px;
             text-align: left;
             border: 1px solid #a3d9b1;
             color: #2c3e50;
@@ -160,28 +142,19 @@ layout: page
             background-color: #f0faf4;
         }
         
-        tr:hover {
-            background-color: #e8f5ee;
-        }
-        
         caption {
             font-size: 1.4em;
             font-weight: bold;
             margin-bottom: 15px;
             text-align: left;
             color: #1a472a;
-            background-color: #d4f7df;
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid #27ae60;
         }
         
         hr {
             border: none;
-            height: 3px;
-            background: linear-gradient(to right, #27ae60, #a3d9b1);
+            height: 2px;
+            background-color: #27ae60;
             margin: 30px 0;
-            border-radius: 2px;
         }
         
         .instructions {
@@ -189,10 +162,24 @@ layout: page
             font-style: italic;
             margin-top: -5px;
             margin-bottom: 20px;
-            padding: 8px;
-            background-color: #f0faf4;
-            border-radius: 4px;
-            border-left: 4px solid #27ae60;
+        }
+        
+        .error {
+            color: #e74c3c;
+            font-size: 0.9em;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        
+        .success {
+            background-color: #d4f7df;
+            color: #1a472a;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            border: 2px solid #27ae60;
+            display: none;
         }
         
         footer {
@@ -200,42 +187,6 @@ layout: page
             margin-top: 40px;
             padding: 20px;
             color: #1a472a;
-            background-color: #d4f7df;
-            border-radius: 8px;
-            border: 1px solid #a3d9b1;
-        }
-        
-        /* Make text more visible overall */
-        h1 {
-            font-size: 2.5em;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-        
-        h2 {
-            font-size: 1.8em;
-            margin-top: 25px;
-        }
-        
-        /* Style for the select dropdown */
-        select {
-            background-color: white;
-            color: #2c3e50;
-            font-weight: 500;
-        }
-        
-        /* Style for checkboxes and radio buttons labels */
-        .checkbox-item label,
-        [type="radio"] + label {
-            color: #2c3e50;
-            font-weight: 500;
-        }
-        
-        /* Highlight required fields more */
-        label:has(+ input:required)::after,
-        label:has(+ select:required)::after {
-            content: " *";
-            color: #e74c3c;
-            font-weight: bold;
         }
     </style>
 </head>
@@ -245,27 +196,36 @@ layout: page
     </header>
 
     <main>
-        <form id="pizzaForm" action="#" method="post" novalidate>
+        <!-- Success message (hidden by default) -->
+        <div id="successMessage" class="success">
+            <h3>✅ Order Submitted Successfully!</h3>
+            <p>Thank you for your order. Your pizza will be ready soon!</p>
+        </div>
+
+        <form id="pizzaForm">
             <fieldset>
-                <legend>Contact Information</legend>
+                <legend>Contact Information <span class="required">*</span></legend>
                 <div>
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    <input type="text" id="name" name="name" required>
+                    <div class="error" id="nameError">Please enter your name</div>
                 </div>
                 <div>
                     <label for="phone">Phone:</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                    <input type="tel" id="phone" name="phone" required>
+                    <div class="error" id="phoneError">Please enter a valid phone number</div>
                 </div>
                 <div>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    <input type="email" id="email" name="email" required>
+                    <div class="error" id="emailError">Please enter a valid email address</div>
                 </div>
             </fieldset>
 
             <hr>
 
             <fieldset>
-                <legend>Select Pizza Size</legend>
+                <legend>Select Pizza Size <span class="required">*</span></legend>
                 <label for="size">Pizza Size:</label>
                 <select id="size" name="size" required>
                     <option value="" selected disabled>Select Size--</option>
@@ -273,10 +233,11 @@ layout: page
                     <option value="large">Large</option>
                     <option value="xlarge">XLarge</option>
                 </select>
+                <div class="error" id="sizeError">Please select a pizza size</div>
             </fieldset>
 
             <fieldset>
-                <legend>Select Sauce</legend>
+                <legend>Select Sauce <span class="required">*</span></legend>
                 <p class="instructions">Choose one sauce option:</p>
                 <div class="checkbox-group">
                     <div class="checkbox-item">
@@ -292,11 +253,12 @@ layout: page
                         <label for="no_sauce">No Sauce</label>
                     </div>
                 </div>
+                <div class="error" id="sauceError">Please select a sauce option</div>
             </fieldset>
 
             <fieldset>
                 <legend>Select Toppings</legend>
-                <p class="instructions">Choose as many as you like:</p>
+                <p class="instructions">Choose as many as you like (at least 6 options available):</p>
                 <div class="checkbox-group">
                     <div class="checkbox-item">
                         <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
@@ -336,7 +298,7 @@ layout: page
             <fieldset>
                 <legend>Additional Instructions</legend>
                 <label for="instructions">Special requests or delivery notes:</label>
-                <textarea id="instructions" name="instructions" rows="4" placeholder="Add any special instructions here..."></textarea>
+                <textarea id="instructions" name="instructions" rows="4" placeholder="Add instructions"></textarea>
             </fieldset>
 
             <button type="submit">Submit Order</button>
@@ -368,10 +330,10 @@ layout: page
                         <td>2017</td>
                     </tr>
                     <tr>
-                        <td>CD Projekt Red</td>
-                        <td>The Witcher 3: Wild Hunt</td>
-                        <td>2015</td>
-                        <td>Role-Playing</td>
+                        <td>Rockstar Games</td>
+                        <td>Red Dead Redemption 2</td>
+                        <td>2018</td>
+                        <td>Action-Adventure</td>
                     </tr>
                     <tr>
                         <td>FromSoftware</td>
@@ -388,7 +350,7 @@ layout: page
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="4" style="text-align: center; font-weight: bold; background-color: #d4f7df;">Count: 5</td>
+                        <td colspan="4" style="text-align: center; font-weight: bold; background-color: #f0faf4;">Count: 5</td>
                     </tr>
                 </tfoot>
             </table>
@@ -401,21 +363,129 @@ layout: page
 
     <script>
         document.getElementById('pizzaForm').addEventListener('submit', function(event) {
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
+            // Prevent actual form submission (which causes 405 error on GitHub Pages)
+            event.preventDefault();
+            
+            // Hide all error messages
+            const errorElements = document.querySelectorAll('.error');
+            errorElements.forEach(error => {
+                error.style.display = 'none';
+            });
+            
+            // Hide success message
+            document.getElementById('successMessage').style.display = 'none';
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
             const size = document.getElementById('size').value;
             const sauceSelected = document.querySelector('input[name="sauce"]:checked');
             
-            if (!name || !phone || !email || !size || !sauceSelected) {
-                alert('Please fill out all required fields: Name, Phone, Email, Pizza Size, and Sauce Type.');
-                event.preventDefault();
-            } else {
-                alert('Order submitted successfully! Thank you for your order.');
-                // In a real application, you would submit the form to a server here
-                // For demo purposes, we'll just show the alert
-                event.preventDefault();
+            // Validation flags
+            let isValid = true;
+            
+            // Validate name
+            if (!name) {
+                document.getElementById('nameError').style.display = 'block';
+                isValid = false;
             }
+            
+            // Validate phone (basic validation)
+            const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
+            if (!phone || !phoneRegex.test(phone.replace(/\D/g, ''))) {
+                document.getElementById('phoneError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate size
+            if (!size) {
+                document.getElementById('sizeError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate sauce
+            if (!sauceSelected) {
+                document.getElementById('sauceError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // If all validations pass
+            if (isValid) {
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Scroll to success message
+                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+                
+                // Optional: Log form data (in real app, you'd send to server)
+                console.log('Form submitted successfully!');
+                console.log('Name:', name);
+                console.log('Phone:', phone);
+                console.log('Email:', email);
+                console.log('Size:', size);
+                console.log('Sauce:', sauceSelected.value);
+                
+                // Get selected toppings
+                const selectedToppings = [];
+                document.querySelectorAll('input[name="toppings"]:checked').forEach(checkbox => {
+                    selectedToppings.push(checkbox.value);
+                });
+                console.log('Toppings:', selectedToppings);
+                console.log('Instructions:', document.getElementById('instructions').value);
+                
+                // Optional: Reset form after successful submission
+                // document.getElementById('pizzaForm').reset();
+            }
+        });
+        
+        // Real-time validation for better UX
+        document.getElementById('name').addEventListener('blur', function() {
+            if (!this.value.trim()) {
+                document.getElementById('nameError').style.display = 'block';
+            } else {
+                document.getElementById('nameError').style.display = 'none';
+            }
+        });
+        
+        document.getElementById('phone').addEventListener('blur', function() {
+            const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
+            if (!this.value.trim() || !phoneRegex.test(this.value.replace(/\D/g, ''))) {
+                document.getElementById('phoneError').style.display = 'block';
+            } else {
+                document.getElementById('phoneError').style.display = 'none';
+            }
+        });
+        
+        document.getElementById('email').addEventListener('blur', function() {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!this.value.trim() || !emailRegex.test(this.value)) {
+                document.getElementById('emailError').style.display = 'block';
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+        });
+        
+        document.getElementById('size').addEventListener('change', function() {
+            if (!this.value) {
+                document.getElementById('sizeError').style.display = 'block';
+            } else {
+                document.getElementById('sizeError').style.display = 'none';
+            }
+        });
+        
+        // Hide sauce error when a sauce is selected
+        document.querySelectorAll('input[name="sauce"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.getElementById('sauceError').style.display = 'none';
+            });
         });
     </script>
 </body>
