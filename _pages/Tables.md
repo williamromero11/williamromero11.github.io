@@ -3,58 +3,96 @@ permalink: /Tables/
 title: "Tables & Forms"
 layout: page
 ---
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizza Ordering Form</title>
     <style>
+        :root {
+            --text-color: #2c3e50;
+            --background-color: #f0fff4;
+            --heading-color: #1a472a;
+            --border-color: #27ae60;
+            --input-bg: white;
+            --fieldset-bg: #f9fffb;
+            --legend-bg: #d4f7df;
+            --table-header-bg: #27ae60;
+            --table-header-color: white;
+            --table-row-even: #f0faf4;
+            --button-bg: #27ae60;
+            --button-hover: #219653;
+            --error-color: #e74c3c;
+            --success-bg: #d4f7df;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-color: #e0e0e0;
+                --background-color: #1a2a1a;
+                --heading-color: #4caf7a;
+                --border-color: #4caf7a;
+                --input-bg: #2a3a2a;
+                --fieldset-bg: #223322;
+                --legend-bg: #1a472a;
+                --table-header-bg: #1a472a;
+                --table-header-color: #e0e0e0;
+                --table-row-even: #2a3a2a;
+                --button-bg: #27ae60;
+                --button-hover: #4caf7a;
+                --error-color: #ff6b6b;
+                --success-bg: #1a472a;
+            }
+        }
+        
         body {
             font-family: Arial, sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f0fff4;
-            color: #2c3e50;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
         }
         
         h1, h2 {
-            color: #1a472a;
-            border-bottom: 2px solid #27ae60;
+            color: var(--heading-color);
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 5px;
         }
         
         form {
-            background-color: white;
+            background-color: var(--input-bg);
             padding: 25px;
             border-radius: 8px;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             margin-bottom: 30px;
-            border: 1px solid #a3d9b1;
+            border: 1px solid var(--border-color);
         }
         
         fieldset {
-            border: 2px solid #27ae60;
+            border: 2px solid var(--border-color);
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 25px;
-            background-color: #f9fffb;
+            background-color: var(--fieldset-bg);
         }
         
         legend {
             font-weight: bold;
-            color: #1a472a;
+            color: var(--heading-color);
             padding: 0 15px;
             font-size: 1.1em;
-            background-color: #d4f7df;
+            background-color: var(--legend-bg);
             border-radius: 4px;
-            border: 1px solid #27ae60;
+            border: 1px solid var(--border-color);
         }
         
         label {
             display: block;
             margin-bottom: 10px;
-            color: #2c3e50;
+            color: var(--text-color);
             font-weight: 500;
         }
         
@@ -66,12 +104,21 @@ layout: page
             width: 100%;
             padding: 12px;
             margin-bottom: 20px;
-            border: 2px solid #a3d9b1;
+            border: 2px solid var(--border-color);
             border-radius: 6px;
             box-sizing: border-box;
-            background-color: white;
-            color: #2c3e50;
+            background-color: var(--input-bg);
+            color: var(--text-color);
             font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--button-hover);
+            box-shadow: 0 0 5px rgba(76, 175, 122, 0.3);
         }
         
         .checkbox-group {
@@ -85,18 +132,19 @@ layout: page
             display: flex;
             align-items: center;
             padding: 8px;
-            background-color: #f0faf4;
+            background-color: var(--fieldset-bg);
             border-radius: 4px;
-            border: 1px solid #d1f2e0;
+            border: 1px solid var(--border-color);
         }
         
         input[type="checkbox"],
         input[type="radio"] {
             margin-right: 10px;
+            accent-color: var(--border-color);
         }
         
         button {
-            background-color: #27ae60;
+            background-color: var(--button-bg);
             color: white;
             border: none;
             padding: 15px 30px;
@@ -107,10 +155,15 @@ layout: page
             display: block;
             margin: 0 auto;
             width: 200px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: var(--button-hover);
         }
         
         .required {
-            color: #e74c3c;
+            color: var(--error-color);
             font-weight: bold;
         }
         
@@ -118,28 +171,28 @@ layout: page
             width: 100%;
             border-collapse: collapse;
             margin-top: 30px;
-            background-color: white;
+            background-color: var(--input-bg);
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             border-radius: 8px;
             overflow: hidden;
-            border: 2px solid #27ae60;
+            border: 2px solid var(--border-color);
         }
         
         th, td {
             padding: 12px 15px;
             text-align: left;
-            border: 1px solid #a3d9b1;
-            color: #2c3e50;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
         }
         
         th {
-            background-color: #27ae60;
-            color: white;
+            background-color: var(--table-header-bg);
+            color: var(--table-header-color);
             font-weight: bold;
         }
         
         tr:nth-child(even) {
-            background-color: #f0faf4;
+            background-color: var(--table-row-even);
         }
         
         caption {
@@ -147,25 +200,26 @@ layout: page
             font-weight: bold;
             margin-bottom: 15px;
             text-align: left;
-            color: #1a472a;
+            color: var(--heading-color);
         }
         
         hr {
             border: none;
             height: 2px;
-            background-color: #27ae60;
+            background-color: var(--border-color);
             margin: 30px 0;
         }
         
         .instructions {
-            color: #34495e;
+            color: var(--text-color);
             font-style: italic;
             margin-top: -5px;
             margin-bottom: 20px;
+            opacity: 0.9;
         }
         
         .error {
-            color: #e74c3c;
+            color: var(--error-color);
             font-size: 0.9em;
             margin-top: -15px;
             margin-bottom: 15px;
@@ -173,12 +227,12 @@ layout: page
         }
         
         .success {
-            background-color: #d4f7df;
-            color: #1a472a;
+            background-color: var(--success-bg);
+            color: var(--heading-color);
             padding: 15px;
             border-radius: 6px;
             margin-top: 20px;
-            border: 2px solid #27ae60;
+            border: 2px solid var(--border-color);
             display: none;
         }
         
@@ -186,11 +240,81 @@ layout: page
             text-align: center;
             margin-top: 40px;
             padding: 20px;
-            color: #1a472a;
+            color: var(--heading-color);
+        }
+        
+        /* Dark mode specific fixes */
+        @media (prefers-color-scheme: dark) {
+            input[type="text"],
+            input[type="tel"],
+            input[type="email"],
+            select,
+            textarea {
+                border-color: #4caf7a;
+            }
+            
+            .checkbox-item {
+                background-color: #2a3a2a;
+            }
+            
+            option {
+                background-color: #2a3a2a;
+                color: #e0e0e0;
+            }
+            
+            /* Ensure placeholder text is visible */
+            ::placeholder {
+                color: #a0a0a0;
+                opacity: 0.8;
+            }
+            
+            /* Make sure all text is visible */
+            h1, h2, legend, caption, label {
+                color: #4caf7a !important;
+            }
+            
+            /* Make the select dropdown text visible */
+            select {
+                color: #e0e0e0;
+            }
+            
+            /* Make the textarea text visible */
+            textarea {
+                color: #e0e0e0;
+            }
+            
+            /* Fix for the table footer */
+            tfoot td {
+                background-color: #1a472a;
+                color: #e0e0e0;
+            }
+        }
+        
+        /* Add a dark mode toggle for users who want to switch manually */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--button-bg);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
     </style>
 </head>
 <body>
+    <!-- Dark mode toggle button -->
+    <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle dark mode">🌓</button>
+    
     <header>
         <h1>Pizza Ordering Form</h1>
     </header>
@@ -207,17 +331,17 @@ layout: page
                 <legend>Contact Information <span class="required">*</span></legend>
                 <div>
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
                     <div class="error" id="nameError">Please enter your name</div>
                 </div>
                 <div>
                     <label for="phone">Phone:</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
                     <div class="error" id="phoneError">Please enter a valid phone number</div>
                 </div>
                 <div>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
                     <div class="error" id="emailError">Please enter a valid email address</div>
                 </div>
             </fieldset>
@@ -350,7 +474,7 @@ layout: page
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="4" style="text-align: center; font-weight: bold; background-color: #f0faf4;">Count: 5</td>
+                        <td colspan="4" style="text-align: center; font-weight: bold; background-color: var(--table-row-even);">Count: 5</td>
                     </tr>
                 </tfoot>
             </table>
@@ -362,91 +486,59 @@ layout: page
     </footer>
 
     <script>
+        // Form submission handler
         document.getElementById('pizzaForm').addEventListener('submit', function(event) {
-            // Prevent actual form submission (which causes 405 error on GitHub Pages)
             event.preventDefault();
             
-            // Hide all error messages
             const errorElements = document.querySelectorAll('.error');
             errorElements.forEach(error => {
                 error.style.display = 'none';
             });
             
-            // Hide success message
             document.getElementById('successMessage').style.display = 'none';
             
-            // Get form values
             const name = document.getElementById('name').value.trim();
             const phone = document.getElementById('phone').value.trim();
             const email = document.getElementById('email').value.trim();
             const size = document.getElementById('size').value;
             const sauceSelected = document.querySelector('input[name="sauce"]:checked');
             
-            // Validation flags
             let isValid = true;
             
-            // Validate name
             if (!name) {
                 document.getElementById('nameError').style.display = 'block';
                 isValid = false;
             }
             
-            // Validate phone (basic validation)
             const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
             if (!phone || !phoneRegex.test(phone.replace(/\D/g, ''))) {
                 document.getElementById('phoneError').style.display = 'block';
                 isValid = false;
             }
             
-            // Validate email
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!email || !emailRegex.test(email)) {
                 document.getElementById('emailError').style.display = 'block';
                 isValid = false;
             }
             
-            // Validate size
             if (!size) {
                 document.getElementById('sizeError').style.display = 'block';
                 isValid = false;
             }
             
-            // Validate sauce
             if (!sauceSelected) {
                 document.getElementById('sauceError').style.display = 'block';
                 isValid = false;
             }
             
-            // If all validations pass
             if (isValid) {
-                // Show success message
                 document.getElementById('successMessage').style.display = 'block';
-                
-                // Scroll to success message
                 document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
-                
-                // Optional: Log form data (in real app, you'd send to server)
-                console.log('Form submitted successfully!');
-                console.log('Name:', name);
-                console.log('Phone:', phone);
-                console.log('Email:', email);
-                console.log('Size:', size);
-                console.log('Sauce:', sauceSelected.value);
-                
-                // Get selected toppings
-                const selectedToppings = [];
-                document.querySelectorAll('input[name="toppings"]:checked').forEach(checkbox => {
-                    selectedToppings.push(checkbox.value);
-                });
-                console.log('Toppings:', selectedToppings);
-                console.log('Instructions:', document.getElementById('instructions').value);
-                
-                // Optional: Reset form after successful submission
-                // document.getElementById('pizzaForm').reset();
             }
         });
         
-        // Real-time validation for better UX
+        // Real-time validation
         document.getElementById('name').addEventListener('blur', function() {
             if (!this.value.trim()) {
                 document.getElementById('nameError').style.display = 'block';
@@ -481,12 +573,41 @@ layout: page
             }
         });
         
-        // Hide sauce error when a sauce is selected
         document.querySelectorAll('input[name="sauce"]').forEach(radio => {
             radio.addEventListener('change', function() {
                 document.getElementById('sauceError').style.display = 'none';
             });
         });
+        
+        // Dark mode toggle functionality
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update toggle button text
+            this.textContent = newTheme === 'dark' ? '🌞' : '🌓';
+        });
+        
+        // Check for saved theme preference or system preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.getElementById('darkModeToggle').textContent = '🌞';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.getElementById('darkModeToggle').textContent = '🌓';
+            }
+        }
+        
+        // Initialize theme on page load
+        initTheme();
     </script>
 </body>
 </html>
