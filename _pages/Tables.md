@@ -3,7 +3,6 @@ permalink: /Tables/
 title: "Tables & Forms"
 layout: page
 ---
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
