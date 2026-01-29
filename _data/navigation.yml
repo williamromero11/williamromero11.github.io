@@ -25,7 +25,8 @@ main:
   - title: "Tables & Forms"
     url: "/Tables/"
     
-  #- title: "CV" url: /cv/
+  - title: "Basic CSS" 
+    url: "/CSS/"
     
   # - title: "CV"
   #   url: /cv-json/
