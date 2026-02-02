@@ -21,12 +21,14 @@ main:
     
   - title: "Ideas"
     url: "/ideas/"
-        
-  - title: "Tables & Forms"
-    url: "/Tables/"
-    
+
   - title: "Basic CSS" 
     url: "/CSS/"
+  
+  #- title: "Tables & Forms"
+  # url: "/Tables/"
+    
+
     
   # - title: "CV"
   #   url: /cv-json/
