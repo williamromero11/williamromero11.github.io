@@ -3,7 +3,6 @@ permalink: /CSS/
 title: "Basic CSS"
 layout: page
 ---
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
