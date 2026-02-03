@@ -46,6 +46,9 @@ I try to bring the lessons I learn from gaming and literature—strategy, ethics
 
 ## 👨‍💻 Security Labs & Competitions
 
+### [OCPS Cyber Challenge](https://hackucf.org/cyber-challenge) | January 2026  
+A competitive, hands-on cybersecurity challenge designed to simulate real-world offensive and defensive security scenarios within a secured, enterprise-style network environment. Hosted in collaboration with Orange Technical College and regional cyber initiatives, the event featured Capture The Flag (CTF)–style exercises focused on ethical hacking, network defense, and system hardening. Participants analyzed simulated infrastructures, identified vulnerabilities, and applied defensive countermeasures under realistic constraints. This experience strengthened practical skills in cyber defense fundamentals, adversarial thinking, and collaborative problem-solving, while reinforcing career pathways in cybersecurity and incident response.
+
 ### [Linux Active Directory & System Administration Lab](https://github.com/williamromero11/linux-active-directory-lab) | November 2025
 A hands-on lab simulating enterprise identity and access management in a multi-server virtualized environment. This hands-on lab demonstrates the deployment and management of a Linux-based Active Directory environment in a virtualized, multi-server setup. Using Samba AD, Kerberos, DNS, and NTP, I configured a domain controller to simulate enterprise-level identity and access management. The project emphasized security best practices, including least-privilege access, automated administration via Bash and PowerShell scripts, and validation of directory services through structured testing. This lab reflects practical skills in system administration, security hardening, and infrastructure automation — core competencies for roles in cybersecurity, IT operations, and cloud administration.
 
