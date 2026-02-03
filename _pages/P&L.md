@@ -48,7 +48,7 @@ layout: page
             <article class="article" id="article1">
                 <div class="article-content">
                     <h2>Article 1</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eros magna, efficitur a facilisis id, venenatis in elit. Nulla dictum vel metus at auctor. Integer venenatis pretium mauris id ultrices. Duis sagittis ligula eget erat hendrerit, ut lobortis libero mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie vehicula quam, non accumsan odio pulvinar ac. Quisque placerat, lorem sed mattis rhoncus, purus tortor sodales tortor, sed viverra turpis orci in neque.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eros magna, efficitur a facilisis id, venenatis in elit. Nulla dictum vel metus at auctor. Integer venenatis pretium mauris id ultrices. Duis sagittis ligula eget erat hendrerit, ut lobortis libero mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie vehicula quam, non accumsan odio pulvinar ac.</p>
                     <a href="#" class="read-more">Read more...</a>
                 </div>
             </article>
@@ -57,7 +57,7 @@ layout: page
             <article class="article" id="article2">
                 <div class="article-content">
                     <h2>Article 2</h2>
-                    <p>Sed sed neque eget justo venenatis rutrum vitae quis ante. Sed ut iaculis dui, eget commodo nisi. Etiam et arcu ipsum. Praesent porta eu nisi a malesuada. Nunc cursus facilisis ligula, in porttitor nisl pulvinar ultrices. Pellentesque consectetur venenatis ex, non lacinia metus lobortis vel. Cras dui urna, dapibus non ante quis, tristique egestas ex. Fusce ornare, neque in interdum condimentum, justo magna accumsan nunc, vitae feugiat felis tellus vitae justo.</p>
+                    <p>Sed sed neque eget justo venenatis rutrum vitae quis ante. Sed ut iaculis dui, eget commodo nisi. Etiam et arcu ipsum. Praesent porta eu nisi a malesuada. Nunc cursus facilisis ligula, in porttitor nisl pulvinar ultrices. Pellentesque consectetur venenatis ex, non lacinia metus lobortis vel.</p>
                     <a href="#" class="read-more">Read more...</a>
                 </div>
             </article>
@@ -66,7 +66,7 @@ layout: page
             <article class="article" id="article3">
                 <div class="article-content">
                     <h2>Article 3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Aenean sit amet felis malesuada, efficitur nisi at, tincidunt nibh. Donec accumsan interdum dui, eget tincidunt libero fermentum vel. Sed vel est euismod, consequat orci at, condimentum ipsum. Proin euismod, lorem in vehicula laoreet, neque purus facilisis odio, sit amet auctor elit neque ut leo.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Aenean sit amet felis malesuada, efficitur nisi at, tincidunt nibh. Donec accumsan interdum dui, eget tincidunt libero fermentum vel.</p>
                     <a href="#" class="read-more">Read more...</a>
                 </div>
             </article>
@@ -75,7 +75,7 @@ layout: page
             <article class="article" id="article4">
                 <div class="article-content">
                     <h2>Article 4</h2>
-                    <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                    <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
                     <a href="#" class="read-more">Read more...</a>
                 </div>
             </article>
@@ -84,7 +84,7 @@ layout: page
             <article class="article" id="article5">
                 <div class="article-content">
                     <h2>Article 5</h2>
-                    <p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet.</p>
+                    <p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor.</p>
                     <a href="#" class="read-more">Read more...</a>
                 </div>
             </article>
@@ -93,7 +93,43 @@ layout: page
             <article class="article" id="article6">
                 <div class="article-content">
                     <h2>Article 6</h2>
-                    <p>Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi.</p>
+                    <p>Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante.</p>
+                    <a href="#" class="read-more">Read more...</a>
+                </div>
+            </article>
+            
+            <!-- Article 7 -->
+            <article class="article" id="article7">
+                <div class="article-content">
+                    <h2>Article 7</h2>
+                    <p>Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet.</p>
+                    <a href="#" class="read-more">Read more...</a>
+                </div>
+            </article>
+            
+            <!-- Article 8 -->
+            <article class="article" id="article8">
+                <div class="article-content">
+                    <h2>Article 8</h2>
+                    <p>Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor.</p>
+                    <a href="#" class="read-more">Read more...</a>
+                </div>
+            </article>
+            
+            <!-- Article 9 -->
+            <article class="article" id="article9">
+                <div class="article-content">
+                    <h2>Article 9</h2>
+                    <p>Semper quis lectus nulla at volutpat. Ut tincidunt tincidunt erat. Sed libero. Phasellus dolor. Maecenas vestibulum mollis diam. Pellentesque ut neque. Pellentesque habitant morbi tristique senectus.</p>
+                    <a href="#" class="read-more">Read more...</a>
+                </div>
+            </article>
+            
+            <!-- Article 10 -->
+            <article class="article" id="article10">
+                <div class="article-content">
+                    <h2>Article 10</h2>
+                    <p>Et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.</p>
                     <a href="#" class="read-more">Read more...</a>
                 </div>
             </article>
