@@ -3,7 +3,6 @@ permalink: /P&L/
 title: "Positioning and Layout"
 layout: page
 ---
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
