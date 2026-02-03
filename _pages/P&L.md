@@ -138,7 +138,9 @@ layout: page
     
     <!-- Footer (Fixed at Bottom Right) -->
     <footer>
-        <p>Thank you for visiting MyBlog.com. We hope you enjoyed our journal articles!</p>
+        <p>Thank you for visiting!
+        Contact Us!
+        Phone: (555) 123-1234 Email: contact@myDomain.com Address: 111 Fictional Place Line 2: Orlando, FL, 32825</p>
     </footer>
 </body>
 </html>
