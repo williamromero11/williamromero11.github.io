@@ -1,32 +1,32 @@
-/* RESET */
+/* =========================
+   RESET / BASE
+========================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f4f4f4;
 }
 
-/* LAYOUT */
+/* =========================
+   LAYOUT
+========================= */
 #container {
     display: flex;
     min-height: 100vh;
 }
 
-#header {
-    background: red;
-    color: black;
-    text-align: center;
-    padding: 20px;
-}
-
-/* SIDEBAR */
+/* =========================
+   SIDEBAR
+========================= */
 #sidebar {
     width: 220px;
     background: black;
-    color: 100vh;
 }
 
 .menu {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-item {
@@ -41,7 +41,9 @@ body {
     background: goldenrod;
 }
 
-/* DROPDOWN */
+/* =========================
+   DROPDOWN
+========================= */
 .submenu {
     display: none;
     list-style: none;
@@ -64,25 +66,42 @@ body {
     color: white;
 }
 
-/* MAIN CONTENT */
+/* =========================
+   MAIN CONTENT
+========================= */
 #content {
     flex: 1;
     padding: 30px;
 }
 
-/* HEADER */
+/* =========================
+   HEADER (BIG RED BAR)
+========================= */
 #header {
-    margin-bottom: 20px;
+    background: red;
+    color: black;
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 30px;
 }
 
-/* ARTICLES GRID — THIS IS THE FIX */
+#header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* =========================
+   ARTICLES GRID — 4 PER ROW
+========================= */
 .articles {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
 }
 
-/* ARTICLE CARDS */
+/* =========================
+   ARTICLE CARDS
+========================= */
 .article {
     background: #f2f2f2;
     padding: 20px;
@@ -95,13 +114,18 @@ body {
     transform: scale(1.05);
 }
 
-/* FIRST LETTER STYLING (EXCLUDES READ MORE) */
+/* =========================
+   FIRST LETTER STYLING
+   (READ MORE UNAFFECTED)
+========================= */
 .article p::first-letter {
     font-family: "Times New Roman", serif;
     font-size: 36px;
 }
 
-/* GOOGLE LINK ARROW */
+/* =========================
+   GOOGLE LINK ARROW
+========================= */
 .article a[href*="google"]::after {
     content: "";
     display: inline-block;
