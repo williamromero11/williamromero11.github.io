@@ -27,7 +27,9 @@ main:
   
   - title: "Positioning & Layout"
     url: "/P&L/"
-    
+  
+  - title: "CSS Transitions and Selectors"
+    url: "/T&S/"
 
     
   # - title: "CV"
