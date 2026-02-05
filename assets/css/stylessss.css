@@ -1,0 +1,122 @@
+/* =========================
+   BASE
+========================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+#container {
+    display: flex;
+}
+
+/* =========================
+   HEADER
+========================= */
+#header {
+    background: red;
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+/* =========================
+   SIDEBAR NAV
+========================= */
+#sidebar {
+    width: 200px;
+    background: black;
+    min-height: 100vh;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    background: blue;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+}
+
+.nav-item:hover {
+    background: goldenrod;
+}
+
+/* =========================
+   RECENT ARTICLES DROPDOWN
+========================= */
+.submenu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: goldenrod;
+}
+
+.recent:hover .submenu {
+    display: block;
+}
+
+.submenu li a {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: blue;
+}
+
+.submenu li a:hover {
+    background: blue;
+    color: white;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* =========================
+   ARTICLES
+========================= */
+.article {
+    color: #b0b0b0;
+    margin-bottom: 20px;
+    transition: color 2s ease, transform 2s ease;
+}
+
+.article:hover {
+    color: #333;
+    transform: scale(1.05);
+}
+
+/* =========================
+   FIRST LETTER STYLING
+========================= */
+.article p:first-of-type::first-letter {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 36px;
+    float: left;
+    line-height: 1;
+    padding-right: 6px;
+}
+
+/* =========================
+   GOOGLE LINKS ARROW
+========================= */
+a[href*="google"]::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 6px;
+    background: url("/assets/css/arrowarrow.png") no-repeat center;
+    background-size: contain;
+}
