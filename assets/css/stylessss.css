@@ -67,7 +67,12 @@ main {
     padding: 20px;
     flex: 1;
 }
-
+/* ARTICLES CONTAINER LAYOUT */
+.articles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
 /* ARTICLES */
 .article {
     color: #b5b5b5;
