@@ -11,11 +11,11 @@
     min-height: 100vh;
 }
 
-/* SIDEBAR */
+/* SIDEBAR — LIGHTER STYLE (LIKE BEFORE) */
 #sidebar {
     width: 220px;
-    background: #1e1e1e;
-    color: white;
+    background-color: #e6e6e6;
+    border-right: 1px solid #ccc;
 }
 
 .menu {
@@ -25,17 +25,18 @@
 .nav-item {
     padding: 15px;
     cursor: pointer;
+    color: #333;
 }
 
 .nav-item:hover {
-    background-color: #444;
+    background-color: #ccc;
 }
 
 /* DROPDOWN */
 .submenu {
     display: none;
     list-style: none;
-    background: #333;
+    background-color: #d9d9d9;
 }
 
 .recent:hover .submenu {
@@ -45,13 +46,13 @@
 .submenu li a {
     display: block;
     padding: 10px;
-    color: #ccc;
+    color: #333;
     text-decoration: none;
 }
 
 .submenu li a:hover {
-    background: #555;
-    color: white;
+    background-color: #bbb;
+    color: black;
 }
 
 /* MAIN CONTENT */
@@ -61,11 +62,12 @@
 }
 
 /* HEADER */
-#header {
+#header h1 {
+    color: red; /* MyBlog.com in red */
     margin-bottom: 20px;
 }
 
-/* ARTICLES GRID — THIS IS THE FIX */
+/* ARTICLES GRID */
 .articles {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -74,7 +76,7 @@
 
 /* ARTICLE CARDS */
 .article {
-    background: #f2f2f2;
+    background-color: #f2f2f2;
     padding: 20px;
     color: #b5b5b5;
     transition: color 2s ease, transform 2s ease;
@@ -85,7 +87,7 @@
     transform: scale(1.05);
 }
 
-/* FIRST LETTER STYLING (EXCLUDES READ MORE) */
+/* FIRST LETTER STYLING */
 .article p::first-letter {
     font-family: "Times New Roman", serif;
     font-size: 36px;
@@ -102,4 +104,3 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
-
