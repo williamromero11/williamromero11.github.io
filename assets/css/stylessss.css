@@ -1,23 +1,22 @@
-/* =========================
-   RESET / BASE
-========================= */
-body {
+/* RESET */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
 }
 
-/* =========================
-   LAYOUT
-========================= */
+/* LAYOUT */
 #container {
     display: flex;
     min-height: 100vh;
 }
 
-/* =========================
-   SIDEBAR
-========================= */
+/* SIDEBAR */
 #sidebar {
     width: 220px;
     background: black;
@@ -25,8 +24,6 @@ body {
 
 .menu {
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-item {
@@ -35,15 +32,15 @@ body {
     padding: 15px;
     cursor: pointer;
     border-bottom: 1px solid black;
+    width: 100%;
+    display: block;
 }
 
 .nav-item:hover {
     background: goldenrod;
 }
 
-/* =========================
-   DROPDOWN
-========================= */
+/* DROPDOWN */
 .submenu {
     display: none;
     list-style: none;
@@ -66,42 +63,35 @@ body {
     color: white;
 }
 
-/* =========================
-   MAIN CONTENT
-========================= */
+/* MAIN CONTENT */
 #content {
     flex: 1;
     padding: 30px;
 }
 
-/* =========================
-   HEADER (BIG RED BAR)
-========================= */
+/* HEADER */
 #header {
     background: red;
     color: black;
-    text-align: center;
-    padding: 30px 0;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 30px;
 }
 
 #header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
-/* =========================
-   ARTICLES GRID — 4 PER ROW
-========================= */
+/* ARTICLES GRID */
 .articles {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
 }
 
-/* =========================
-   ARTICLE CARDS
-========================= */
+/* ARTICLES */
 .article {
     background: #f2f2f2;
     padding: 20px;
@@ -114,18 +104,13 @@ body {
     transform: scale(1.05);
 }
 
-/* =========================
-   FIRST LETTER STYLING
-   (READ MORE UNAFFECTED)
-========================= */
+/* FIRST LETTER */
 .article p::first-letter {
     font-family: "Times New Roman", serif;
     font-size: 36px;
 }
 
-/* =========================
-   GOOGLE LINK ARROW
-========================= */
+/* GOOGLE ARROW */
 .article a[href*="google"]::after {
     content: "";
     display: inline-block;
