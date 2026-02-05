@@ -68,10 +68,12 @@ main {
     flex: 1;
 }
 /* ARTICLES CONTAINER LAYOUT */
+/* ARTICLES CONTAINER */
 .articles {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+
 }
 /* ARTICLES */
 .article {
