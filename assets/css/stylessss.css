@@ -1,14 +1,21 @@
 /* RESET */
-* {
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
 }
 
 /* LAYOUT */
 #container {
     display: flex;
     min-height: 100vh;
+}
+
+#header {
+    background: red;
+    color: black;
+    text-align: center;
+    padding: 20px;
 }
 
 /* SIDEBAR */
@@ -23,8 +30,11 @@
 }
 
 .nav-item {
+    background: blue;
+    color: white;
     padding: 15px;
     cursor: pointer;
+    border-bottom: 1px solid black;
 }
 
 .nav-item:hover {
