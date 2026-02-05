@@ -3,12 +3,15 @@ permalink: /TS/
 title: "CSS Transitions and Selectors"
 layout: page
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>MyBlog.com</title>
-    <link rel="stylesheet" href="stylessss.css">
+
+    <!-- IMPORTANT: absolute path -->
+    <link rel="stylesheet" href="/assets/css/stylessss.css">
 </head>
 <body>
 
@@ -24,12 +27,6 @@ layout: page
                     <li><a href="#a2">Article 2</a></li>
                     <li><a href="#a3">Article 3</a></li>
                     <li><a href="#a4">Article 4</a></li>
-                    <li><a href="#a5">Article 5</a></li>
-                    <li><a href="#a6">Article 6</a></li>
-                    <li><a href="#a7">Article 7</a></li>
-                    <li><a href="#a8">Article 8</a></li>
-                    <li><a href="#a9">Article 9</a></li>
-                    <li><a href="#a10">Article 10</a></li>
                 </ul>
             </li>
             <li class="nav-item">Services</li>
