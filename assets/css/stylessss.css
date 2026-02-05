@@ -1,43 +1,21 @@
-/* =========================
-   RESET / BASE
-========================= */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-}
-
-/* =========================
-   LAYOUT
-========================= */
+/* LAYOUT */
 #container {
     display: flex;
     min-height: 100vh;
 }
 
-/* =========================
-   HEADER
-========================= */
-#header {
-    background: red;
-    color: black;
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-/* =========================
-   SIDEBAR NAV
-========================= */
+/* SIDEBAR */
 #sidebar {
     width: 220px;
-    background: black;
-    min-height: 100vh;
+    background: #1e1e1e;
+    color: white;
 }
 
 .menu {
@@ -45,24 +23,19 @@ body {
 }
 
 .nav-item {
-    background: blue;
-    color: white;
     padding: 15px;
     cursor: pointer;
-    border-bottom: 1px solid black;
 }
 
 .nav-item:hover {
-    background: goldenrod;
+    background-color: #444;
 }
 
-/* =========================
-   RECENT ARTICLES DROPDOWN
-========================= */
+/* DROPDOWN */
 .submenu {
     display: none;
     list-style: none;
-    background: goldenrod;
+    background: #333;
 }
 
 .recent:hover .submenu {
@@ -71,36 +44,35 @@ body {
 
 .submenu li a {
     display: block;
-    padding: 8px 15px;
+    padding: 10px;
+    color: #ccc;
     text-decoration: none;
-    color: blue;
 }
 
 .submenu li a:hover {
-    background: blue;
+    background: #555;
     color: white;
 }
 
-/* =========================
-   MAIN CONTENT
-========================= */
+/* MAIN CONTENT */
 #content {
     flex: 1;
     padding: 30px;
 }
 
-/* =========================
-   ARTICLES GRID (4 PER ROW)
-========================= */
+/* HEADER */
+#header {
+    margin-bottom: 20px;
+}
+
+/* ARTICLES GRID — THIS IS THE FIX */
 .articles {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
 }
 
-/* =========================
-   ARTICLE CARDS
-========================= */
+/* ARTICLE CARDS */
 .article {
     background: #f2f2f2;
     padding: 20px;
@@ -113,28 +85,20 @@ body {
     transform: scale(1.05);
 }
 
-/* =========================
-   FIRST LETTER STYLING
-   (READ MORE UNAFFECTED)
-========================= */
-.article p:first-of-type::first-letter {
-    font-family: "Times New Roman", Times, serif;
+/* FIRST LETTER STYLING (EXCLUDES READ MORE) */
+.article p::first-letter {
+    font-family: "Times New Roman", serif;
     font-size: 36px;
-    float: left;
-    line-height: 1;
-    padding-right: 6px;
 }
 
-/* =========================
-   GOOGLE LINK ARROW
-========================= */
+/* GOOGLE LINK ARROW */
 .article a[href*="google"]::after {
     content: "";
     display: inline-block;
     width: 14px;
     height: 14px;
     margin-left: 6px;
-    background-image: url("/assets/css/arrowarrow.png");
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6b/Arrow_right.svg");
     background-size: contain;
     background-repeat: no-repeat;
 }
