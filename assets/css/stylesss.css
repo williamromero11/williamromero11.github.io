@@ -34,7 +34,7 @@ body {
 /* HEADER */
 #header {
     position: fixed;
-    top: 0;
+    top: 60px;
     left: 15%;
     width: 85%;
     z-index: 10;
