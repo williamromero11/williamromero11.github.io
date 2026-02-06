@@ -33,12 +33,17 @@ body {
 
 /* HEADER */
 #header {
+    position: fixed;
+    top: 60px;                 /* below site navbar */
+    left: 15%;
+    width: 85%;
     background: red;
+    z-index: 9999;
 }
 
 /* BLOG TITLE */
 #header h1 {
-    margin: 0;              /* <-- this removes the white bar */
+    margin: 0;                 /* removes white gap */
     padding: 22px 0;
     line-height: 1;
     background: red;
@@ -50,6 +55,7 @@ body {
 
 /* NAV BAR */
 #nav {
+    margin: 0;
     background: black;
     display: flex;
     justify-content: center;
@@ -67,10 +73,11 @@ body {
 /* MAIN CONTENT */
 #content {
     margin-left: 15%;
-    margin-top: 240px;
+    margin-top: 240px;        /* space for header + nav */
     padding: 40px;
 }
 
+/* SECTION TITLE */
 .section-title {
     text-align: center;
     font-family: "Times New Roman", Times, serif;
