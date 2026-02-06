@@ -66,9 +66,10 @@ body {
 /* MAIN CONTENT */
 #content {
     margin-left: 15%;
-    margin-top: 180px;   /* KEY FIX */
+    margin-top: 260px;   /* header + nav + site navbar */
     padding: 40px;
 }
+
 
 
 #articles {
