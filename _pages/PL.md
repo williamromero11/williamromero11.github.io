@@ -41,71 +41,21 @@ layout: page
     <h2 class="section-title">Recent Journal Articles</h2>
 
     <div id="articles">
-        <div class="article" id="a1">
-            <h3>Article 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim neque at convallis tempor.</p>
-            <a href="#">Read more...</a>
-        </div>
-
-        <div class="article" id="a2">
-            <h3>Article 2</h3>
-            <p>Sed sed neque eget justo tincidunt pharetra. Suspendisse potenti.</p>
-            <a href="#">Read more...</a>
-        </div>
-
-        <div class="article" id="a3">
-            <h3>Article 3</h3>
-            <p>Vivamus lectus ante, facilisis at lorem sed, porta dictum elit.</p>
-            <a href="#">Read more...</a>
-        </div>
-
-        <div class="article" id="a4">
-            <h3>Article 4</h3>
-            <p>Proin mi ipsum, fermentum at odio vitae, tempor dignissim lectus.</p>
-            <a href="#">Read more...</a>
-        </div>
-
-        <div class="article" id="a5">
-            <h3>Article 5</h3>
-            <p>Sed suscipit vestibulum elit, at tincidunt magna consequat vitae.</p>
-            <a href="#">Read more...</a>
-        </div>
-
-        <div class="article" id="a6">
-            <h3>Article 6</h3>
-            <p>Phasellus nunc sapien, malesuada sed volutpat vitae, varius id lorem.</p>
-            <a href="#">Read more...</a>
-        </div>
-
-        <div class="article" id="a7">
-            <h3>Article 7</h3>
-            <p>Mauris tempus ligula ut velit scelerisque, sed viverra nisi facilisis.</p>
-            <a href="#">Read more...</a>
-        </div>
-
-        <div class="article" id="a8">
-            <h3>Article 8</h3>
-            <p>Integer at ligula id tortor elementum porta. Nam pulvinar metus.</p>
-            <a href="#">Read more...</a>
-        </div>
-
-        <div class="article" id="a9">
-            <h3>Article 9</h3>
-            <p>Sed at augue nec magna cursus posuere.</p>
-            <a href="#">Read more...</a>
-        </div>
-
-        <div class="article" id="a10">
-            <h3>Article 10</h3>
-            <p>Sed erat elit, efficitur at risus nec, porta volutpat turpis.</p>
-            <a href="#">Read more...</a>
-        </div>
+        <div class="article" id="a1"><h3>Article 1</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim neque at convallis tempor.</p><a href="#">Read more...</a></div>
+        <div class="article" id="a2"><h3>Article 2</h3><p>Sed sed neque eget justo tincidunt pharetra. Suspendisse potenti.</p><a href="#">Read more...</a></div>
+        <div class="article" id="a3"><h3>Article 3</h3><p>Vivamus lectus ante, facilisis at lorem sed, porta dictum elit.</p><a href="#">Read more...</a></div>
+        <div class="article" id="a4"><h3>Article 4</h3><p>Proin mi ipsum, fermentum at odio vitae, tempor dignissim lectus.</p><a href="#">Read more...</a></div>
+        <div class="article" id="a5"><h3>Article 5</h3><p>Sed suscipit vestibulum elit, at tincidunt magna consequat vitae.</p><a href="#">Read more...</a></div>
+        <div class="article" id="a6"><h3>Article 6</h3><p>Phasellus nunc sapien, malesuada sed volutpat vitae, varius id lorem.</p><a href="#">Read more...</a></div>
+        <div class="article" id="a7"><h3>Article 7</h3><p>Mauris tempus ligula ut velit scelerisque, sed viverra nisi facilisis.</p><a href="#">Read more...</a></div>
+        <div class="article" id="a8"><h3>Article 8</h3><p>Integer at ligula id tortor elementum porta. Nam pulvinar metus.</p><a href="#">Read more...</a></div>
+        <div class="article" id="a9"><h3>Article 9</h3><p>Sed at augue nec magna cursus posuere.</p><a href="#">Read more...</a></div>
+        <div class="article" id="a10"><h3>Article 10</h3><p>Sed erat elit, efficitur at risus nec, porta volutpat turpis.</p><a href="#">Read more...</a></div>
     </div>
 </div>
 
-<div id="thank-you">
-    Thank you for visiting!
-</div>
+<div id="thank-you">Thank you for visiting!</div>
 
 </body>
 </html>
+
