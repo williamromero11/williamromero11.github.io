@@ -1,1 +1,147 @@
-* { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: Arial, sans-serif; } /* LEFT JUMP MENU */ #jump-menu { position: fixed; left: 0; top: 0; width: 15%; height: 100vh; background: #d8a820; padding: 20px; } #jump-menu a { display: block; margin: 6px 0; color: teal; text-decoration: underline; } /* HEADER CONTAINER */ #header { position: fixed; top: 70px; left: 15%; width: 85%; z-index: 10; } /* BLOG TITLE */ #header h1 { background: red; color: black; margin: 0; padding: 20px 0; font-size: 36px; text-align: center; } /* NAV BAR */ #nav { background: black; display: flex; justify-content: center; gap: 20px; padding: 10px 0; } #nav a { background: blue; color: white; padding: 15px 40px; text-decoration: none; } /* MAIN CONTENT */ #content { margin-left: 15%; margin-top: 260px; padding: 40px; } /* ARTICLES GRID - 4 PER ROW */ #articles { display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start; } .article { flex: 0 0 calc(25% - 15px); /* 4 per row with 20px gap */ background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); } .article h3 { margin-bottom: 15px; color: #333; font-size: 1.4em; } .article p { margin-bottom: 15px; line-height: 1.6; color: #555; } .article a { color: #0066cc; text-decoration: none; font-weight: bold; } .article a:hover { text-decoration: underline; } /* THANK YOU BOX */ #thank-you { position: fixed; bottom: 20px; right: 20px; background: #8fd0f0; padding: 20px; border: 2px solid black; font-size: 24px; } /* RESPONSIVE ADJUSTMENTS */ @media (max-width: 1400px) { .article { flex: 0 0 calc(33.333% - 14px); /* 3 per row */ } } @media (max-width: 1100px) { .article { flex: 0 0 calc(50% - 10px); /* 2 per row */ } } @media (max-width: 800px) { #jump-menu { width: 0; padding: 0; overflow: hidden; } #header { left: 0; width: 100%; top: 0; } #content { margin-left: 0; margin-top: 180px; } .article { flex: 0 0 100%; /* 1 per row */ } } /* For very wide screens, limit the content width */ @media (min-width: 1600px) { #content { max-width: 1400px; margin-left: calc(15% + ((100% - 15% - 1400px) / 2)); } }
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* LEFT JUMP MENU */
+#jump-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 15%;
+    height: 100vh;
+    background: #d8a820;
+    padding: 20px;
+}
+
+#jump-menu h2 {
+    margin-bottom: 10px;
+}
+
+#jump-menu a {
+    display: block;
+    margin: 6px 0;
+    color: teal;
+    text-decoration: underline;
+}
+
+/* HEADER */
+#header {
+    position: fixed;
+    top: 0;
+    left: 15%;
+    width: 85%;
+    z-index: 10;
+}
+
+/* BLOG TITLE */
+#header h1 {
+    background: red;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 36px;
+}
+
+/* NAV BAR */
+#nav {
+    background: black;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+#nav a {
+    background: blue;
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+}
+
+/* MAIN CONTENT */
+#content {
+    margin-left: 15%;
+    margin-top: 180px;
+    padding: 40px;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+/* ARTICLES GRID */
+#articles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.article {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.article h3 {
+    margin-bottom: 10px;
+}
+
+.article p {
+    margin-bottom: 10px;
+}
+
+.article a {
+    color: teal;
+    text-decoration: underline;
+}
+
+/* THANK YOU BOX */
+#thank-you {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #8fd0f0;
+    padding: 20px;
+    border: 2px solid black;
+    font-size: 24px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1400px) {
+    #articles {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1100px) {
+    #articles {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    #articles {
+        grid-template-columns: 1fr;
+    }
+
+    #jump-menu {
+        display: none;
+    }
+
+    #header {
+        left: 0;
+        width: 100%;
+    }
+
+    #content {
+        margin-left: 0;
+    }
+}
