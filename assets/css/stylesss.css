@@ -25,20 +25,26 @@ body {
     color: teal;
     text-decoration: underline;
 }
+/* HEADER CONTAINER */
+#header {
+    position: fixed;
+    top: 0;
+    left: 15%;
+    width: 85%;
+    z-index: 10;
+}
 
-/* HEADER */
+/* BLOG TITLE */
 #header h1 {
-    color: black;
     background: red;
+    color: black;
     margin: 0;
     padding: 20px 0;
     font-size: 36px;
-}
-#header {
-    z-index: 10;
-    padding-bottom: 0;
+    text-align: center;
 }
 
+/* NAV BAR */
 #nav {
     background: black;
     display: flex;
@@ -53,6 +59,8 @@ body {
     padding: 15px 40px;
     text-decoration: none;
 }
+
+
 
 /* MAIN CONTENT */
 #content {
