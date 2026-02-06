@@ -28,11 +28,12 @@ body {
 /* HEADER CONTAINER */
 #header {
     position: fixed;
-    top: 0;
+    top: 70px;           /* ← THIS fixes everything */
     left: 15%;
     width: 85%;
     z-index: 10;
 }
+
 
 /* BLOG TITLE */
 #header h1 {
