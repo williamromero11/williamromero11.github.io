@@ -33,22 +33,19 @@ body {
 
 /* HEADER */
 #header {
-    position: fixed;
-    top: 60px;
-    left: 15%;
-    width: 85%;
-    z-index: 9999;
-}
+    background: red;
+
 
 /* BLOG TITLE */
 #header h1 {
+    margin: 0;              /* <-- this removes the white bar */
+    padding: 22px 0;
+    line-height: 1;
     background: red;
     color: black;
     text-align: center;
-    padding: 22px 0;
     font-size: 36px;
     font-weight: 700;
-    line-height: 1;
 }
 
 /* NAV BAR */
