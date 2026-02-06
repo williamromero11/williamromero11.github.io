@@ -28,14 +28,8 @@ body {
 
 /* HEADER */
 #header {
-    position: fixed;
-    top: 0;
-    left: 15%;
-    width: 85%;
-    background: red;
-    text-align: center;
-    z-index: 1000;
-    padding-bottom: 10px;
+    z-index: 10;
+    padding-bottom: 0;
 }
 
 #nav {
@@ -56,18 +50,18 @@ body {
 /* MAIN CONTENT */
 #content {
     margin-left: 15%;
-    padding: 220px 40px 40px 40px; /* FIXES OVERLAP */
+    margin-top: 180px;   /* KEY FIX */
+    padding: 40px;
 }
+
 
 #articles {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 40px;
+    display: block;
 }
 
-.article p {
-    line-height: 1.6;
-    margin: 10px 0 15px 0;
+.article {
+    width: 100%;
+    margin-bottom: 40px;
 }
 
 /* THANK YOU BOX */
