@@ -8,6 +8,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* LEFT JUMP MENU */
 #jump-menu {
     position: fixed;
     left: 0;
@@ -18,6 +19,14 @@ body {
     padding: 20px;
 }
 
+#jump-menu a {
+    display: block;
+    margin: 6px 0;
+    color: teal;
+    text-decoration: underline;
+}
+
+/* HEADER */
 #header {
     position: fixed;
     top: 0;
@@ -26,38 +35,42 @@ body {
     background: red;
     text-align: center;
     z-index: 1000;
+    padding-bottom: 10px;
 }
 
 #nav {
     background: black;
     display: flex;
     justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
 }
 
 #nav a {
     background: blue;
     color: white;
     padding: 15px 40px;
-    margin: 0 10px;
     text-decoration: none;
 }
 
+/* MAIN CONTENT */
 #content {
     margin-left: 15%;
-    padding-top: 160px;
-    padding: 20px;
+    padding: 220px 40px 40px 40px; /* FIXES OVERLAP */
 }
 
 #articles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
 }
 
-.article {
-    width: 300px;
+.article p {
+    line-height: 1.6;
+    margin: 10px 0 15px 0;
 }
 
+/* THANK YOU BOX */
 #thank-you {
     position: fixed;
     bottom: 20px;
