@@ -1,3 +1,8 @@
+---
+permalink: /PL/
+title: "CSS Position and layout"
+layout: page
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
