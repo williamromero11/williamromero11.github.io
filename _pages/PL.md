@@ -8,8 +8,6 @@ layout: page
 <head>
     <meta charset="UTF-8">
     <title>MyBlog.com</title>
-
-    <!-- CORRECT PATH FROM _pages -->
     <link rel="stylesheet" href="../assets/css/stylesss.css">
 </head>
 <body>
@@ -42,16 +40,65 @@ layout: page
     <h2 class="section-title">Recent Journal Articles</h2>
 
     <div id="articles">
-        <div class="article" id="a1"><h3>Article 1</h3><p>Lorem ipsum dolor sit amet.</p><a href="#">Read more...</a></div>
-        <div class="article" id="a2"><h3>Article 2</h3><p>Sed sed neque eget justo.</p><a href="#">Read more...</a></div>
-        <div class="article" id="a3"><h3>Article 3</h3><p>Vivamus lectus ante.</p><a href="#">Read more...</a></div>
-        <div class="article" id="a4"><h3>Article 4</h3><p>Proin mi ipsum.</p><a href="#">Read more...</a></div>
-        <div class="article" id="a5"><h3>Article 5</h3><p>Sed suscipit vestibulum.</p><a href="#">Read more...</a></div>
-        <div class="article" id="a6"><h3>Article 6</h3><p>Phasellus nunc sapien.</p><a href="#">Read more...</a></div>
-        <div class="article" id="a7"><h3>Article 7</h3><p>Mauris tempus ligula.</p><a href="#">Read more...</a></div>
-        <div class="article" id="a8"><h3>Article 8</h3><p>Integer at ligula.</p><a href="#">Read more...</a></div>
-        <div class="article" id="a9"><h3>Article 9</h3><p>Sed at augue nec.</p><a href="#">Read more...</a></div>
-        <div class="article" id="a10"><h3>Article 10</h3><p>Sed erat elit.</p><a href="#">Read more...</a></div>
+        <div class="article" id="a1">
+            <h3>Article 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, neque at convallis tempor, lacus erat posuere lorem, vitae interdum nunc risus sed nulla.</p>
+            <a href="#">Read more...</a>
+        </div>
+
+        <div class="article" id="a2">
+            <h3>Article 2</h3>
+            <p>Sed sed neque eget justo tincidunt pharetra. Suspendisse potenti. Integer non turpis ac metus bibendum volutpat at non est.</p>
+            <a href="#">Read more...</a>
+        </div>
+
+        <div class="article" id="a3">
+            <h3>Article 3</h3>
+            <p>Vivamus lectus ante, facilisis at lorem sed, porta dictum elit. Integer vehicula magna vel nisl lacinia, a pretium eros suscipit.</p>
+            <a href="#">Read more...</a>
+        </div>
+
+        <div class="article" id="a4">
+            <h3>Article 4</h3>
+            <p>Proin mi ipsum, fermentum at odio vitae, tempor dignissim lectus. Donec id purus nec lorem tincidunt fermentum.</p>
+            <a href="#">Read more...</a>
+        </div>
+
+        <div class="article" id="a5">
+            <h3>Article 5</h3>
+            <p>Sed suscipit vestibulum elit, at tincidunt magna consequat vitae. Nullam euismod metus nec lacus fermentum luctus.</p>
+            <a href="#">Read more...</a>
+        </div>
+
+        <div class="article" id="a6">
+            <h3>Article 6</h3>
+            <p>Phasellus nunc sapien, malesuada sed volutpat vitae, varius id lorem. Nulla facilisi. Integer a ex at metus dictum pretium.</p>
+            <a href="#">Read more...</a>
+        </div>
+
+        <div class="article" id="a7">
+            <h3>Article 7</h3>
+            <p>Mauris tempus ligula ut velit scelerisque, sed viverra nisi facilisis. Cras ut magna non augue ultrices dignissim.</p>
+            <a href="#">Read more...</a>
+        </div>
+
+        <div class="article" id="a8">
+            <h3>Article 8</h3>
+            <p>Integer at ligula id tortor elementum porta. Nam pulvinar, metus a gravida tincidunt, ipsum lorem tempor turpis.</p>
+            <a href="#">Read more...</a>
+        </div>
+
+        <div class="article" id="a9">
+            <h3>Article 9</h3>
+            <p>Sed at augue nec magna cursus posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p>
+            <a href="#">Read more...</a>
+        </div>
+
+        <div class="article" id="a10">
+            <h3>Article 10</h3>
+            <p>Sed erat elit, efficitur at risus nec, porta volutpat turpis. Aliquam erat volutpat. Aenean at libero vitae erat.</p>
+            <a href="#">Read more...</a>
+        </div>
     </div>
 </div>
 
@@ -61,4 +108,3 @@ layout: page
 
 </body>
 </html>
-
