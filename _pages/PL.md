@@ -42,7 +42,7 @@ layout: page
     <div id="articles">
         <div class="article" id="a1">
             <h3>Article 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, neque at convallis tempor, lacus erat posuere lorem, vitae interdum nunc risus sed nulla.</p>
+            <p>The golden morning light filtered through the ancient canopy, illuminating the forest floor in patches of dappled warmth. A gentle breeze rustled the leaves overhead, carrying the scent of damp earth and pine. In the distance, the rhythmic call of a woodpecker echoed, a steady percussion against the symphony of whispering trees. Time seemed to slow, held in the quiet majesty of the undisturbed woods.</p>
             <a href="#">Read more...</a>
         </div>
 
