@@ -45,7 +45,7 @@ I try to apply these habits of careful analysis, attention to detail, and ethica
 
 ## 👨‍💻 Security Labs & Competitions
 
-### [OCPS Cyber Challenge](https://hackucf.org/cyber-challenge) | January 2026  
+### [OCPS Cyber Challenge](https://www.linkedin.com/posts/william-romero-pirela_hack-cybersecurity-ctf-activity-7423359165286461440-B_-r?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFSV9AkBQJmlEWSSmo9R5VMU2-zVcDD8LV0) | January 2026  
 Participated in a competitive cybersecurity challenge designed to simulate real world defensive and offensive security scenarios in an enterprise style network. I worked in a two person team and placed 5th out of 60 teams. The competition involved ethical hacking tasks, network defense, system hardening, and vulnerability analysis under time constraints. This experience strengthened my teamwork skills and reinforced my ability to analyze security problems quickly and methodically.
 
 ### [HACK@UCF Cyber Challenge CTF](https://hackucf.org/ctf) | February 2025  
