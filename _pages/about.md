@@ -6,21 +6,20 @@ author_profile: true
 
 
 
-Entry-level IT and cybersecurity professional pursuing a B.S. in Information Technology with hands-on experience in IT support, network troubleshooting, and system security. Eligible for security clearance and seeking an internship or junior role in system administration or cybersecurity to support secure systems, network operations, and incident response. 
+I am an entry level IT and cybersecurity student currently completing my degree in Information Technology. My interests focus on system administration, network security, and defensive security operations. I am looking for an internship or junior role where I can contribute to maintaining secure systems, supporting network operations, and assisting with incident response while continuing to grow my technical skills.
 
 ## About Me
-I’m a 24‑year‑old IT and Cybersecurity student from Venezuela, currently living in Orlando, Florida. I’ve been passionate about technology for as long as I can remember, especially how different systems interact and how to protect them from threats. That interest has also led me to building custom PCs—where I focus on both performance and security in every build.
+I am a 24 year old IT and cybersecurity student originally from Venezuela and currently living in Orlando, Florida. I have been interested in technology from a young age, particularly how systems interact and how they can be protected from misuse or attack. This interest naturally led me to building custom PCs, where I focus on reliability, performance, and security in each build.
 
-Outside of academics and tech, I’m a big fan of deep, strategic games like Elden Ring, The Witcher 3, and Baldur’s Gate 3. These games have taught me a lot about persistence, creative problem‑solving, and strategic thinking. I also read a lot, particularly epic fantasy. A Song of Ice and Fire by George R.R. Martin is one of my favorites—it inspired my fascination with complex systems, layered narratives, and how small details can shape entire worlds, which ties back to how I think about cybersecurity.
+Outside of academics, I enjoy strategy driven games such as Elden Ring, The Witcher 3, and Baldur’s Gate 3. These games reinforce skills that translate well to cybersecurity, including persistence, critical thinking, and problem solving under pressure. I am also an avid reader of epic fantasy, especially A Song of Ice and Fire by George R. R. Martin. The complexity of its world building and interconnected systems mirrors how I approach technical environments and security challenges.
 
-I try to bring the lessons I learn from gaming and literature—strategy, ethics, and attention to detail—into my IT and security work every day.
+I try to apply these habits of careful analysis, attention to detail, and ethical thinking to my academic and technical work.
 
 ### 🎓 Education Journey
-- **High School:** JP Taravella High School (9th grade), Coral Glades High School (10th-12th)
 - **University:** University of Central Florida (UCF) - Pursuing B.S. in Information Technology
 - **Specialization:** Networks and Cybersecurity
 - **Expected Graduation:** This semester
-- **Future Plans:** Pursue a Master's degree in Cybersecurity after graduation
+- **Future Plans:** I plan to pursue a Master’s degree in Cybersecurity after completing my undergraduate studies.
 - **Certifications:** [![CompTIA Security+](https://img.shields.io/badge/CompTIA-Security%2B-red)](https://www.credly.com/users/william-romero.9412f593/badges#credly) | [![AWS Cloud Security Foundations](https://img.shields.io/badge/AWS-Cloud%20Foundations-blue)](https://www.credly.com/users/william-romero.9412f593/badges#credly) | [![TestOut IT Fundamentals Pro](https://img.shields.io/badge/TestOut-IT%20Fundamentals%20Pro-yellow)](https://certification.testout.com/managecert?certificateID=6-1C6-VPU5M2) | [![AWS Cloud Foundations](https://img.shields.io/badge/AWS-Cloud%20Foundations-blue)](https://www.credly.com/users/william-romero.9412f593/badges#credly) |  
 ## Technical Skills
 
@@ -47,14 +46,13 @@ I try to bring the lessons I learn from gaming and literature—strategy, ethics
 ## 👨‍💻 Security Labs & Competitions
 
 ### [OCPS Cyber Challenge](https://hackucf.org/cyber-challenge) | January 2026  
-A competitive, hands-on cybersecurity challenge simulating real-world offensive and defensive security scenarios within a secured, enterprise-style network environment. Working in a two-person team, I placed 5th out of 60 teams in Capture The Flag (CTF)–style exercises focused on ethical hacking, network defense, and system hardening. The competition required analyzing simulated infrastructures, identifying vulnerabilities, and implementing defensive countermeasures under time constraints. This experience demonstrates strong collaborative problem-solving, technical depth in cyber defense fundamentals, and the ability to perform under pressure—key skills for SOC, incident response, and security analyst roles.
+Participated in a competitive cybersecurity challenge designed to simulate real world defensive and offensive security scenarios in an enterprise style network. I worked in a two person team and placed 5th out of 60 teams. The competition involved ethical hacking tasks, network defense, system hardening, and vulnerability analysis under time constraints. This experience strengthened my teamwork skills and reinforced my ability to analyze security problems quickly and methodically.
 
 ### [HACK@UCF Cyber Challenge CTF](https://hackucf.org/ctf) | February 2025  
-A scenario-based cybersecurity competition simulating real-world enterprise breach investigation and incident response under time-constrained conditions. This Capture The Flag challenge required practical application of network reconnaissance, service enumeration, and forensic analysis techniques to identify compromised systems and recover critical data flags. The competition emphasized rapid threat assessment, systematic investigation methodologies, and adherence to incident response protocols while working within competitive time constraints. This experience demonstrates applied skills in defensive security operations, threat hunting, and real-time problem-solving — valuable competencies for roles in SOC analysis, incident response, and penetration testing.
+Competed in a scenario based Capture the Flag event focused on enterprise breach investigation and incident response. Tasks included network reconnaissance, service enumeration, and basic forensic analysis to identify compromised systems and recover data. The event emphasized structured investigation, rapid threat assessment, and working effectively under pressure.
 
 ### [Linux Active Directory & System Administration Lab](https://github.com/williamromero11/linux-active-directory-lab) | November 2025
-A hands-on lab simulating enterprise identity and access management in a multi-server virtualized environment. This hands-on lab demonstrates the deployment and management of a Linux-based Active Directory environment in a virtualized, multi-server setup. Using Samba AD, Kerberos, DNS, and NTP, I configured a domain controller to simulate enterprise-level identity and access management. The project emphasized security best practices, including least-privilege access, automated administration via Bash and PowerShell scripts, and validation of directory services through structured testing. This lab reflects practical skills in system administration, security hardening, and infrastructure automation — core competencies for roles in cybersecurity, IT operations, and cloud administration.
-
+Completed a hands on lab focused on identity and access management in a multi server virtualized environment. I deployed and managed a Linux based domain controller using Samba Active Directory, Kerberos, DNS, and NTP. The lab focused on least privilege access, automated administration through scripting, and validating directory services through structured testing. This project strengthened my understanding of system administration, authentication services, and security hardening in enterprise environments.
 
 
 
