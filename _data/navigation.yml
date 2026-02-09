@@ -22,11 +22,11 @@ main:
   - title: "Ideas"
     url: "/ideas/"
 
-  - title: "Basic CSS" 
-    url: "/CSS/"
+  #- title: "Basic CSS" 
+  # url: "/CSS/"
   
-  - title: "Positioning & Layout"
-    url: "/PL/"
+  # title: "Positioning & Layout"
+  # url: "/PL/"
   
   - title: "CSS Transitions and Selectors"
     url: "/TS/"
