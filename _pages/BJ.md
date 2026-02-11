@@ -88,11 +88,9 @@ layout: page
 <button id="btnBlue">Blue</button>
 
 <script>
-  // footer car objects
   window.car1 = { cType: "truck", cMPG: 28, cColor: "red" };
   window.car2 = { cType: "sedan", cMPG: 35, cColor: "blue" };
   window.car3 = { cType: "SUV",   cMPG: 22, cColor: "black" };
 </script>
 
-<script src="{{ '/script.js' | relative_url }}"></script>
-
+<script src="{{ '/script.js' | relative_url }}" defer></script>
