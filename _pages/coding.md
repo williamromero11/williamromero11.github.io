@@ -7,27 +7,31 @@ layout: page
 # Coding Portfolio
 
 ### [Project # 1: Campus Parking System](https://github.com/williamromero11/Project-1)
-Campus Parking System is a C program implementing a comprehensive parking management simulation for a university campus. Built with strict adherence to dynamic memory allocation principles, the system models real-world parking operations through efficient data structures and command-driven interactions.
+The Campus Parking System is a C-based simulation that models parking operations across a university campus using dynamically allocated data structures and command-driven interaction. The system represents multiple parking garages, registered vehicles, and real-time occupancy, closely mirroring real-world parking management workflows.
 
-The program demonstrates advanced C programming concepts including pointer arithmetic, multi-dimensional dynamic arrays, and memory management while solving a practical problem space. It features a complete command-line interface for managing multiple garages, tracking registered vehicles, and providing real-time utilization analytics.
+This project demonstrates strong proficiency in core C programming concepts, including pointer arithmetic, multi-dimensional dynamic arrays, and manual memory management. A robust command-line interface allows users to manage garage capacity, register and remove vehicles, and query utilization statistics efficiently.
 
-Key technical achievements include zero memory leaks (validated via Valgrind), optimized string handling with exact-size allocations, and a modular architecture that cleanly separates data structures, business logic, and I/O operations.
+From a systems perspective, the project emphasizes correctness and performance. Key technical achievements include zero memory leaks verified with Valgrind, optimized string handling using exact-size allocations, and a modular program architecture that cleanly separates data structures, business logic, and input/output responsibilities.
 
 ### [Project # 2: Traffic Fine Management System (BST)](https://github.com/williamromero11/Project-2)
-Traffic Fine Management System is a C program implementing a comprehensive traffic violation tracking system using Binary Search Tree (BST) data structures. Built with meticulous attention to tree algorithms and recursive design patterns, the system models municipal fine administration through efficient hierarchical organization and command-driven operations.
+The Traffic Fine Management System is a C program that simulates municipal traffic violation tracking using a Binary Search Tree (BST) as its core data structure. Each node represents a vehicle owner and associated fine data, enabling efficient organization and retrieval of records.
 
-The program demonstrates advanced C programming concepts including recursive algorithms, pointer-based tree structures, and dynamic memory management while solving a practical governance problem. It features a complete command-line interface for managing vehicle owner records, processing fine transactions, and providing real-time tree analytics.
+This project highlights advanced use of recursive algorithms, pointer-based tree structures, and dynamic memory allocation. The system provides a full command-line interface that supports inserting new records, updating fines, searching for owners, and generating analytical summaries based on tree traversal.
 
-Key technical achievements include O(log n) average-case operations, proper recursive memory deallocation, and a modular architecture that cleanly separates tree operations, business logic, and user interaction layers.
+Technically, the project achieves O(log n) average-case performance for key operations and implements proper recursive memory deallocation to prevent leaks. Its modular design separates BST operations from business logic and user interaction, demonstrating clean abstraction and maintainable C code.
 
 ### [Project # 3: Nile Dot Com E-Store Simulation (Event-Driven GUI)](https://github.com/williamromero11/Project-3)
-Nile Dot Com E-Store Simulation is a Java-based standalone GUI application implementing a comprehensive e-commerce simulation through event-driven programming principles. Built with Swing and adhering to model-view-controller separation, the system models online retail operations including inventory management, shopping cart functionality, and transaction logging.
+The Nile Dot Com E-Store Simulation is a Java-based standalone GUI application that models an online retail system using event-driven programming principles. Built with Java Swing and structured around a model–view–controller (MVC) design, the application simulates inventory management, shopping cart behavior, and order processing.
 
-The program demonstrates advanced Java concepts including event handling, file I/O operations, GUI component management, and object-oriented design while solving a practical e-commerce problem. It features a complete graphical interface for managing store inventory, processing customer orders, and maintaining permanent transaction records.
+The project showcases advanced Java concepts such as GUI event handling, object-oriented design, and file I/O. Users interact with a graphical interface to browse products, place orders, and generate transaction logs that persist across application sessions.
 
-Key technical achievements include thread-safe CSV file operations, dynamic GUI state management, proper separation of business logic from presentation layer, and comprehensive error handling for all user interaction scenarios.
+Notable technical accomplishments include thread-safe CSV file operations, dynamic GUI state updates, strict separation of business logic from the presentation layer, and comprehensive input validation and error handling. The result is a stable, user-friendly simulation that mirrors real-world e-commerce workflows.
 
 ### [Project # 4: Train Yard Dispatch Simulator](https://github.com/williamromero11/Project-4)
-A concurrent train-yard simulation that models multiple trains attempting to traverse a shared switch complex under Precision Scheduled Railroading (PSR)-inspired constraints. Each train must acquire exclusive control of a required set of switches (locks) in a strict order before it can move through the yard. The simulator uses Java’s ExecutorService and ReentrantLock to coordinate train movements and avoid deadlock.
+The Train Yard Dispatch Simulator is a concurrent Java application that models the movement of multiple trains through a shared switch yard under Precision Scheduled Railroading (PSR)-inspired constraints. Each train operates as an independent task and must acquire exclusive control of a specific sequence of track switches before traversing the yard.
+
+This project focuses heavily on concurrency, synchronization, and deadlock avoidance. Trains are executed using an ExecutorService with a fixed thread pool, while shared switch resources are protected using ReentrantLock objects and non-blocking tryLock() acquisition. To prevent deadlock, each train strictly follows an ordered lock acquisition strategy and releases all held locks if any required switch is unavailable, retrying after a randomized backoff period.
+
+The simulator reads its configuration from external CSV files defining the train fleet and yard topology, allowing the simulation to be easily reconfigured without code changes. Trains with invalid inbound-to-outbound routes are correctly identified and placed on permanent hold. A complete execution log is produced, followed by a final status report summarizing each train’s outcome. This project demonstrates strong mastery of Java concurrency, resource coordination, and real-world systems modeling.
 
 
