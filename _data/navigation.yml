@@ -32,8 +32,8 @@ main:
     url: "/TS/"
 
     
-  # - title: "CV"
-  #   url: /cv-json/
+  - title: "Basic Javascript"
+    url: "/BJ/"
     
   #- title: "Guide"
    # url: /markdown/
