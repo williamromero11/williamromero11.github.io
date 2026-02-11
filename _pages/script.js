@@ -121,31 +121,24 @@ function changeColor(color) {
 // Wire up buttons AFTER page loads
 // (avoids onclick issues and ensures elements exist)
 // -----------------------------
-window.addEventListener("DOMContentLoaded", () => {
-  // Initialize counter display
+window.addEventListener("load", () => {
   updateCounter();
 
-  // Simple functions
-  $("btnIncrease")?.addEventListener("click", increaseCounter);
-  $("btnDecrease")?.addEventListener("click", decreaseCounter);
+  document.getElementById("btnIncrease")?.addEventListener("click", increaseCounter);
+  document.getElementById("btnDecrease")?.addEventListener("click", decreaseCounter);
 
-  // Loops
-  $("btnForLoop")?.addEventListener("click", runForLoop);
-  $("btnOdds")?.addEventListener("click", showOddNumbers);
+  document.getElementById("btnForLoop")?.addEventListener("click", runForLoop);
+  document.getElementById("btnOdds")?.addEventListener("click", showOddNumbers);
 
-  // Arrays
-  $("btnArray")?.addEventListener("click", arrayMultiplesOfFive);
+  document.getElementById("btnArray")?.addEventListener("click", arrayMultiplesOfFive);
 
-  // Car object printing
-  $("btnPrintCar")?.addEventListener("click", printCarObject);
+  document.getElementById("btnPrintCar")?.addEventListener("click", printCarObject);
 
-  // Car loading (car1/car2/car3 are defined in the HTML footer script)
-  $("btnLoad1")?.addEventListener("click", () => loadCar(window.car1));
-  $("btnLoad2")?.addEventListener("click", () => loadCar(window.car2));
-  $("btnLoad3")?.addEventListener("click", () => loadCar(window.car3));
+  document.getElementById("btnLoad1")?.addEventListener("click", () => loadCar(window.car1));
+  document.getElementById("btnLoad2")?.addEventListener("click", () => loadCar(window.car2));
+  document.getElementById("btnLoad3")?.addEventListener("click", () => loadCar(window.car3));
 
-  // Color change
-  $("btnRed")?.addEventListener("click", () => changeColor("red"));
-  $("btnGreen")?.addEventListener("click", () => changeColor("green"));
-  $("btnBlue")?.addEventListener("click", () => changeColor("blue"));
+  document.getElementById("btnRed")?.addEventListener("click", () => changeColor("red"));
+  document.getElementById("btnGreen")?.addEventListener("click", () => changeColor("green"));
+  document.getElementById("btnBlue")?.addEventListener("click", () => changeColor("blue"));
 });
