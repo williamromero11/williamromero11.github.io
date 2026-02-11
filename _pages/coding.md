@@ -27,5 +27,7 @@ The program demonstrates advanced Java concepts including event handling, file I
 
 Key technical achievements include thread-safe CSV file operations, dynamic GUI state management, proper separation of business logic from presentation layer, and comprehensive error handling for all user interaction scenarios.
 
+### [Project # 4: Train Yard Dispatch Simulator](https://github.com/williamromero11/Project-4)
+A concurrent train-yard simulation that models multiple trains attempting to traverse a shared switch complex under Precision Scheduled Railroading (PSR)-inspired constraints. Each train must acquire exclusive control of a required set of switches (locks) in a strict order before it can move through the yard. The simulator uses Java’s ExecutorService and ReentrantLock to coordinate train movements and avoid deadlock.
 
 
