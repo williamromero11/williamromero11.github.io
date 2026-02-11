@@ -1,23 +1,18 @@
-"use strict";
-
 // -----------------------------
-// Global Counter
+// Basic JavaScript Exercises
 // -----------------------------
-let counter = 0;
 
-// Safe element getter (prevents crashes if an ID is missing)
+// Helper: short getElementById
 function $(id) {
-  const el = document.getElementById(id);
-  if (!el) {
-    console.error(`Missing element with id="${id}"`);
-  }
-  return el;
+  return document.getElementById(id);
 }
+
+// Counter state
+let counter = 0;
 
 function updateCounter() {
   const counterEl = $("counter");
-  if (!counterEl) return;
-  counterEl.textContent = counter;
+  if (counterEl) counterEl.textContent = counter;
 }
 
 // -----------------------------
