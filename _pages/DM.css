@@ -1,1 +1,106 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
 
+header {
+  padding: 14px 18px;
+}
+
+.siteTitle {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.topNav button {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+#toggleButtons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 14px 0;
+}
+
+#toggleButtons button {
+  padding: 8px 14px;
+  border: 2px solid #777;
+  border-radius: 6px;
+  background: white;
+}
+
+#filterContent {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+#filterContent h2 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+#filterContent label {
+  margin: 0 10px;
+}
+
+#newContent {
+  width: 420px;
+  margin: 0 auto 20px auto;
+}
+
+.formRow {
+  margin-bottom: 8px;
+}
+
+main h1 {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 16px 0;
+}
+
+#articleList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 0 18px 24px;
+}
+
+#articleList article {
+  border: 2px solid #ccc;
+  padding: 10px;
+  position: relative;
+}
+
+.marker {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 2px 6px;
+  font-size: 14px;
+}
+
+article.opinion {
+  border-color: red;
+}
+article.opinion .marker {
+  background: red;
+}
+
+article.recipe {
+  border-color: #6aa9ff;
+}
+article.recipe .marker {
+  background: #6aa9ff;
+}
+
+article.update {
+  border-color: green;
+}
+article.update .marker {
+  background: green;
+}
+
+footer {
+  padding: 18px;
+}
