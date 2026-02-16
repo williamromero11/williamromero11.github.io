@@ -1,38 +1,26 @@
 "use strict";
 
-/**
- * Helper: get the counter as a number (defaults to 0 if something weird happens)
- */
+/* Helpers */
 function getCounterValue() {
   const counterEl = document.getElementById("counter");
   const n = Number(counterEl.textContent);
   return Number.isFinite(n) ? n : 0;
 }
 
-/**
- * Helper: set the counter display
- */
 function setCounterValue(n) {
   document.getElementById("counter").textContent = String(n);
 }
 
-/**
- * 1pt: Simple Functions
- */
+/* 1pt: Simple Functions */
 function tickUp() {
-  const n = getCounterValue();
-  setCounterValue(n + 1);
+  setCounterValue(getCounterValue() + 1);
 }
 
 function tickDown() {
-  const n = getCounterValue();
-  setCounterValue(n - 1);
+  setCounterValue(getCounterValue() - 1);
 }
 
-/**
- * 1pt: Simple For Loop
- * Display every number from 0 up to and including the counter.
- */
+/* 1pt: Simple For Loop */
 function runForLoop() {
   const n = getCounterValue();
   const out = [];
@@ -44,10 +32,7 @@ function runForLoop() {
   document.getElementById("forLoopResult").textContent = out.join(" ");
 }
 
-/**
- * 1pt: Repetition with Condition
- * Display all odd numbers from 1 to the counter.
- */
+/* 1pt: Repetition with Condition */
 function showOddNumbers() {
   const n = getCounterValue();
   const out = [];
@@ -59,12 +44,7 @@ function showOddNumbers() {
   document.getElementById("oddNumberResult").textContent = out.join(" ");
 }
 
-/**
- * 1pt: Arrays
- * Add every multiple of 5 up to the counter to an array in reverse order.
- * Then print the array itself to the console.
- * If counter < 5, print [].
- */
+/* 1pt: Arrays */
 function addMultiplesToArray() {
   const n = getCounterValue();
   const arr = [];
@@ -73,13 +53,10 @@ function addMultiplesToArray() {
     if (i % 5 === 0) arr.push(i);
   }
 
-  console.log(arr); // print the array itself
+  console.log(arr);
 }
 
-/**
- * 2pts: Objects and Form Fields
- * Build an object from the form values and print it to console.
- */
+/* 2pts: Objects */
 function printCarObject() {
   const car = {
     cType: document.getElementById("carType").value,
@@ -90,34 +67,26 @@ function printCarObject() {
   console.log(car);
 }
 
-/**
- * 2pts: Objects and Form Fields pt. 2
- * Load carObject1/2/3 (defined in the HTML footer) into the form.
- */
 function loadCar(which) {
-  let carObj;
+  let car;
 
-  if (which === 1) carObj = window.carObject1;
-  else if (which === 2) carObj = window.carObject2;
-  else if (which === 3) carObj = window.carObject3;
-  else return;
+  if (which === 1) car = window.carObject1;
+  if (which === 2) car = window.carObject2;
+  if (which === 3) car = window.carObject3;
 
-  // In case something is missing, fail safely
-  if (!carObj) return;
+  if (!car) return;
 
-  document.getElementById("carType").value = carObj.cType ?? "";
-  document.getElementById("carMPG").value = carObj.cMPG ?? "";
-  document.getElementById("carColor").value = carObj.cColor ?? "";
+  document.getElementById("carType").value = car.cType;
+  document.getElementById("carMPG").value = car.cMPG;
+  document.getElementById("carColor").value = car.cColor;
 }
 
-/**
- * 2pt: Changing Styles
- * Change only the paragraph with id="styleParagraph" to red/green/blue.
- */
+/* 2pt: Changing Styles */
 function changeColor(which) {
   const p = document.getElementById("styleParagraph");
 
   if (which === 1) p.style.color = "red";
-  else if (which === 2) p.style.color = "green";
-  else if (which === 3) p.style.color = "blue";
+  if (which === 2) p.style.color = "green";
+  if (which === 3) p.style.color = "blue";
 }
+
