@@ -3,14 +3,17 @@ permalink: /DM/
 title: "DOM Manipulation"
 layout: page
 ---
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <title>Recent Journal Articles</title>
-    <link rel="stylesheet" href="10_css.css">
+    <link rel="stylesheet" href="/_pages/10_css.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- IMPORTANT: load your JS -->
-    <script src="script.js" defer></script>
+    <!-- IMPORTANT: load your actual JS filename + correct absolute path -->
+    <script src="/_pages/scriptssssssss.js" defer></script>
   </head>
 
   <body>
@@ -32,75 +35,20 @@ layout: page
           <button onclick="showAddNew()" id="addButton" type="button">Add New Article</button>
         </div>
 
-        <!-- start hidden (requirement says menu appears on click) -->
+        <!-- hidden until "Add New Article" -->
         <form id="newContent" style="display:none;">
           <h2 class="formRow">Add New Article</h2>
 
           <div class="formRow">
             <label for="inputHeader">Title: </label>
-            <input id="inputHeader" name="inputHeader" type="text">
+            <input id="inputHeader" name="inputHeader" type="text" />
           </div>
 
           <div class="formRow">
             <label>Type:</label>
 
-            <!-- IMPORTANT: add value="" so JS can read type -->
-            <input name="articleType" id="opinionRadio" type="radio" value="opinion">
+            <input name="articleType" id="opinionRadio" type="radio" value="opinion" />
             <label for="opinionRadio">Opinion</label>
 
-            <input name="articleType" id="recipeRadio" type="radio" value="recipe">
-            <label for="recipeRadio">Recipe</label>
-
-            <input name="articleType" id="lifeRadio" type="radio" value="update">
-            <label for="lifeRadio">Life Update</label>
-          </div>
-
-          <div class="formRow">
-            <label for="inputArticle">Text:</label>
-            <textarea id="inputArticle" name="inputArticle"></textarea>
-          </div>
-
-          <div class="formRow">
-            <button onclick="addNewArticle()" type="button">Add New Article</button>
-          </div>
-        </form>
-
-        <!-- start hidden (requirement says menu appears on click) -->
-        <form id="filterContent" style="display:none;">
-          <h2>Filter by Article Type</h2>
-
-          <label for="opinionCheckbox">Opinion</label>
-          <input onclick="filterArticles()" id="opinionCheckbox" type="checkbox" checked>
-
-          <label for="recipeCheckbox">Recipe</label>
-          <input onclick="filterArticles()" id="recipeCheckbox" type="checkbox" checked>
-
-          <label for="updateCheckbox">Update</label>
-          <input onclick="filterArticles()" id="updateCheckbox" type="checkbox" checked>
-        </form>
-      </div>
-
-      <h1>Recent Journal Articles</h1>
-
-      <div id="articleList">
-        <!-- keep all your existing articles exactly as they are -->
-        <!-- (I’m not re-pasting all 10 here; leave your Article 1-10 unchanged) -->
-
-        <!-- PASTE your existing <article> blocks here exactly like your current file -->
-      </div>
-
-      <footer>
-        <p>Contact Us!</p>
-        <address>
-          <div>
-            <span>Phone:</span> <span>(555) 123-1234</span>
-            <span>Email:</span> <span><a href="">contact@myDomain.com</a></span>
-            <span>Address:</span> <span>111 Fictional Place</span>
-            <span>Line 2:</span> <span>Orlando, FL, 32825</span>
-          </div>
-        </address>
-      </footer>
-    </main>
-  </body>
-</html>
+            <input name="articleType"
 
