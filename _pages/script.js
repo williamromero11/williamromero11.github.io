@@ -1,147 +1,123 @@
-// -----------------------------
-// Basic JavaScript Exercises
-// -----------------------------
+"use strict";
 
-// Helper: short getElementById
-function $(id) {
-  return document.getElementById(id);
+/**
+ * Helper: get the counter as a number (defaults to 0 if something weird happens)
+ */
+function getCounterValue() {
+  const counterEl = document.getElementById("counter");
+  const n = Number(counterEl.textContent);
+  return Number.isFinite(n) ? n : 0;
 }
 
-// Counter state
-let counter = 0;
-
-function updateCounter() {
-  const counterEl = $("counter");
-  if (counterEl) counterEl.textContent = counter;
+/**
+ * Helper: set the counter display
+ */
+function setCounterValue(n) {
+  document.getElementById("counter").textContent = String(n);
 }
 
-// -----------------------------
-// 1pt: Simple Functions
-// -----------------------------
-function increaseCounter() {
-  counter++;
-  updateCounter();
+/**
+ * 1pt: Simple Functions
+ */
+function tickUp() {
+  const n = getCounterValue();
+  setCounterValue(n + 1);
 }
 
-function decreaseCounter() {
-  counter--;
-  updateCounter();
+function tickDown() {
+  const n = getCounterValue();
+  setCounterValue(n - 1);
 }
 
-// -----------------------------
-// 1pt: Simple For Loop
-// -----------------------------
+/**
+ * 1pt: Simple For Loop
+ * Display every number from 0 up to and including the counter.
+ */
 function runForLoop() {
-  const outEl = $("forLoopResult");
-  if (!outEl) return;
+  const n = getCounterValue();
+  const out = [];
 
-  const output = [];
-  for (let i = 0; i <= counter; i++) {
-    output.push(i);
+  for (let i = 0; i <= n; i++) {
+    out.push(i);
   }
-  outEl.textContent = output.join(" ");
+
+  document.getElementById("forLoopResult").textContent = out.join(" ");
 }
 
-// -----------------------------
-// 1pt: Repetition with Condition
-// -----------------------------
+/**
+ * 1pt: Repetition with Condition
+ * Display all odd numbers from 1 to the counter.
+ */
 function showOddNumbers() {
-  const outEl = $("oddResult");
-  if (!outEl) return;
+  const n = getCounterValue();
+  const out = [];
 
-  const output = [];
-  for (let i = 1; i <= counter; i++) {
-    if (i % 2 !== 0) output.push(i);
+  for (let i = 1; i <= n; i++) {
+    if (i % 2 === 1) out.push(i);
   }
-  outEl.textContent = output.join(" ");
+
+  document.getElementById("oddNumberResult").textContent = out.join(" ");
 }
 
-// -----------------------------
-// 1pt: Arrays
-// -----------------------------
-function arrayMultiplesOfFive() {
+/**
+ * 1pt: Arrays
+ * Add every multiple of 5 up to the counter to an array in reverse order.
+ * Then print the array itself to the console.
+ * If counter < 5, print [].
+ */
+function addMultiplesToArray() {
+  const n = getCounterValue();
   const arr = [];
 
-  // add every multiple of 5 up to the counter, in reverse order
-  for (let i = counter; i >= 5; i--) {
+  for (let i = n; i >= 5; i--) {
     if (i % 5 === 0) arr.push(i);
   }
 
-  // IMPORTANT: print the array itself (not individual elements)
-  console.log(arr);
+  console.log(arr); // print the array itself
 }
 
-// -----------------------------
-// 2pts: Objects and Form Fields
-// -----------------------------
+/**
+ * 2pts: Objects and Form Fields
+ * Build an object from the form values and print it to console.
+ */
 function printCarObject() {
-  const typeEl = $("carType");
-  const mpgEl = $("carMPG");
-  const colorEl = $("carColor");
-  if (!typeEl || !mpgEl || !colorEl) return;
-
   const car = {
-    cType: typeEl.value,
-    cMPG: mpgEl.value,
-    cColor: colorEl.value
+    cType: document.getElementById("carType").value,
+    cMPG: document.getElementById("carMPG").value,
+    cColor: document.getElementById("carColor").value
   };
 
   console.log(car);
 }
 
-// -----------------------------
-// 2pts: Objects and Form Fields pt. 2
-// -----------------------------
-function loadCar(carObj) {
-  const typeEl = $("carType");
-  const mpgEl = $("carMPG");
-  const colorEl = $("carColor");
-  if (!typeEl || !mpgEl || !colorEl) return;
+/**
+ * 2pts: Objects and Form Fields pt. 2
+ * Load carObject1/2/3 (defined in the HTML footer) into the form.
+ */
+function loadCar(which) {
+  let carObj;
 
-  typeEl.value = carObj.cType;
-  mpgEl.value = carObj.cMPG;
-  colorEl.value = carObj.cColor;
+  if (which === 1) carObj = window.carObject1;
+  else if (which === 2) carObj = window.carObject2;
+  else if (which === 3) carObj = window.carObject3;
+  else return;
+
+  // In case something is missing, fail safely
+  if (!carObj) return;
+
+  document.getElementById("carType").value = carObj.cType ?? "";
+  document.getElementById("carMPG").value = carObj.cMPG ?? "";
+  document.getElementById("carColor").value = carObj.cColor ?? "";
 }
 
-// -----------------------------
-// 2pt: Changing Styles
-// -----------------------------
-function changeColor(color) {
-  const p = $("colorParagraph");
-  if (!p) return;
-  p.style.color = color;
+/**
+ * 2pt: Changing Styles
+ * Change only the paragraph with id="styleParagraph" to red/green/blue.
+ */
+function changeColor(which) {
+  const p = document.getElementById("styleParagraph");
+
+  if (which === 1) p.style.color = "red";
+  else if (which === 2) p.style.color = "green";
+  else if (which === 3) p.style.color = "blue";
 }
-
-// -----------------------------
-// Wire up buttons AFTER page loads
-// (avoids onclick issues and ensures elements exist)
-// -----------------------------
-window.addEventListener("load", () => {
-  updateCounter();
-
-  // Simple Functions
-  document.getElementById("btnIncrease")?.addEventListener("click", increaseCounter);
-  document.getElementById("btnDecrease")?.addEventListener("click", decreaseCounter);
-
-  // For Loop
-  document.getElementById("btnForLoop")?.addEventListener("click", runForLoop);
-
-  // Odd Numbers
-  document.getElementById("btnOdds")?.addEventListener("click", showOddNumbers);
-
-  // Arrays
-  document.getElementById("btnArray")?.addEventListener("click", arrayMultiplesOfFive);
-
-  // Print Car Object
-  document.getElementById("btnPrintCar")?.addEventListener("click", printCarObject);
-
-  // Load Car Objects
-  document.getElementById("btnLoad1")?.addEventListener("click", () => loadCar(window.car1));
-  document.getElementById("btnLoad2")?.addEventListener("click", () => loadCar(window.car2));
-  document.getElementById("btnLoad3")?.addEventListener("click", () => loadCar(window.car3));
-
-  // Color Change Buttons
-  document.getElementById("btnRed")?.addEventListener("click", () => changeColor("red"));
-  document.getElementById("btnGreen")?.addEventListener("click", () => changeColor("green"));
-  document.getElementById("btnBlue")?.addEventListener("click", () => changeColor("blue"));
-});
