@@ -44,7 +44,88 @@
 
         <div class="formRow">
           <span class="label">Type:</span>
-          <
+          <label><input name="articleType" type="radio" /> Opinion</label>
+          <label><input name="articleType" type="radio" /> Recipe</label>
+          <label><input name="articleType" type="radio" /> Life Update</label>
+        </div>
 
+        <div class="formRow">
+          <label for="inputArticle">Text:</label>
+          <textarea id="inputArticle"></textarea>
+        </div>
 
+        <div class="formRow">
+          <button type="button">Add New Article</button>
+        </div>
+      </form>
+    </div>
 
+    <h1>Recent Journal Articles</h1>
+
+    <div id="articleList">
+      <!-- OPINION -->
+      <article class="opinion">
+        <span class="marker">Opinion</span>
+        <h2>Article 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eros magna, efficitur a facilisis id, venenatis in elit.</p>
+        <p><a href="#">Read more...</a></p>
+      </article>
+
+      <article class="opinion">
+        <span class="marker">Opinion</span>
+        <h2>Article 2</h2>
+        <p>Sed sed neque eget justo venenatis rutrum vitae quis ante. Sed ut iaculis dui. Praesent porta eu nisi a malesuada.</p>
+        <p><a href="#">Read more...</a></p>
+      </article>
+
+      <article class="opinion">
+        <span class="marker">Opinion</span>
+        <h2>Article 9</h2>
+        <p>Sed at augue nec turpis condimentum vulputate. Donec tincidunt, turpis dapibus viverra vehicula, dui lectus gravida justo.</p>
+        <p><a href="#">Read more...</a></p>
+      </article>
+
+      <!-- RECIPE -->
+      <article class="recipe">
+        <span class="marker">Recipe</span>
+        <h2>Article 3</h2>
+        <p>Vivamus lectus ante, venenatis sed placerat id, pretium a est. Nulla facilisi. Curabitur vestibulum malesuada lacus.</p>
+        <p><a href="#">Read more...</a></p>
+      </article>
+
+      <article class="recipe">
+        <span class="marker">Recipe</span>
+        <h2>Article 6</h2>
+        <p>Phasellus nunc sapien, dignissim in magna id, egestas condimentum erat. Fusce ac consectetur velit, a iaculis nisi.</p>
+        <p><a href="#">Read more...</a></p>
+      </article>
+
+      <article class="recipe">
+        <span class="marker">Recipe</span>
+        <h2>Article 7</h2>
+        <p>Mauris tempus ligula euismod massa commodo vehicula. Praesent euismod feugiat posuere. Etiam convallis.</p>
+        <p><a href="#">Read more...</a></p>
+      </article>
+
+      <!-- UPDATE -->
+      <article class="update">
+        <span class="marker">Update</span>
+        <h2>Article 10</h2>
+        <p>Sed erat elit, maximus ut ullamcorper vitae, mattis vel ante.</p>
+        <p><a href="#">Read more...</a></p>
+      </article>
+    </div>
+
+    <footer>
+      <p>Contact Us!</p>
+      <address>
+        <div>
+          <span>Phone:</span> <span>(555) 123-1234</span><br />
+          <span>Email:</span> <span><a href="#">contact@myDomain.com</a></span><br />
+          <span>Address:</span> <span>111 Fictional Place, Orlando, FL 32825</span>
+        </div>
+      </address>
+    </footer>
+  </main>
+</body>
+</html>
