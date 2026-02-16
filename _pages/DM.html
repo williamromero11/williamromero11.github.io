@@ -9,114 +9,170 @@ layout: page
 <head>
   <meta charset="UTF-8" />
   <title>Recent Journal Articles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- CSS lives in _pages -->
-  <link rel="stylesheet" href="/_pages/DM.css">
+  <!-- PROVIDED CSS -->
+  <link rel="stylesheet" href="/_pages/10_css.css">
+
+  <!-- WORKING JS -->
+  <script src="/_pages/scriptsss.js" defer></script>
 </head>
 
 <body>
   <header>
-    <p class="siteTitle">MyBlog.com</p>
+    <p>MyBlog.com</p>
 
-    <nav class="topNav">
-      <button>Recent Articles</button>
-      <button>Services</button>
-      <button>Mission</button>
-      <button>About Us</button>
+    <nav>
+      <button type="button">Recent Articles</button>
+      <button type="button">Services</button>
+      <button type="button">Mission</button>
+      <button type="button">About Us</button>
     </nav>
   </header>
 
   <main>
     <div id="showArea">
+
+      <!-- TOP BUTTONS -->
       <div id="toggleButtons">
-        <button>Filter Articles</button>
-        <button>Add New Article</button>
+        <button type="button" id="filterButton">Filter Articles</button>
+        <button type="button" id="addButton">Add New Article</button>
       </div>
 
-      <div id="filterContent">
+      <!-- FILTER MENU -->
+      <form id="filterContent" style="display:none;">
         <h2>Filter by Article Type</h2>
-        <label><input type="checkbox" checked> Opinion</label>
-        <label><input type="checkbox" checked> Recipe</label>
-        <label><input type="checkbox" checked> Update</label>
-      </div>
 
-      <div id="newContent">
-        <h2>Add New Article</h2>
+        <label>
+          <input id="opinionCheckbox" type="checkbox" checked>
+          Opinion
+        </label>
+
+        <label>
+          <input id="recipeCheckbox" type="checkbox" checked>
+          Recipe
+        </label>
+
+        <label>
+          <input id="updateCheckbox" type="checkbox" checked>
+          Update
+        </label>
+      </form>
+
+      <!-- ADD NEW ARTICLE FORM -->
+      <form id="newContent" style="display:none;">
+        <h2 class="formRow">Add New Article</h2>
 
         <div class="formRow">
-          <label>Title:</label>
-          <input type="text">
+          <label for="inputHeader">Title:</label>
+          <input id="inputHeader" type="text">
         </div>
 
         <div class="formRow">
           <label>Type:</label>
-          <input type="radio"> Opinion
-          <input type="radio"> Recipe
-          <input type="radio"> Life Update
+
+          <label>
+            <input name="articleType" type="radio" value="opinion">
+            Opinion
+          </label>
+
+          <label>
+            <input name="articleType" type="radio" value="recipe">
+            Recipe
+          </label>
+
+          <label>
+            <input name="articleType" type="radio" value="update">
+            Life Update
+          </label>
         </div>
 
         <div class="formRow">
-          <label>Text:</label>
-          <textarea></textarea>
+          <label for="inputArticle">Text:</label>
+          <textarea id="inputArticle"></textarea>
         </div>
 
         <div class="formRow">
-          <button>Add New Article</button>
+          <button type="button" id="submitArticle">Add New Article</button>
         </div>
-      </div>
+      </form>
+
     </div>
 
+    <!-- ARTICLES -->
     <h1>Recent Journal Articles</h1>
 
     <div id="articleList">
+
+      <!-- OPINION ARTICLES -->
       <article class="opinion">
         <span class="marker">Opinion</span>
         <h2>Article 1</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p><a href="#">Read more...</a></p>
+        <p><a href="moreDetails.html">Read more...</a></p>
       </article>
 
       <article class="opinion">
         <span class="marker">Opinion</span>
         <h2>Article 2</h2>
         <p>Sed sed neque eget justo venenatis rutrum vitae quis ante.</p>
-        <p><a href="#">Read more...</a></p>
+        <p><a href="moreDetails.html">Read more...</a></p>
       </article>
 
       <article class="opinion">
         <span class="marker">Opinion</span>
         <h2>Article 9</h2>
         <p>Sed at augue nec turpis condimentum vulputate.</p>
-        <p><a href="#">Read more...</a></p>
+        <p><a href="moreDetails.html">Read more...</a></p>
       </article>
 
+      <!-- RECIPE ARTICLES -->
       <article class="recipe">
         <span class="marker">Recipe</span>
         <h2>Article 3</h2>
         <p>Vivamus lectus ante, venenatis sed placerat id.</p>
-        <p><a href="#">Read more...</a></p>
+        <p><a href="moreDetails.html">Read more...</a></p>
       </article>
 
       <article class="recipe">
         <span class="marker">Recipe</span>
         <h2>Article 6</h2>
         <p>Phasellus nunc sapien, dignissim in magna id.</p>
-        <p><a href="#">Read more...</a></p>
+        <p><a href="moreDetails.html">Read more...</a></p>
       </article>
 
       <article class="recipe">
         <span class="marker">Recipe</span>
         <h2>Article 7</h2>
         <p>Mauris tempus ligula euismod massa commodo.</p>
-        <p><a href="#">Read more...</a></p>
+        <p><a href="moreDetails.html">Read more...</a></p>
       </article>
+
+      <!-- UPDATE ARTICLE -->
+      <article class="update">
+        <span class="marker">Update</span>
+        <h2>Article 10</h2>
+        <p>Sed erat elit, maximus ut ullamcorper vitae.</p>
+        <p><a href="moreDetails.html">Read more...</a></p>
+      </article>
+
     </div>
 
     <footer>
       <p>Contact Us!</p>
+      <address>
+        <div>
+          <span>Phone:</span> <span>(555) 123-1234</span>
+          <span>Email:</span> <span><a href="">contact@myDomain.com</a></span>
+          <span>Address:</span> <span>111 Fictional Place</span>
+          <span>Line 2:</span> <span>Orlando, FL, 32825</span>
+        </div>
+      </address>
     </footer>
   </main>
 </body>
 </html>
+
+
 
 
