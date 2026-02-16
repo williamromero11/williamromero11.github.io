@@ -5,11 +5,9 @@ function showFilter() {
   const filterForm = document.getElementById("filterContent");
   const newForm = document.getElementById("newContent");
 
-  // toggle filter menu
-  const filterIsHidden = (getComputedStyle(filterForm).display === "none");
+  const filterIsHidden = getComputedStyle(filterForm).display === "none";
   filterForm.style.display = filterIsHidden ? "block" : "none";
 
-  // hide add-new form when opening filter
   if (filterIsHidden) newForm.style.display = "none";
 }
 
@@ -17,11 +15,9 @@ function showAddNew() {
   const filterForm = document.getElementById("filterContent");
   const newForm = document.getElementById("newContent");
 
-  // toggle add-new form
-  const newIsHidden = (getComputedStyle(newForm).display === "none");
+  const newIsHidden = getComputedStyle(newForm).display === "none";
   newForm.style.display = newIsHidden ? "flex" : "none";
 
-  // hide filter menu when opening add-new
   if (newIsHidden) filterForm.style.display = "none";
 }
 
@@ -50,7 +46,6 @@ function addNewArticle() {
   const title = titleEl.value.trim();
   const text = textEl.value.trim();
 
-  // Determine selected type (radio values are opinion/recipe/update)
   const selected = document.querySelector('input[name="articleType"]:checked');
   const type = selected ? selected.value : "";
 
@@ -61,11 +56,11 @@ function addNewArticle() {
 
   const articleList = document.getElementById("articleList");
 
-  // Build article element matching your existing structure + CSS hooks
+  // Create <article class="opinion|recipe|update">
   const article = document.createElement("article");
   article.className = type;
 
-  // marker (CSS colors it based on parent class) :contentReference[oaicite:3]{index=3}
+  // marker
   const marker = document.createElement("span");
   marker.className = "marker";
   marker.textContent =
@@ -82,25 +77,6 @@ function addNewArticle() {
   pText.textContent = text;
   article.appendChild(pText);
 
-  // "Read more..." link (matches your existing articles) :contentReference[oaicite:4]{index=4}
+  // Read more...
   const pLink = document.createElement("p");
-  const a = document.createElement("a");
-  a.href = "moreDetails.html";
-  a.textContent = "Read more...";
-  pLink.appendChild(a);
-  article.appendChild(pLink);
-
-  // Add to the list
-  articleList.appendChild(article);
-
-  // Re-apply current filters so the new article follows the checkbox state
-  filterArticles();
-
-  // Clear form
-  titleEl.value = "";
-  textEl.value = "";
-  document.querySelectorAll('input[name="articleType"]').forEach((r) => (r.checked = false));
-
-  // Optional: hide form after adding (comment out if you want it to stay open)
-  document.getElementById("newContent").style.display = "none";
-}
+  const a = docu
