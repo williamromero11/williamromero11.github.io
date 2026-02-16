@@ -3,14 +3,12 @@ permalink: /BJ/
 title: "Basic JavaScript"
 layout: page
 ---
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Basic JavaScript Exercises</title>
 
-  <!-- IMPORTANT: correct path to JS -->
+  <!-- correct JS path -->
   <script src="/_pages/script.js" defer></script>
 </head>
 
@@ -33,8 +31,7 @@ layout: page
 
   <h2>1pt: Simple For Loop</h2>
   <p>
-    When this button is clicked, display every number from 0 up to and including
-    the counter above.
+    When this button is clicked, display every number from 0 up to and including the counter above.
   </p>
   <button onclick="runForLoop()">Run For Loop</button>
   <p>Result: <span id="forLoopResult"></span></p>
@@ -52,38 +49,48 @@ layout: page
 
   <h2>1pt: Arrays</h2>
   <p>
-    Add every multiple of 5 up to the counter to an array in reverse order,
-    then print the array itself to the console.
+    When this button is clicked, add every multiple of 5 up to the counter (above)
+    to an array in reverse order. Then <em>print the array to console</em>.<br>
+    NOTE: print the array itself, not the contents of the array.<br>
+    If the number is &lt; 5, then it should print an empty array.
   </p>
   <button onclick="addMultiplesToArray()">Array of Reverse Order Multiples of 5</button>
+  <p><em>Check DevTools → Console to see the array output.</em></p>
 
   <hr>
 
   <h2>2pts: Objects and Form Fields</h2>
-  <label>Car Type</label> <input id="carType" type="text"><br>
-  <label>Car MPG</label> <input id="carMPG" type="text"><br>
-  <label>Car Color</label> <input id="carColor" type="text"><br><br>
-  <button onclick="printCarObject()">Print Car Object</button>
+  <label for="carType">Car Type</label> <input id="carType" type="text"><br>
+  <label for="carMPG">Car MPG</label> <input id="carMPG" type="text"><br>
+  <label for="carColor">Car Color</label> <input id="carColor" type="text"><br>
+  <br>
+  <button type="button" onclick="printCarObject()">Print Car Object</button>
+  <p><em>Print Car Object logs AND saves your input as Car 1.</em></p>
 
   <hr>
 
   <h2>2pts: Objects and Form Fields pt. 2</h2>
-  <button onclick="loadCar(1)">Load Car 1</button>
-  <button onclick="loadCar(2)">Load Car 2</button>
-  <button onclick="loadCar(3)">Load Car 3</button>
+  <p>
+    Load the data from the car objects into the form above.
+  </p>
+  <button type="button" onclick="loadCar(1)">Load Car 1</button>
+  <button type="button" onclick="loadCar(2)">Load Car 2</button>
+  <button type="button" onclick="loadCar(3)">Load Car 3</button>
 
   <hr>
 
   <h2>2pt: Changing Styles</h2>
   <p id="styleParagraph">
-    When either button is clicked, only this paragraph changes color.
+    When either of these buttons are clicked, the text color of this paragraph (and only this paragraph)
+    should change to the color described by the button text.
   </p>
-  <button onclick="changeColor(1)">Red</button>
-  <button onclick="changeColor(2)">Green</button>
-  <button onclick="changeColor(3)">Blue</button>
+
+  <button type="button" onclick="changeColor(1)">Red</button>
+  <button type="button" onclick="changeColor(2)">Green</button>
+  <button type="button" onclick="changeColor(3)">Blue</button>
 
   <footer>
-    <!-- IMPORTANT: objects must be on window -->
+    <!-- IMPORTANT: make these global so script.js can access them -->
     <script>
       window.carObject1 = { cType: "sedan", cMPG: "32", cColor: "blue" };
       window.carObject2 = { cType: "truck", cMPG: "28", cColor: "red" };
@@ -92,3 +99,4 @@ layout: page
   </footer>
 </body>
 </html>
+
