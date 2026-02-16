@@ -28,8 +28,8 @@ main:
   # title: "Positioning & Layout"
   # url: "/PL/"
   
-  - title: "CSS Transitions and Selectors"
-    url: "/TS/"
+  #- title: "CSS Transitions and Selectors"
+  #  url: "/TS/"
 
     
   - title: "Basic Javascript"
