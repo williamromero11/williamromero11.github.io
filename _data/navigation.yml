@@ -35,5 +35,5 @@ main:
   - title: "Basic Javascript"
     url: "/BJ/"
     
-  #- title: "Guide"
-   # url: /markdown/
+  - title: "DOM Manipulation"
+    url: "/DM/"
