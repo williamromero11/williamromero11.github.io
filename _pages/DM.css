@@ -1,3 +1,4 @@
+/* ===== Base ===== */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -7,16 +8,19 @@ header {
   padding: 14px 18px;
 }
 
-.siteTitle {
+header p {
+  margin: 0 0 10px 0;
   font-size: 22px;
-  margin-bottom: 10px;
 }
 
-.topNav button {
+/* ===== Nav ===== */
+nav button {
   font-size: 18px;
   margin-right: 8px;
+  padding: 6px 10px;
 }
 
+/* ===== Top buttons ===== */
 #toggleButtons {
   display: flex;
   justify-content: center;
@@ -31,37 +35,78 @@ header {
   background: white;
 }
 
+/* ===== Filter menu ===== */
+/* Make each label keep the checkbox next to its text */
 #filterContent {
   text-align: center;
-  margin-bottom: 12px;
+  margin: 0 0 12px 0;
 }
 
 #filterContent h2 {
   font-family: Georgia, "Times New Roman", serif;
+  margin: 6px 0 10px 0;
 }
 
 #filterContent label {
-  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
 }
 
+#filterContent input[type="checkbox"] {
+  margin: 0;
+}
+
+/* ===== Add New Article form ===== */
 #newContent {
-  width: 420px;
-  margin: 0 auto 20px auto;
+  width: 520px;
+  margin: 0 auto 18px auto;
+  padding: 10px 0;
 }
 
 .formRow {
-  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
+/* title input */
+#inputHeader {
+  width: 260px;
+}
+
+/* textarea */
+#inputArticle {
+  width: 320px;
+  height: 70px;
+}
+
+/* Radio layout: keep each radio next to its text */
+#newContent .formRow label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+#newContent input[type="radio"] {
+  margin: 0;
+}
+
+/* ===== Page title ===== */
 main h1 {
   text-align: center;
   font-family: Georgia, "Times New Roman", serif;
   margin: 16px 0;
 }
 
+/* ===== Articles grid ===== */
 #articleList {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
   gap: 18px;
   padding: 0 18px 24px;
 }
@@ -70,16 +115,20 @@ main h1 {
   border: 2px solid #ccc;
   padding: 10px;
   position: relative;
+  background: #fff;
 }
 
+/* marker tag */
 .marker {
   position: absolute;
   top: 6px;
   right: 6px;
   padding: 2px 6px;
   font-size: 14px;
+  color: #000;
 }
 
+/* type styles */
 article.opinion {
   border-color: red;
 }
@@ -100,6 +149,31 @@ article.update {
 article.update .marker {
   background: green;
 }
+
+/* ===== Footer ===== */
+footer {
+  padding: 18px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  #articleList {
+    grid-template-columns: 1fr;
+  }
+
+  #newContent {
+    width: 92%;
+  }
+
+  .formRow {
+    flex-wrap: wrap;
+  }
+
+  #inputArticle {
+    width: 100%;
+  }
+}
+
 
 footer {
   padding: 18px;
