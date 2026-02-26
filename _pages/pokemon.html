@@ -9,385 +9,43 @@ layout: page
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Pokemon Team Builder</title>
-  <style>
-    body { font-family: system-ui, Arial, sans-serif; max-width: 920px; margin: 24px auto; padding: 0 12px; }
-    fieldset { padding: 12px; }
-    .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-    input { padding: 8px; min-width: 220px; }
-    button { padding: 8px 12px; cursor: pointer; }
-    .panel { border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 14px; }
-    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    img { width: 160px; height: 160px; image-rendering: pixelated; }
-    .error { color: #b00020; }
-    .muted { color: #666; }
-    select { width: 100%; padding: 8px; }
-    .team { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 12px; }
-    .card { border: 1px solid #ddd; border-radius: 10px; padding: 12px; }
-    .card h3 { margin: 0 0 8px; text-transform: capitalize; }
-    ul { margin: 8px 0 0; padding-left: 18px; }
-    .small { font-size: 0.9rem; }
-  </style>
 </head>
 <body>
+
   <h1>Pokemon Team Builder</h1>
-  <p class="muted">Enter a Pokémon <b>name</b> (e.g., <i>ditto</i>) or <b>ID</b> (1–151). Load it, choose 4 moves, then add it to your team.</p>
 
-  <fieldset>
-    <legend>Lookup</legend>
-    <div class="row">
-      <label for="pokeInput">Pokemon Name or ID:</label>
-      <input id="pokeInput" type="text" placeholder="e.g. 25 or pikachu" />
-      <button id="btnLoad" type="button">Submit</button>
-      <span id="status" class="muted small"></span>
-    </div>
-    <div id="err" class="error" role="alert" aria-live="polite"></div>
-  </fieldset>
+  <label for="pokeInput">Name or ID</label>
+  <input id="pokeInput" type="text" />
+  <button id="btnLoad" type="button">Find</button>
 
-  <div class="panel" id="resultPanel" hidden>
+  <div id="err" style="color:red;"></div>
+  <div id="status" style="color:#666;"></div>
+
+  <div id="resultPanel" hidden>
     <h2 id="pokeTitle"></h2>
 
-    <div class="two">
-      <div>
-        <img id="pokeImg" alt="" />
-        <div style="margin-top:10px;">
-          <audio id="pokeAudio" controls preload="none"></audio>
-          <div class="muted small">If no sound plays, the Pokémon may not have a cry URL in the response.</div>
-        </div>
-      </div>
+    <img id="pokeImg" width="160" height="160" alt="Pokemon Image" />
 
-      <div>
-        <h3>Choose 4 Moves</h3>
-        <div class="row" style="align-items:stretch;">
-          <div style="flex:1; min-width: 200px;">
-            <label for="move1">Move 1</label>
-            <select id="move1"></select>
-          </div>
-          <div style="flex:1; min-width: 200px;">
-            <label for="move2">Move 2</label>
-            <select id="move2"></select>
-          </div>
-          <div style="flex:1; min-width: 200px;">
-            <label for="move3">Move 3</label>
-            <select id="move3"></select>
-          </div>
-          <div style="flex:1; min-width: 200px;">
-            <label for="move4">Move 4</label>
-            <select id="move4"></select>
-          </div>
-        </div>
+    <br><br>
 
-        <div class="row" style="margin-top:12px;">
-          <button id="btnAdd" type="button">Add to Team</button>
-          <button id="btnClearTeam" type="button">Clear Team</button>
-          <span class="muted small">Team is saved in localStorage.</span>
-        </div>
-      </div>
-    </div>
+    <audio id="pokeAudio" controls></audio>
+
+    <br><br>
+
+    <select id="move1"></select>
+    <select id="move2"></select>
+    <select id="move3"></select>
+    <select id="move4"></select>
+
+    <br><br>
+
+    <button id="btnAdd" type="button">Add to Team</button>
   </div>
 
-  <div class="panel">
-    <h2>Your Team</h2>
-    <div id="teamList" class="team"></div>
-    <div id="teamEmpty" class="muted">No Pokémon on your team yet.</div>
-  </div>
+  <h2>Your Team</h2>
+  <div id="teamList"></div>
 
-<script>
-(() => {
-  // -----------------------------
-  // Simple caching (memory + localStorage)
-  // -----------------------------
-  const memCache = new Map(); // key -> { data, ts }
-  const CACHE_KEY_PREFIX = "pokeapi:pokemon:";
-  const CACHE_TTL_MS = 1000 * 60 * 60 * 24; // 24h (tweak if instructor wants)
-
-  function normalizeKey(input) {
-    return String(input).trim().toLowerCase();
-  }
-
-  function getCachedPokemon(key) {
-    const now = Date.now();
-
-    // memory cache
-    const m = memCache.get(key);
-    if (m && (now - m.ts) < CACHE_TTL_MS) return m.data;
-
-    // localStorage cache
-    const raw = localStorage.getItem(CACHE_KEY_PREFIX + key);
-    if (!raw) return null;
-
-    try {
-      const parsed = JSON.parse(raw);
-      if (parsed && parsed.ts && parsed.data && (now - parsed.ts) < CACHE_TTL_MS) {
-        memCache.set(key, { data: parsed.data, ts: parsed.ts });
-        return parsed.data;
-      }
-    } catch (_) { /* ignore bad cache */ }
-
-    return null;
-  }
-
-  function setCachedPokemon(key, data) {
-    const payload = { ts: Date.now(), data };
-    memCache.set(key, payload);
-    try {
-      localStorage.setItem(CACHE_KEY_PREFIX + key, JSON.stringify(payload));
-    } catch (_) {
-      // If storage is full, silently fall back to memory cache only.
-    }
-  }
-
-  // -----------------------------
-  // Team persistence
-  // -----------------------------
-  const TEAM_KEY = "pokemonTeamBuilder:team";
-  function loadTeam() {
-    try { return JSON.parse(localStorage.getItem(TEAM_KEY)) || []; }
-    catch { return []; }
-  }
-  function saveTeam(team) {
-    localStorage.setItem(TEAM_KEY, JSON.stringify(team));
-  }
-
-  // -----------------------------
-  // DOM helpers
-  // -----------------------------
-  const $ = (id) => document.getElementById(id);
-
-  const pokeInput = $("pokeInput");
-  const btnLoad = $("btnLoad");
-  const status = $("status");
-  const err = $("err");
-
-  const resultPanel = $("resultPanel");
-  const pokeTitle = $("pokeTitle");
-  const pokeImg = $("pokeImg");
-  const pokeAudio = $("pokeAudio");
-
-  const moveSelects = [$("move1"), $("move2"), $("move3"), $("move4")];
-  const btnAdd = $("btnAdd");
-  const btnClearTeam = $("btnClearTeam");
-
-  const teamList = $("teamList");
-  const teamEmpty = $("teamEmpty");
-
-  let currentPokemon = null; // holds last loaded pokemon JSON
-
-  function setStatus(msg) {
-    status.textContent = msg || "";
-  }
-  function setError(msg) {
-    err.textContent = msg || "";
-  }
-
-  function fillMovesDropdowns(moves) {
-    // moves: array of move names
-    const optionsHtml = [
-      `<option value="" disabled selected>Select a move</option>`,
-      ...moves.map(m => `<option value="${m}">${m}</option>`)
-    ].join("");
-
-    for (const sel of moveSelects) {
-      sel.innerHTML = optionsHtml;
-      sel.selectedIndex = 0;
-    }
-  }
-
-  function renderPokemon(p) {
-    currentPokemon = p;
-
-    // Title
-    const title = `${p.name} (#${p.id})`;
-    pokeTitle.textContent = title;
-
-    // Image (prefer official-artwork; fall back to front_default)
-    const art =
-      p.sprites?.other?.["official-artwork"]?.front_default ||
-      p.sprites?.front_default ||
-      "";
-    pokeImg.src = art;
-    pokeImg.alt = p.name ? `${p.name} sprite` : "pokemon sprite";
-
-    // Sound (cry)
-    const cryUrl = p.cries?.latest || p.cries?.legacy || "";
-    if (cryUrl) {
-      pokeAudio.src = cryUrl;
-      pokeAudio.load(); // prepare controls
-    } else {
-      pokeAudio.removeAttribute("src");
-      pokeAudio.load();
-    }
-
-    // Moves -> 4 dropdowns
-    const moves = (p.moves || [])
-      .map(m => m.move?.name)
-      .filter(Boolean)
-      .sort((a,b) => a.localeCompare(b));
-
-    if (moves.length === 0) {
-      fillMovesDropdowns(["(no moves found)"]);
-      moveSelects.forEach(s => s.disabled = true);
-    } else {
-      moveSelects.forEach(s => s.disabled = false);
-      fillMovesDropdowns(moves);
-    }
-
-    resultPanel.hidden = false;
-  }
-
-  async function fetchPokemon(input) {
-    const key = normalizeKey(input);
-    if (!key) throw new Error("Please enter a Pokémon name or ID.");
-
-    const cached = getCachedPokemon(key);
-    if (cached) return { data: cached, fromCache: true };
-
-    const url = `https://pokeapi.co/api/v2/pokemon/${encodeURIComponent(key)}`;
-    const resp = await fetch(url, { method: "GET" });
-
-    if (!resp.ok) {
-      throw new Error(`Pokémon not found. Try a name like "ditto" or an ID like "25". (HTTP ${resp.status})`);
-    }
-
-    const json = await resp.json();
-    setCachedPokemon(key, json);
-
-    // Also cache by canonical name and id to reduce future calls
-    if (json?.name) setCachedPokemon(normalizeKey(json.name), json);
-    if (json?.id) setCachedPokemon(String(json.id), json);
-
-    return { data: json, fromCache: false };
-  }
-
-  function renderTeam() {
-    const team = loadTeam();
-    teamList.innerHTML = "";
-
-    if (!team.length) {
-      teamEmpty.hidden = false;
-      return;
-    }
-    teamEmpty.hidden = true;
-
-    for (const member of team) {
-      const card = document.createElement("div");
-      card.className = "card";
-
-      const img = document.createElement("img");
-      img.src = member.image || "";
-      img.alt = member.name ? `${member.name} sprite` : "pokemon sprite";
-      img.style.width = "96px";
-      img.style.height = "96px";
-
-      const h3 = document.createElement("h3");
-      h3.textContent = `${member.name} (#${member.id})`;
-
-      const moves = document.createElement("ul");
-      for (const mv of member.moves) {
-        const li = document.createElement("li");
-        li.textContent = mv;
-        moves.appendChild(li);
-      }
-
-      const removeBtn = document.createElement("button");
-      removeBtn.type = "button";
-      removeBtn.textContent = "Remove";
-      removeBtn.addEventListener("click", () => {
-        const updated = loadTeam().filter(m => m.uuid !== member.uuid);
-        saveTeam(updated);
-        renderTeam();
-      });
-
-      const topRow = document.createElement("div");
-      topRow.className = "row";
-      topRow.appendChild(img);
-
-      const right = document.createElement("div");
-      right.style.flex = "1";
-      right.appendChild(h3);
-      right.appendChild(removeBtn);
-
-      topRow.appendChild(right);
-      card.appendChild(topRow);
-      card.appendChild(document.createTextNode("Moves:"));
-      card.appendChild(moves);
-
-      teamList.appendChild(card);
-    }
-  }
-
-  function uuid() {
-    return crypto?.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2);
-  }
-
-  // -----------------------------
-  // Events
-  // -----------------------------
-  btnLoad.addEventListener("click", async () => {
-    setError("");
-    setStatus("Loading...");
-
-    try {
-      const input = pokeInput.value;
-      const { data, fromCache } = await fetchPokemon(input);
-      renderPokemon(data);
-      setStatus(fromCache ? "Loaded from cache." : "Loaded from API.");
-    } catch (e) {
-      resultPanel.hidden = true;
-      currentPokemon = null;
-      setError(e.message || "Something went wrong.");
-      setStatus("");
-    }
-  });
-
-  // Enter key triggers submit
-  pokeInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") btnLoad.click();
-  });
-
-  btnAdd.addEventListener("click", () => {
-    setError("");
-
-    if (!currentPokemon) {
-      setError("Load a Pokémon first.");
-      return;
-    }
-
-    const selectedMoves = moveSelects.map(s => s.value).filter(Boolean);
-
-    if (selectedMoves.length !== 4) {
-      setError("Select 4 moves before adding to your team.");
-      return;
-    }
-
-    const image =
-      currentPokemon.sprites?.other?.["official-artwork"]?.front_default ||
-      currentPokemon.sprites?.front_default ||
-      "";
-
-    const member = {
-      uuid: uuid(),
-      id: currentPokemon.id,
-      name: currentPokemon.name,
-      image,
-      moves: selectedMoves
-    };
-
-    const team = loadTeam();
-    team.push(member);
-    saveTeam(team);
-    renderTeam();
-    setStatus(`Added ${currentPokemon.name} to your team.`);
-  });
-
-  btnClearTeam.addEventListener("click", () => {
-    localStorage.removeItem(TEAM_KEY);
-    renderTeam();
-    setStatus("Team cleared.");
-  });
-
-  // initial render
-  renderTeam();
-})();
-</script>
+  <!-- JS MUST LOAD AFTER ELEMENTS -->
+  <script src="pokemon.js" defer></script>
 </body>
 </html>
