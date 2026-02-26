@@ -1,123 +1,279 @@
-// Pokemon Team Builder JS
-// Uses fetch() + PokéAPI + caching
-
 (() => {
-  const $ = id => document.getElementById(id);
+  // ---------- DOM ----------
+  const $ = (id) => document.getElementById(id);
 
-  const input = $("pokeInput");
-  const btnLoad = $("btnLoad");
-  const resultPanel = $("resultPanel");
-  const title = $("pokeTitle");
-  const img = $("pokeImg");
-  const audio = $("pokeAudio");
+  const pokeInput = $("pokeInput");
+  const btnFind = $("btnFind");
   const err = $("err");
   const status = $("status");
 
-  const moveSelects = [
-    $("move1"),
-    $("move2"),
-    $("move3"),
-    $("move4")
-  ];
+  const pokeImg = $("pokeImg");
+  const pokeAudio = $("pokeAudio");
 
+  const moveSelects = [$("move1"), $("move2"), $("move3"), $("move4")];
   const btnAdd = $("btnAdd");
-  const teamList = $("teamList");
+
+  const teamEl = $("team");
+  const teamEmpty = $("teamEmpty");
 
   let currentPokemon = null;
 
-  // ---------- CACHING ----------
-  const CACHE_PREFIX = "poke-cache-";
-  const CACHE_TIME = 1000 * 60 * 60 * 24; // 24 hours
+  // ---------- PLACEHOLDER (looks like sample #1) ----------
+  // Just a “static noise” placeholder so the page isn't empty before searching.
+  // You can replace this with any image URL you want.
+  const PLACEHOLDER_IMG =
+    "data:image/svg+xml;charset=UTF-8," +
+    encodeURIComponent(`
+      <svg xmlns="http://www.w3.org/2000/svg" width="260" height="260">
+        <rect width="100%" height="100%" fill="#fff"/>
+        <g>
+          ${Array.from({length: 260}, (_,y)=>
+            `<rect x="${(y*37)%260}" y="${y}" width="10" height="1" fill="${y%7===0?'#7b5ea7':(y%5===0?'#f2b3b3':'#c7c7c7')}"/>`
+          ).join("")}
+        </g>
+      </svg>
+    `);
 
-  function getCached(key) {
+  pokeImg.src = PLACEHOLDER_IMG;
+  pokeAudio.removeAttribute("src");
+  pokeAudio.load();
+
+  // ---------- CACHING ----------
+  // localStorage cache with TTL (minimizes API calls)
+  const CACHE_PREFIX = "pokeapi:pokemon:";
+  const CACHE_TTL_MS = 1000 * 60 * 60 * 24; // 24 hours
+
+  function keyify(input) {
+    return String(input).trim().toLowerCase();
+  }
+
+  function cacheGet(key) {
     const raw = localStorage.getItem(CACHE_PREFIX + key);
     if (!raw) return null;
 
-    const cached = JSON.parse(raw);
-    if (Date.now() - cached.time > CACHE_TIME) return null;
-
-    return cached.data;
+    try {
+      const obj = JSON.parse(raw);
+      if (!obj || !obj.ts || !obj.data) return null;
+      if (Date.now() - obj.ts > CACHE_TTL_MS) return null;
+      return obj.data;
+    } catch {
+      return null;
+    }
   }
 
-  function setCached(key, data) {
-    localStorage.setItem(
-      CACHE_PREFIX + key,
-      JSON.stringify({ time: Date.now(), data })
-    );
+  function cacheSet(key, data) {
+    try {
+      localStorage.setItem(
+        CACHE_PREFIX + key,
+        JSON.stringify({ ts: Date.now(), data })
+      );
+    } catch {
+      // ignore quota errors
+    }
   }
 
-  // ---------- FETCH ----------
-  async function loadPokemon(query) {
-    const key = query.toLowerCase();
-    const cached = getCached(key);
-    if (cached) return cached;
+  async function getPokemon(input) {
+    const key = keyify(input);
+    if (!key) throw new Error("Enter a Pokémon name or ID.");
 
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${key}`);
-    if (!response.ok) throw new Error("Pokemon not found");
+    const cached = cacheGet(key);
+    if (cached) return { data: cached, fromCache: true };
 
-    const data = await response.json();
-    setCached(key, data);
-    return data;
+    const url = `https://pokeapi.co/api/v2/pokemon/${encodeURIComponent(key)}`;
+    const resp = await fetch(url);
+
+    if (!resp.ok) {
+      throw new Error("Pokémon not found. Try: ditto, pikachu, or 1-151.");
+    }
+
+    const data = await resp.json();
+
+    // cache by the query AND by canonical name/id
+    cacheSet(key, data);
+    if (data?.name) cacheSet(keyify(data.name), data);
+    if (data?.id) cacheSet(String(data.id), data);
+
+    return { data, fromCache: false };
   }
 
-  // ---------- RENDER ----------
+  // ---------- MOVES DROPDOWNS ----------
+  function fillMoves(moves) {
+    // default “blank” option like sample (empty select)
+    const defaultOpt = `<option value="" selected></option>`;
+    const opts = moves
+      .map((m) => `<option value="${m}">${m}</option>`)
+      .join("");
+
+    const html = defaultOpt + opts;
+
+    for (const sel of moveSelects) {
+      sel.innerHTML = html;
+      sel.selectedIndex = 0;
+      sel.disabled = moves.length === 0;
+    }
+  }
+
+  // ---------- RENDER POKEMON ----------
   function renderPokemon(p) {
     currentPokemon = p;
 
-    title.textContent = `${p.name} (#${p.id})`;
+    // Image: prefer official artwork, fallback to sprite
+    const imageUrl =
+      p.sprites?.other?.["official-artwork"]?.front_default ||
+      p.sprites?.front_default ||
+      "";
 
-    img.src =
-      p.sprites.other["official-artwork"].front_default ||
-      p.sprites.front_default;
+    pokeImg.src = imageUrl || PLACEHOLDER_IMG;
+    pokeImg.alt = p.name ? p.name : "Pokemon";
 
-    audio.src = p.cries.latest || p.cries.legacy || "";
-    audio.load();
+    // Audio cry
+    const cry = p.cries?.latest || p.cries?.legacy || "";
+    if (cry) {
+      pokeAudio.src = cry;
+    } else {
+      pokeAudio.removeAttribute("src");
+    }
+    pokeAudio.load();
 
-    const moves = p.moves.map(m => m.move.name);
+    // Moves list (sorted)
+    const moves = (p.moves || [])
+      .map((x) => x.move?.name)
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b));
 
-    moveSelects.forEach(select => {
-      select.innerHTML = "";
-      moves.forEach(move => {
-        const option = document.createElement("option");
-        option.value = move;
-        option.textContent = move;
-        select.appendChild(option);
+    fillMoves(moves);
+  }
+
+  // ---------- TEAM STORAGE ----------
+  const TEAM_KEY = "pokemon-team-builder:team";
+
+  function loadTeam() {
+    try {
+      return JSON.parse(localStorage.getItem(TEAM_KEY)) || [];
+    } catch {
+      return [];
+    }
+  }
+
+  function saveTeam(team) {
+    localStorage.setItem(TEAM_KEY, JSON.stringify(team));
+  }
+
+  function uuid() {
+    return crypto?.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2);
+  }
+
+  function renderTeam() {
+    const team = loadTeam();
+    teamEl.innerHTML = "";
+
+    teamEmpty.style.display = team.length ? "none" : "block";
+
+    for (const member of team) {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      const row = document.createElement("div");
+      row.className = "smallRow";
+
+      const h3 = document.createElement("h3");
+      h3.textContent = `${member.name} (#${member.id})`;
+
+      const remove = document.createElement("button");
+      remove.className = "removeBtn";
+      remove.type = "button";
+      remove.textContent = "Remove";
+      remove.addEventListener("click", () => {
+        const updated = loadTeam().filter((m) => m.uuid !== member.uuid);
+        saveTeam(updated);
+        renderTeam();
       });
-    });
 
-    resultPanel.hidden = false;
+      row.appendChild(h3);
+      row.appendChild(remove);
+
+      const im = document.createElement("img");
+      im.src = member.image || "";
+      im.alt = member.name;
+
+      const ul = document.createElement("ul");
+      for (const mv of member.moves) {
+        const li = document.createElement("li");
+        li.textContent = mv;
+        ul.appendChild(li);
+      }
+
+      card.appendChild(row);
+      card.appendChild(im);
+      card.appendChild(ul);
+      teamEl.appendChild(card);
+    }
   }
 
   // ---------- EVENTS ----------
-  btnLoad.addEventListener("click", async () => {
-    err.textContent = "";
-    status.textContent = "Loading...";
+  function setError(msg) {
+    err.textContent = msg || "";
+  }
+  function setStatus(msg) {
+    status.textContent = msg || "";
+  }
+
+  btnFind.addEventListener("click", async () => {
+    setError("");
+    setStatus("Loading...");
 
     try {
-      const pokemon = await loadPokemon(input.value.trim());
-      renderPokemon(pokemon);
-      status.textContent = "Loaded!";
+      const { data, fromCache } = await getPokemon(pokeInput.value);
+      renderPokemon(data);
+      setStatus(fromCache ? "Loaded from cache." : "Loaded from API.");
     } catch (e) {
-      err.textContent = e.message;
-      status.textContent = "";
-      resultPanel.hidden = true;
+      currentPokemon = null;
+      pokeImg.src = PLACEHOLDER_IMG;
+      pokeAudio.removeAttribute("src");
+      pokeAudio.load();
+      fillMoves([]);
+      setError(e.message || "Error loading Pokémon.");
+      setStatus("");
     }
   });
 
-  btnAdd.addEventListener("click", () => {
-    if (!currentPokemon) return;
-
-    const moves = moveSelects.map(s => s.value);
-
-    const div = document.createElement("div");
-    div.innerHTML = `
-      <h3>${currentPokemon.name}</h3>
-      <img src="${img.src}" width="96">
-      <ul>
-        ${moves.map(m => `<li>${m}</li>`).join("")}
-      </ul>
-    `;
-
-    teamList.appendChild(div);
+  pokeInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") btnFind.click();
   });
+
+  btnAdd.addEventListener("click", () => {
+    setError("");
+    if (!currentPokemon) {
+      setError("Find a Pokémon first.");
+      return;
+    }
+
+    const chosen = moveSelects.map((s) => s.value).filter(Boolean);
+    if (chosen.length !== 4) {
+      setError("Select 4 moves before adding to team.");
+      return;
+    }
+
+    const imageUrl =
+      currentPokemon.sprites?.other?.["official-artwork"]?.front_default ||
+      currentPokemon.sprites?.front_default ||
+      "";
+
+    const team = loadTeam();
+    team.push({
+      uuid: uuid(),
+      id: currentPokemon.id,
+      name: currentPokemon.name,
+      image: imageUrl,
+      moves: chosen
+    });
+
+    saveTeam(team);
+    renderTeam();
+    setStatus(`Added ${currentPokemon.name} to team.`);
+  });
+
+  // initial UI
+  fillMoves([]);
+  renderTeam();
 })();
