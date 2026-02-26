@@ -32,8 +32,8 @@ main:
   #  url: "/TS/"
 
     
-  - title: "Basic Javascript"
-    url: "/BJ/"
+  #- title: "Basic Javascript"
+  #  url: "/BJ/"
     
-  - title: "DOM Manipulation"
-    url: "/DM/"
+  #- title: "DOM Manipulation"
+  #  url: "/DM/"
