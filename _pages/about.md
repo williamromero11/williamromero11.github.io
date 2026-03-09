@@ -44,6 +44,9 @@ I try to apply these habits of careful analysis, attention to detail, and ethica
 - Native Spanish, Fluent English
 
 ## 👨‍💻 Security Labs & Competitions
+### [VLAN Segmentation & Inter-VLAN Routing](https://github.com/williamromero11/Packet-Tracer-VLAN) | March 2026
+
+Designed and implemented a segmented enterprise-style network using Cisco Packet Tracer to simulate VLAN-based network isolation and controlled communication between departments. Configured multiple VLANs on a Cisco switch and implemented router-on-a-stick architecture using IEEE 802.1Q trunking and router subinterfaces to enable inter-VLAN routing across multiple /28 subnets. The project included configuring switch access ports, trunk links, and router interfaces using the Cisco CLI, as well as verifying network behavior through ICMP connectivity testing and interface diagnostics. This project strengthened my understanding of network segmentation, Layer 2 and Layer 3 interaction, subnetting, and troubleshooting VLAN routing in enterprise network environments.
 
 ### [Two-Tier SQL Client-Server Application](https://github.com/williamromero11/Project-5/tree/main)| March 2026
 Developed a Java-based client-server database application that connects to a MySQL server using JDBC and allows authenticated users to execute SQL commands through a graphical interface. The system supports multiple user roles with different database privileges, demonstrating role-based access control and secure database interaction. This project strengthened my understanding of database connectivity, SQL query execution, and client-server architecture in enterprise environments.
