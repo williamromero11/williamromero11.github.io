@@ -5,10 +5,10 @@
 }
 
 body {
-    background-color: #bfe3ee;
+    background-color: #0f1f1b;  /* same dark background as your site */
     font-family: Georgia, "Times New Roman", serif;
     padding: 30px;
-    color: #000;
+    color: #e6e6e6;             /* light text for dark background */
 }
 
 h1 {
@@ -37,7 +37,15 @@ p {
     margin: 20px auto;
     padding: 15px;
     border: 3px solid green;
-    background-color: #ffffff;
+    background-color: #1a2b27;
+}
+
+td {
+    background-color: #1a2b27;
+}
+
+th {
+    background-color: #243833;
 }
 
 /* 4th & 5th paragraphs */
