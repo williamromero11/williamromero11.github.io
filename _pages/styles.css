@@ -40,13 +40,6 @@ p {
     background-color: #1a2b27;
 }
 
-td {
-    background-color: #1a2b27;
-}
-
-th {
-    background-color: #243833;
-}
 
 /* 4th & 5th paragraphs */
 .blue-bar {
@@ -80,11 +73,13 @@ table {
 }
 
 th {
-    background-color: #d9d9d9;
+    background-color: #243833;
+    color: #e6e6e6;
 }
 
 td {
-    background-color: #ffffff;
+    background-color: #1a2b27;
+    color: #e6e6e6;
 }
 
 th, td {
