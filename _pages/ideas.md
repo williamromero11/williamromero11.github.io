@@ -28,7 +28,9 @@ This conclusion does not stem from flaws in experimentation or theoretical limit
 
 
 ---
-![Atom2](https://williamromero11.github.io/images/sc.jpg)
+<p align="center">
+  <img src="https://williamromero11.github.io/images/sc.jpg" width="650">
+</p>
 ## Schrödinger’s Equation and Probability Distributions
 
 Non-realism is evident in Schrödinger’s equation, which describes quantum systems in terms of a wavefunction rather than precise trajectories. For example, an electron in a hydrogen atom does not orbit the nucleus in a classical sense; it exists as a probability cloud. 
