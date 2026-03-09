@@ -36,7 +36,9 @@ Physics can predict where the electron is likely to be found, but not its exact 
 
 
 ---
-![sc](https://williamromero11.github.io/images/sc2.png)
+<p align="center">
+  <img src="https://williamromero11.github.io/images/sc2.png" width="400" />
+</p>
 ## An Informational and Computational Universe
 
 An increasingly discussed possibility is that the universe is fundamentally computational. Approaches such as Wolfram Physics suggest that reality arises from simple computational rules applied to abstract structures, with physical laws operating as algorithms and the universe progressing through discrete computational steps.
