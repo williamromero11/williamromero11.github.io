@@ -11,9 +11,7 @@ Modern physics has repeatedly shown that the universe does not behave in ways th
 
 This post summarizes and analyzes Bell’s theorem, and the provocative idea that reality itself may depend on a fundamental source of randomness.
 ---
-<p align="center">
-  <img src="https://williamromero11.github.io/images/atom.jpg" width="550">
-</p>
+<img src="https://williamromero11.github.io/images/atom.jpg" width="400">
 ## Bell’s Theorem: Reality or Locality Must Fail
 
 Bell’s theorem demonstrates that no physical theory based on **local realism** can reproduce all predictions of quantum mechanics. In simple terms, the universe must give up at least one of the following assumptions:
