@@ -1,7 +1,7 @@
 ---
 permalink: /ideas/
 title: "Ideas"
-layout: page
+layout: single
 ---
 # Quantum Weirdness, Bell’s Theorem, and the Question of Randomness
 
