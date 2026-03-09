@@ -1,7 +1,7 @@
 ---
 permalink: /coding/
 title: "Coding & Projects"
-layout: page
+layout: single
 ---
 
 # Coding Portfolio
