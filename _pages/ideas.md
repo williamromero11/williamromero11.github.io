@@ -37,7 +37,7 @@ Physics can predict where the electron is likely to be found, but not its exact 
 
 ---
 <p align="center">
-  <img src="https://williamromero11.github.io/images/sc2.png" width="600">
+  <img src="https://williamromero11.github.io/images/sc2.png" width="700">
 </p>
 ## An Informational and Computational Universe
 
