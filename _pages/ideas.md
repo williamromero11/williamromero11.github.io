@@ -1,6 +1,6 @@
 ---
 permalink: /ideas/
-title: "Ideas"
+title: ""
 layout: single
 ---
 # Quantum Weirdness, Bell’s Theorem, and the Question of Randomness
@@ -9,7 +9,7 @@ layout: single
 
 Modern physics has repeatedly shown that the universe does not behave in ways that align with everyday intuition. Quantum mechanics, in particular, challenges classical assumptions about reality, causality, and determinism. A key argument for this fundamental strangeness comes from **Bell’s theorem**, experimentally confirmed with increasing rigor, including landmark results in 2015. These results suggest that the universe is not merely *apparently* weird due to human misunderstanding, but *intrinsically* weird at its core.
 
-This post summarizes and analyzes Bell’s theorem, and the provocative idea that reality itself may depend on a fundamental source of randomness.
+
 ---
 <img src="https://williamromero11.github.io/images/atom.jpg" width="400">
 ## Bell’s Theorem: Reality or Locality Must Fail
