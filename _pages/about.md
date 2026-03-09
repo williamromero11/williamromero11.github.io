@@ -54,11 +54,13 @@ Developed a Java-based client-server database application that connects to a MyS
 ### [OCPS Cyber Challenge](https://www.linkedin.com/posts/william-romero-pirela_hack-cybersecurity-ctf-activity-7423359165286461440-B_-r?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFSV9AkBQJmlEWSSmo9R5VMU2-zVcDD8LV0) | January 2026  
 Participated in a competitive cybersecurity challenge designed to simulate real world defensive and offensive security scenarios in an enterprise style network. I worked in a two person team and placed 5th out of 60 teams. The competition involved ethical hacking tasks, network defense, system hardening, and vulnerability analysis under time constraints. This experience strengthened my teamwork skills and reinforced my ability to analyze security problems quickly and methodically.
 
+### [Linux Active Directory & System Administration Lab](https://github.com/williamromero11/linux-active-directory-lab) | November 2025
+Completed a hands on lab focused on identity and access management in a multi server virtualized environment. I deployed and managed a Linux based domain controller using Samba Active Directory, Kerberos, DNS, and NTP. The lab focused on least privilege access, automated administration through scripting, and validating directory services through structured testing. This project strengthened my understanding of system administration, authentication services, and security hardening in enterprise environments.
+
 ### [HACK@UCF Cyber Challenge CTF](https://hackucf.org/ctf) | February 2025  
 Competed in a scenario based Capture the Flag event focused on enterprise breach investigation and incident response. Tasks included network reconnaissance, service enumeration, and basic forensic analysis to identify compromised systems and recover data. The event emphasized structured investigation, rapid threat assessment, and working effectively under pressure.
 
-### [Linux Active Directory & System Administration Lab](https://github.com/williamromero11/linux-active-directory-lab) | November 2025
-Completed a hands on lab focused on identity and access management in a multi server virtualized environment. I deployed and managed a Linux based domain controller using Samba Active Directory, Kerberos, DNS, and NTP. The lab focused on least privilege access, automated administration through scripting, and validating directory services through structured testing. This project strengthened my understanding of system administration, authentication services, and security hardening in enterprise environments.
+
 
 
 
