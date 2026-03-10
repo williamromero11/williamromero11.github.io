@@ -3,173 +3,218 @@ permalink: /Pokemon/
 title: "Pokemon"
 layout: page
 ---
+---
+permalink: /Pokemon/
+title: "Pokemon"
+layout: page
+---
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Pokemon Team Builder</title>
+
   <style>
-    body{
-  margin:0;
-  font-family: "Times New Roman", Times, serif;
-  background: linear-gradient(135deg, #0f2a23, #071a16);
-  color:#e6e6e6;
-}
-
-    .outer{
-      min-height:100vh;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding:40px 12px;
+    body {
+      margin: 0;
+      font-family: "Times New Roman", Times, serif;
+      background: linear-gradient(135deg, #0f2a23, #071a16);
+      color: #e6e6e6;
     }
 
-    .frame{
-      background:#fff;
-      color:#111;
-      width:min(720px, 96vw);
-      border:6px solid #d69b18; /* gold */
-      border-radius:40px;
-      padding:28px 28px 30px;
-      box-sizing:border-box;
+    .outer {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 12px;
     }
 
-    .top{
-      text-align:center;
-      margin-top:4px;
+    .frame {
+      background: #fff;
+      color: #111; /* fixes the washed-out/aqua-looking text inside the white box */
+      width: min(720px, 96vw);
+      border: 6px solid #d69b18;
+      border-radius: 40px;
+      padding: 28px 28px 30px;
+      box-sizing: border-box;
     }
 
-    .top label{
-      display:block;
-      font-size:22px;
-      margin-bottom:6px;
+    .top {
+      text-align: center;
+      margin-top: 4px;
     }
 
-    .searchRow{
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      align-items:center;
+    .top label {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: #111;
     }
 
-    #pokeInput{
-      width:320px;
-      height:28px;
-      font-size:18px;
-      padding:2px 8px;
-      box-sizing:border-box;
-      color:#111;
-
-      #pokeInput::placeholder{
-        color:#777;
+    .searchRow {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
     }
 
-    #btnFind{
-      height:32px;
-      font-size:18px;
-      padding:0 12px;
-      cursor:pointer;
+    #pokeInput {
+      width: 320px;
+      height: 28px;
+      font-size: 18px;
+      padding: 2px 8px;
+      box-sizing: border-box;
+      color: #111;
+      background: #fff;
+      border: 1px solid #666;
     }
 
-    .content{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      margin-top:18px;
-      gap:18px;
+    #pokeInput::placeholder {
+      color: #777;
     }
 
-    #pokeImg{
-      width:260px;
-      height:260px;
-      object-fit:contain;
-      image-rendering:pixelated;
+    #btnFind {
+      height: 32px;
+      font-size: 18px;
+      padding: 0 12px;
+      cursor: pointer;
+      color: #111;
     }
 
-    audio{
-      width:420px;
-      max-width:90%;
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 18px;
+      gap: 18px;
     }
 
-    .movesGrid{
-      width:520px;
-      max-width:96%;
-      display:grid;
+    #pokeImg {
+      width: 260px;
+      height: 260px;
+      object-fit: contain;
+      image-rendering: pixelated;
+    }
+
+    audio {
+      width: 420px;
+      max-width: 90%;
+    }
+
+    .movesGrid {
+      width: 520px;
+      max-width: 96%;
+      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap:10px 18px;
-      margin-top:4px;
+      gap: 10px 18px;
+      margin-top: 4px;
     }
 
-    select{
-      height:28px;
-      font-size:16px;
-      width:100%;
+    select {
+      height: 28px;
+      font-size: 16px;
+      width: 100%;
+      color: #111;
+      background: #fff;
     }
 
-    #btnAdd{
-      margin-top:10px;
-      height:34px;
-      font-size:18px;
-      padding:0 14px;
-      cursor:pointer;
+    #btnAdd {
+      margin-top: 10px;
+      height: 34px;
+      font-size: 18px;
+      padding: 0 14px;
+      cursor: pointer;
+      color: #111;
     }
 
-    .msg{
-      margin-top:10px;
-      text-align:center;
+    .msg {
+      margin-top: 10px;
+      text-align: center;
       font-family: system-ui, Arial, sans-serif;
-      font-size:14px;
+      font-size: 14px;
     }
-    #err{ color:#b00020; }
-    #status{ color:#555; }
 
-    /* Team display under the frame, simple */
-    .teamWrap{
-      margin-top:18px;
-      width:min(720px, 96vw);
+    #err {
+      color: #b00020;
+    }
+
+    #status {
+      color: #555;
+    }
+
+    .teamWrap {
+      margin-top: 18px;
+      width: min(720px, 96vw);
       font-family: system-ui, Arial, sans-serif;
+      color: #e6e6e6; /* keeps Team section readable on dark background */
     }
-    .teamTitle{ font-weight:700; margin:0 0 8px; }
-    .team{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-      gap:10px;
+
+    .teamTitle {
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: #e6e6e6;
     }
-    .card{
-      background:#fff;
-      border:1px solid #ddd;
-      border-radius:10px;
-      padding:10px;
+
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
     }
-    .card h3{
-      margin:0 0 6px;
-      text-transform:capitalize;
-      font-size:16px;
+
+    .card {
+      background: #fff;
+      color: #111;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 10px;
     }
-    .card img{
-      width:96px;
-      height:96px;
-      object-fit:contain;
-      display:block;
-      margin-bottom:6px;
+
+    .card h3 {
+      margin: 0 0 6px;
+      text-transform: capitalize;
+      font-size: 16px;
+      color: #111;
     }
-    .card ul{ margin:6px 0 0; padding-left:18px; }
-    .smallRow{ display:flex; justify-content:space-between; align-items:center; gap:8px; }
-    .removeBtn{
-      cursor:pointer;
-      font-size:12px;
-      padding:4px 8px;
+
+    .card img {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .card ul {
+      margin: 6px 0 0;
+      padding-left: 18px;
+      color: #111;
+    }
+
+    .smallRow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .removeBtn {
+      cursor: pointer;
+      font-size: 12px;
+      padding: 4px 8px;
+      color: #111;
     }
   </style>
 </head>
 <body>
-
   <div class="outer">
     <div>
       <div class="frame">
         <div class="top">
           <label for="pokeInput">Name or ID</label>
+
           <div class="searchRow">
             <input id="pokeInput" type="text" placeholder="" />
             <button id="btnFind" type="button">Find</button>
@@ -180,7 +225,6 @@ layout: page
         </div>
 
         <div class="content" id="contentArea">
-          <!-- Big “placeholder” image area like sample before search -->
           <img id="pokeImg" alt="Pokemon" src="" />
 
           <audio id="pokeAudio" controls preload="none"></audio>
@@ -199,12 +243,11 @@ layout: page
       <div class="teamWrap">
         <p class="teamTitle">Team</p>
         <div id="team" class="team"></div>
-        <div class="msg" id="teamEmpty" style="color:#555;">No team members yet.</div>
+        <div class="msg" id="teamEmpty" style="color:#e6e6e6;">No team members yet.</div>
       </div>
     </div>
   </div>
 
-  <!-- IMPORTANT: you said both files are in /_pages -->
   <script src="/_pages/pokemon.js" defer></script>
 </body>
 </html>
