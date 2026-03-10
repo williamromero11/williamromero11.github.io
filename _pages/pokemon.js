@@ -21,33 +21,8 @@
   // ---------- PLACEHOLDER (looks like sample #1) ----------
   // Just a “static noise” placeholder so the page isn't empty before searching.
   // You can replace this with any image URL you want.
-  const PLACEHOLDER_IMG =
-  "data:image/svg+xml;charset=UTF-8," +
-  encodeURIComponent(`
-    <svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260">
-      <!-- transparent background -->
-      <rect width="100%" height="100%" fill="transparent"/>
-
-      <!-- outer circle -->
-      <circle cx="130" cy="130" r="92" fill="#ffffff" stroke="#111111" stroke-width="8"/>
-
-      <!-- top half red -->
-      <path d="M38 130 A92 92 0 0 1 222 130 L38 130 Z"
-            fill="#e53935" stroke="#111111" stroke-width="8" stroke-linejoin="round"/>
-
-      <!-- middle black band -->
-      <rect x="38" y="122" width="184" height="16" fill="#111111"/>
-
-      <!-- center button outer -->
-      <circle cx="130" cy="130" r="24" fill="#ffffff" stroke="#111111" stroke-width="8"/>
-
-      <!-- center button inner -->
-      <circle cx="130" cy="130" r="10" fill="#d9d9d9" stroke="#111111" stroke-width="3"/>
-
-      <!-- subtle highlight -->
-      <ellipse cx="98" cy="92" rx="28" ry="14" fill="rgba(255,255,255,0.35)"/>
-    </svg>
-  `);
+  const PLACEHOLDER_IMG = "/_pages/pokeball.png";
+  
 
   pokeImg.src = PLACEHOLDER_IMG;
   pokeAudio.removeAttribute("src");
