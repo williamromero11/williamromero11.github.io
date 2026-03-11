@@ -45,3 +45,30 @@ font-size:13px;
 .tool-box a:hover{
 background:#f1b733;
 }
+.vpn-recommend {
+  margin-top: 18px;
+  background: #001b18;
+  border: 2px solid #d69b18;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.vpn-recommend a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.vpn-recommend img {
+  height: 40px;
+}
+
+.vpn-text {
+  color: #f5f5f5;
+  font-size: 14px;
+}
+
+.vpn-text strong {
+  color: #f1b733;
+}
