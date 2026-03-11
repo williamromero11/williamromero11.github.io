@@ -1,3 +1,4 @@
+<style>
 .tools-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -101,23 +102,28 @@
   border-radius:10px;
 }
 </style>
+
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+
   const breachBtn = document.getElementById("breachBtn");
   const breachEmail = document.getElementById("breachEmail");
 
-  if (breachBtn && breachEmail) {
-    breachBtn.addEventListener("click", () => {
-      const email = breachEmail.value.trim();
-      if (!email) return;
+  if (!breachBtn || !breachEmail) return;
 
-      const target = `https://haveibeenpwned.com/account/${encodeURIComponent(email)}`;
-      window.open(target, "_blank", "noopener,noreferrer");
-    });
+  breachBtn.addEventListener("click", () => {
+    const email = breachEmail.value.trim();
+    if (!email) return;
 
-    breachEmail.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        breachBtn.click();
-      }
-    });
-  }
+    const target = `https://haveibeenpwned.com/account/${encodeURIComponent(email)}`;
+    window.open(target, "_blank", "noopener,noreferrer");
+  });
+
+  breachEmail.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      breachBtn.click();
+    }
+  });
+
+});
 </script>
