@@ -584,7 +584,7 @@ layout: page
     panel.style.display = "block";
   }
 
-  function buildBasicRiskFromIpapi(data) {
+  function buildBasicRiskFromLookup(data) {
     const vpn = inferVpn(data);
     const hosting = inferHosting(data);
 
@@ -610,28 +610,39 @@ layout: page
 
   async function loadIpInfo() {
     try {
-      const res = await fetch("https://ipapi.co/json/");
+      const res = await fetch("https://ipwho.is/");
       if (!res.ok) {
         throw new Error("Failed to fetch IP information.");
       }
 
       const data = await res.json();
 
+      if (data.success === false) {
+        throw new Error(data.message || "IP lookup failed.");
+      }
+
       statusEl.style.display = "none";
       infoEl.style.display = "grid";
       infoEl.innerHTML = "";
 
-      showCountryFlag(data.country_code, data.country_name);
-      buildBasicRiskFromIpapi(data);
+      showCountryFlag(data.country_code, data.country);
+
+      buildBasicRiskFromLookup({
+        org: data.connection?.org || "",
+        asn: data.connection?.asn || "",
+        city: data.city || "",
+        region: data.region || "",
+        country_name: data.country || ""
+      });
 
       addRow("IP", data.ip);
       addRow("City", data.city);
       addRow("Region", data.region);
-      addRow("Country", data.country_name);
+      addRow("Country", data.country);
       addRow("Postal", data.postal);
-      addRow("Timezone", data.timezone);
-      addRow("ISP / Org", data.org);
-      addRow("ASN", data.asn);
+      addRow("Timezone", data.timezone?.id || "");
+      addRow("ISP / Org", data.connection?.org || "");
+      addRow("ASN", data.connection?.asn || "");
 
       if (data.ip) {
         setInvestigationLinks(data.ip);
@@ -649,12 +660,12 @@ layout: page
 
         L.marker([lat, lon]).addTo(map)
           .bindPopup(
-            `<strong>${data.city || "Unknown city"}</strong><br>${data.region || ""} ${data.country_name || ""}<br>IP: ${data.ip || "N/A"}`
+            `<strong>${data.city || "Unknown city"}</strong><br>${data.region || ""} ${data.country || ""}<br>IP: ${data.ip || "N/A"}`
           )
           .openPopup();
 
         mapCaptionEl.textContent =
-          `Approximate location based on IP geolocation: ${data.city || "Unknown city"}, ${data.region || ""}, ${data.country_name || ""}.`;
+          `Approximate location based on IP geolocation: ${data.city || "Unknown city"}, ${data.region || ""}, ${data.country || ""}.`;
       } else {
         mapCaptionEl.textContent = "Latitude/longitude not available for this IP.";
       }
