@@ -4,7 +4,6 @@ title: "Useful"
 layout: page
 ---
 
-
 <link
   rel="stylesheet"
   href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -55,6 +54,65 @@ layout: page
     color: #f1b733;
   }
 
+  .flag-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 4px 0 18px;
+    font-size: 18px;
+    color: #f5f5f5;
+  }
+
+  .flag-emoji {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .risk-panel {
+    margin: 0 0 18px;
+  }
+
+  .risk-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .risk-badge,
+  .mini-badge {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .risk-badge {
+    background: #2d2d2d;
+    color: #fff;
+  }
+
+  .risk-low {
+    background: #1f7a1f;
+    color: #fff;
+  }
+
+  .risk-medium {
+    background: #b7791f;
+    color: #fff;
+  }
+
+  .risk-high {
+    background: #b00020;
+    color: #fff;
+  }
+
+  .mini-badge {
+    background: #24322f;
+    color: #f1f1f1;
+    border: 1px solid rgba(214, 155, 24, 0.35);
+  }
+
   .ip-list {
     display: grid;
     gap: 12px;
@@ -75,6 +133,28 @@ layout: page
 
   .ip-value {
     word-break: break-word;
+  }
+
+  .ip-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .ip-actions a {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #d69b18;
+    color: #000;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .ip-actions a:hover {
+    background: #f1b733;
   }
 
   #map {
@@ -146,15 +226,35 @@ layout: page
 <div class="page-wrap">
   <h1 class="section-title">Cybersecurity &amp; Networking Tools</h1>
 
-  <!-- NEW IP / MAP SECTION -->
   <div class="ip-grid">
     <section class="ip-card">
       <h2>IP Details</h2>
+
+      <div id="countryFlagRow" class="flag-row" style="display:none;">
+        <span id="countryFlag" class="flag-emoji"></span>
+        <span id="countryFlagText"></span>
+      </div>
+
+      <div id="riskPanel" class="risk-panel" style="display:none;">
+        <div class="risk-badge-row">
+          <span id="riskBadge" class="risk-badge">Risk: Unknown</span>
+          <span id="vpnBadge" class="mini-badge">VPN: Unknown</span>
+          <span id="hostingBadge" class="mini-badge">Hosting: Unknown</span>
+        </div>
+      </div>
+
       <div id="ipStatus" class="loading">Loading IP information...</div>
       <div id="ipInfo" class="ip-list" style="display:none;"></div>
+
       <p class="ip-note">
         This is approximate IP-based geolocation, not precise GPS.
       </p>
+
+      <div class="ip-actions" id="ipActions" style="display:none;">
+        <a id="abuseLink" href="#" target="_blank" rel="noopener noreferrer">Check on AbuseIPDB</a>
+        <a id="vtLink" href="#" target="_blank" rel="noopener noreferrer">Check on VirusTotal</a>
+        <a id="shodanLink" href="#" target="_blank" rel="noopener noreferrer">Check on Shodan</a>
+      </div>
     </section>
 
     <section class="map-card">
@@ -166,42 +266,41 @@ layout: page
     </section>
   </div>
 
-  <!-- YOUR ORIGINAL TOOL BOXES STAY HERE -->
   <div class="tools-grid">
     <div class="tool-box">
       <h3>IPInfo</h3>
       <p>Lookup IP address details such as ISP, ASN, geolocation, and ownership.</p>
-      <a href="https://ipinfo.io" target="_blank">Open Tool</a>
+      <a href="https://ipinfo.io" target="_blank" rel="noopener noreferrer">Open Tool</a>
     </div>
 
     <div class="tool-box">
       <h3>AbuseIPDB</h3>
       <p>Check whether an IP address has been reported for malicious activity.</p>
-      <a href="https://www.abuseipdb.com" target="_blank">Open Tool</a>
+      <a href="https://www.abuseipdb.com" target="_blank" rel="noopener noreferrer">Open Tool</a>
     </div>
 
     <div class="tool-box">
       <h3>VirusTotal</h3>
       <p>Analyze suspicious files, hashes, domains, URLs, and IP addresses.</p>
-      <a href="https://www.virustotal.com" target="_blank">Open Tool</a>
+      <a href="https://www.virustotal.com" target="_blank" rel="noopener noreferrer">Open Tool</a>
     </div>
 
     <div class="tool-box">
       <h3>Shodan</h3>
       <p>Search for internet-connected devices, services, and exposed systems.</p>
-      <a href="https://www.shodan.io" target="_blank">Open Tool</a>
+      <a href="https://www.shodan.io" target="_blank" rel="noopener noreferrer">Open Tool</a>
     </div>
 
     <div class="tool-box">
       <h3>DNS Checker</h3>
       <p>Verify DNS records and propagation across global DNS servers.</p>
-      <a href="https://dnschecker.org" target="_blank">Open Tool</a>
+      <a href="https://dnschecker.org" target="_blank" rel="noopener noreferrer">Open Tool</a>
     </div>
 
     <div class="tool-box">
       <h3>crt.sh</h3>
       <p>Search certificate transparency logs for issued SSL/TLS certificates.</p>
-      <a href="https://crt.sh" target="_blank">Open Tool</a>
+      <a href="https://crt.sh" target="_blank" rel="noopener noreferrer">Open Tool</a>
     </div>
   </div>
 </div>
@@ -234,6 +333,85 @@ layout: page
     infoEl.appendChild(row);
   }
 
+  function countryCodeToFlagEmoji(code) {
+    if (!code || code.length !== 2) return "🌍";
+    return String.fromCodePoint(
+      ...code.toUpperCase().split("").map(char => 127397 + char.charCodeAt())
+    );
+  }
+
+  function showCountryFlag(countryCode, countryName) {
+    const row = document.getElementById("countryFlagRow");
+    const flag = document.getElementById("countryFlag");
+    const text = document.getElementById("countryFlagText");
+
+    flag.textContent = countryCodeToFlagEmoji(countryCode);
+    text.textContent = countryName || "Unknown Country";
+    row.style.display = "flex";
+  }
+
+  function inferHosting(org = "") {
+    const value = org.toLowerCase();
+    const hostingKeywords = [
+      "amazon", "aws", "google cloud", "microsoft", "azure", "digitalocean",
+      "linode", "vultr", "hetzner", "ovh", "oracle cloud", "cloudflare",
+      "choopa", "contabo", "netcup", "hostwinds"
+    ];
+    return hostingKeywords.some(keyword => value.includes(keyword));
+  }
+
+  function inferVpn(org = "") {
+    const value = org.toLowerCase();
+    const vpnKeywords = [
+      "nord", "mullvad", "proton", "surfshark", "expressvpn", "pia",
+      "private internet access", "cyberghost", "windscribe", "tunnelbear"
+    ];
+    return vpnKeywords.some(keyword => value.includes(keyword));
+  }
+
+  function renderRiskPanel({ riskLevel, vpn, hosting }) {
+    const panel = document.getElementById("riskPanel");
+    const riskBadge = document.getElementById("riskBadge");
+    const vpnBadge = document.getElementById("vpnBadge");
+    const hostingBadge = document.getElementById("hostingBadge");
+
+    riskBadge.className = "risk-badge";
+    if (riskLevel === "Low") riskBadge.classList.add("risk-low");
+    if (riskLevel === "Medium") riskBadge.classList.add("risk-medium");
+    if (riskLevel === "High") riskBadge.classList.add("risk-high");
+
+    riskBadge.textContent = `Risk: ${riskLevel}`;
+    vpnBadge.textContent = `VPN: ${vpn ? "Yes" : "No"}`;
+    hostingBadge.textContent = `Hosting: ${hosting ? "Yes" : "No"}`;
+
+    panel.style.display = "block";
+  }
+
+  function buildBasicRiskFromIpapi(data) {
+    const org = data.org || "";
+    const vpn = inferVpn(org);
+    const hosting = inferHosting(org);
+
+    let riskLevel = "Low";
+    if (hosting || vpn) riskLevel = "Medium";
+    if (hosting && vpn) riskLevel = "High";
+
+    renderRiskPanel({ riskLevel, vpn, hosting });
+  }
+
+  function setInvestigationLinks(ip) {
+    const actions = document.getElementById("ipActions");
+    const abuseLink = document.getElementById("abuseLink");
+    const vtLink = document.getElementById("vtLink");
+    const shodanLink = document.getElementById("shodanLink");
+
+    abuseLink.href = `https://www.abuseipdb.com/check/${encodeURIComponent(ip)}`;
+    vtLink.href = `https://www.virustotal.com/gui/ip-address/${encodeURIComponent(ip)}`;
+    shodanLink.href = `https://www.shodan.io/host/${encodeURIComponent(ip)}`;
+
+    actions.style.display = "flex";
+  }
+
   async function loadIpInfo() {
     try {
       const res = await fetch("https://ipapi.co/json/");
@@ -247,6 +425,9 @@ layout: page
       infoEl.style.display = "grid";
       infoEl.innerHTML = "";
 
+      showCountryFlag(data.country_code, data.country_name);
+      buildBasicRiskFromIpapi(data);
+
       addRow("IP", data.ip);
       addRow("City", data.city);
       addRow("Region", data.region);
@@ -255,6 +436,10 @@ layout: page
       addRow("Timezone", data.timezone);
       addRow("ISP / Org", data.org);
       addRow("ASN", data.asn);
+
+      if (data.ip) {
+        setInvestigationLinks(data.ip);
+      }
 
       const lat = Number(data.latitude);
       const lon = Number(data.longitude);
