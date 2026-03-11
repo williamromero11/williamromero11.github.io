@@ -45,30 +45,32 @@ font-size:13px;
 .tool-box a:hover{
 background:#f1b733;
 }
-.vpn-recommend {
-  margin-top: 18px;
+.vpn-recommend-card {
+  margin-top: 22px;
   background: #001b18;
   border: 2px solid #d69b18;
-  border-radius: 14px;
-  padding: 14px;
+  border-radius: 18px;
+  padding: 20px;
 }
 
-.vpn-recommend a {
+.vpn-recommend-card a {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   text-decoration: none;
 }
 
-.vpn-recommend img {
-  height: 40px;
+.vpn-recommend-card img {
+  height: 60px;
 }
 
-.vpn-text {
-  color: #f5f5f5;
-  font-size: 14px;
-}
-
-.vpn-text strong {
+.vpn-rec-text strong {
   color: #f1b733;
+  font-size: 18px;
+}
+
+.vpn-rec-text p {
+  color: #e6e6e6;
+  margin: 6px 0 0;
+  font-size: 14px;
 }
