@@ -350,24 +350,42 @@ layout: page
     row.style.display = "flex";
   }
 
-  function inferHosting(org = "") {
-    const value = org.toLowerCase();
-    const hostingKeywords = [
-      "amazon", "aws", "google cloud", "microsoft", "azure", "digitalocean",
-      "linode", "vultr", "hetzner", "ovh", "oracle cloud", "cloudflare",
-      "choopa", "contabo", "netcup", "hostwinds"
-    ];
-    return hostingKeywords.some(keyword => value.includes(keyword));
-  }
+  function inferHosting(data = {}) {
+  const combined = [
+    data.org || "",
+    data.asn || "",
+    data.city || "",
+    data.region || "",
+    data.country_name || ""
+  ].join(" ").toLowerCase();
 
-  function inferVpn(org = "") {
-    const value = org.toLowerCase();
-    const vpnKeywords = [
-      "nord", "mullvad", "proton", "surfshark", "expressvpn", "pia",
-      "private internet access", "cyberghost", "windscribe", "tunnelbear"
-    ];
-    return vpnKeywords.some(keyword => value.includes(keyword));
-  }
+  const hostingKeywords = [
+    "amazon", "aws", "google cloud", "microsoft", "azure", "digitalocean",
+    "linode", "vultr", "hetzner", "ovh", "oracle cloud", "cloudflare",
+    "choopa", "contabo", "netcup", "hostwinds", "datacenter", "data center",
+    "hosting", "server", "colo", "leaseweb", "m247", "datacamp"
+  ];
+
+  return hostingKeywords.some(keyword => combined.includes(keyword));
+}
+
+function inferVpn(data = {}) {
+  const combined = [
+    data.org || "",
+    data.asn || "",
+    data.city || "",
+    data.region || "",
+    data.country_name || ""
+  ].join(" ").toLowerCase();
+
+  const vpnKeywords = [
+    "nord", "mullvad", "proton", "surfshark", "expressvpn", "pia",
+    "private internet access", "cyberghost", "windscribe", "tunnelbear",
+    "vpn", "wireguard"
+  ];
+
+  return vpnKeywords.some(keyword => combined.includes(keyword));
+}
 
   function renderRiskPanel({ riskLevel, vpn, hosting }) {
     const panel = document.getElementById("riskPanel");
@@ -381,23 +399,22 @@ layout: page
     if (riskLevel === "High") riskBadge.classList.add("risk-high");
 
     riskBadge.textContent = `Risk: ${riskLevel}`;
-    vpnBadge.textContent = `VPN: ${vpn ? "Yes" : "No"}`;
-    hostingBadge.textContent = `Hosting: ${hosting ? "Yes" : "No"}`;
+    vpnBadge.textContent = `Possible VPN: ${vpn ? "Yes" : "No"}`;
+    hostingBadge.textContent = `Possible Hosting: ${hosting ? "Yes" : "No"}`;
 
     panel.style.display = "block";
   }
 
   function buildBasicRiskFromIpapi(data) {
-    const org = data.org || "";
-    const vpn = inferVpn(org);
-    const hosting = inferHosting(org);
+  const vpn = inferVpn(data);
+  const hosting = inferHosting(data);
 
-    let riskLevel = "Low";
-    if (hosting || vpn) riskLevel = "Medium";
-    if (hosting && vpn) riskLevel = "High";
+  let riskLevel = "Low";
+  if (hosting || vpn) riskLevel = "Medium";
+  if (hosting && vpn) riskLevel = "High";
 
-    renderRiskPanel({ riskLevel, vpn, hosting });
-  }
+  renderRiskPanel({ riskLevel, vpn, hosting });
+}
 
   function setInvestigationLinks(ip) {
     const actions = document.getElementById("ipActions");
