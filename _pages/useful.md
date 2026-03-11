@@ -412,6 +412,9 @@ layout: page
           Opens the official Have I Been Pwned breach database in a new tab.
         </p>
       </div>
+      <div class="fun-card">
+  <img src="/_pages/lizard.gif" alt="Security Lizard">
+</div>
     </div>
   </div>
 
