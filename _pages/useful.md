@@ -353,9 +353,7 @@ layout: page
 
     </section>
 
-<div class="fun-card">
-  <img src="/_pages/lizard.gif" alt="Security Lizard">
-</div>
+
 
 </div>
 
