@@ -24,6 +24,9 @@ main:
 
   - title: "Pokemon"
     url: "/Pokemon/"
+    
+  - title: "Useful" 
+    url: "/Useful/"
 
   #- title: "Basic CSS" 
   # url: "/CSS/"
