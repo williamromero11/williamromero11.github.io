@@ -351,6 +351,23 @@ layout: page
       </div>
     </a>
   </div>
+  
+<div class="breach-check-card">
+  <h3>Email Breach Checker</h3>
+
+  <p>
+    Check whether an email address has appeared in known data breaches.
+  </p>
+
+  <div class="breach-form">
+    <input type="email" id="breachEmail" placeholder="Enter email address">
+    <button type="button" id="breachBtn">Check Email</button>
+  </div>
+
+  <p class="breach-note">
+    Opens the official Have I Been Pwned site in a new tab.
+  </p>
+</div>
 
 </div>
   </div>
