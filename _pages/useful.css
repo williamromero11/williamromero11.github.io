@@ -1,50 +1,51 @@
 .tools-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:1000px;
-margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  max-width:1000px;
+  margin:40px auto;
 }
 
 .tool-box{
-background:#0f1f1b;
-border:2px solid #d69b18;
-border-radius:12px;
-padding:20px;
-text-align:left;
-transition:all .2s ease;
+  background:#0f1f1b;
+  border:2px solid #d69b18;
+  border-radius:12px;
+  padding:20px;
+  text-align:left;
+  transition:all .2s ease;
 }
 
 .tool-box:hover{
-transform:translateY(-5px);
-background:#142a24;
+  transform:translateY(-5px);
+  background:#142a24;
 }
 
 .tool-box h3{
-margin-top:0;
-color:#f1b733;
+  margin-top:0;
+  color:#f1b733;
 }
 
 .tool-box p{
-font-size:14px;
-line-height:1.4;
-color:#d6d6d6;
+  font-size:14px;
+  line-height:1.4;
+  color:#d6d6d6;
 }
 
 .tool-box a{
-display:inline-block;
-margin-top:10px;
-padding:6px 12px;
-background:#d69b18;
-color:black;
-text-decoration:none;
-border-radius:6px;
-font-size:13px;
+  display:inline-block;
+  margin-top:10px;
+  padding:6px 12px;
+  background:#d69b18;
+  color:black;
+  text-decoration:none;
+  border-radius:6px;
+  font-size:13px;
 }
 
 .tool-box a:hover{
-background:#f1b733;
+  background:#f1b733;
 }
+
 .vpn-recommend-card {
   margin-top: 22px;
   background: #001b18;
@@ -68,28 +69,30 @@ background:#f1b733;
   color: #f1b733;
   font-size: 18px;
 }
-.left-column{
-display:flex;
-flex-direction:column;
-gap:20px;
-}
 
-.fun-card{
-background:#001b18;
-border:2px solid #d69b18;
-border-radius:18px;
-padding:15px;
-text-align:center;
-}
-
-.fun-card img{
-width:100%;
-border-radius:10px;
-}
 .vpn-rec-text p {
   color: #e6e6e6;
   margin: 6px 0 0;
   font-size: 14px;
+}
+
+.left-column{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.fun-card{
+  background:#001b18;
+  border:2px solid #d69b18;
+  border-radius:18px;
+  padding:15px;
+  text-align:center;
+}
+
+.fun-card img{
+  width:100%;
+  border-radius:10px;
 }
 
 <script>
