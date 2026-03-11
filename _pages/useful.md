@@ -264,7 +264,7 @@ layout: page
   <p class="ip-note" id="mapCaption">
     Map will load after the IP geolocation lookup finishes.
   </p>
-
+</section>
   <div class="vpn-recommend">
     <a href="https://mullvad.net" target="_blank" rel="noopener noreferrer">
       <img src="https://mullvad.net/media/logo.svg" alt="Mullvad VPN">
