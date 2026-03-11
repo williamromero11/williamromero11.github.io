@@ -318,6 +318,9 @@ layout: page
   <h1 class="section-title">Cybersecurity &amp; Networking Tools</h1>
 
   <div class="ip-grid">
+
+  <div class="left-column">
+
     <section class="ip-card">
       <h2>IP Details</h2>
 
@@ -348,7 +351,16 @@ layout: page
       </div>
     </section>
 
-    <div class="map-column">
+    </section>
+
+<div class="fun-card">
+  <img src="/_pages/lizard.gif" alt="Security Lizard">
+</div>
+
+</div>
+
+<div class="map-column">
+  
       <section class="map-card">
         <h2>Map</h2>
         <div id="map"></div>
