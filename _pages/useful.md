@@ -1,5 +1,5 @@
 ---
-permalink: /PL/
+permalink: /useful/
 title: "Useful"
 layout: page
 ---
