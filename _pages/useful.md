@@ -33,9 +33,16 @@ layout: page
     margin-bottom: 40px;
   }
 
+  .map-column {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
   .ip-card,
   .map-card,
-  .tool-box {
+  .tool-box,
+  .vpn-recommend {
     background: #001b18;
     border: 2px solid #d69b18;
     border-radius: 18px;
@@ -179,6 +186,34 @@ layout: page
     color: #ff9c9c;
   }
 
+  .vpn-recommend {
+    padding: 18px;
+  }
+
+  .vpn-recommend a {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+  }
+
+  .vpn-recommend img {
+    height: 56px;
+    width: auto;
+    display: block;
+  }
+
+  .vpn-text {
+    color: #f5f5f5;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .vpn-text strong {
+    color: #f1b733;
+    font-size: 18px;
+  }
+
   .tools-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -189,6 +224,12 @@ layout: page
   .tool-box {
     padding: 24px 28px 28px;
     min-height: 230px;
+    transition: all 0.2s ease;
+  }
+
+  .tool-box:hover {
+    transform: translateY(-5px);
+    background: #142a24;
   }
 
   .tool-box p {
@@ -238,8 +279,8 @@ layout: page
       <div id="riskPanel" class="risk-panel" style="display:none;">
         <div class="risk-badge-row">
           <span id="riskBadge" class="risk-badge">Risk: Unknown</span>
-          <span id="vpnBadge" class="mini-badge">VPN: Unknown</span>
-          <span id="hostingBadge" class="mini-badge">Hosting: Unknown</span>
+          <span id="vpnBadge" class="mini-badge">Possible VPN: Unknown</span>
+          <span id="hostingBadge" class="mini-badge">Possible Hosting: Unknown</span>
         </div>
       </div>
 
@@ -257,25 +298,25 @@ layout: page
       </div>
     </section>
 
-    
-  <section class="map-card">
-  <h2>Map</h2>
-  <div id="map"></div>
-  <p class="ip-note" id="mapCaption">
-    Map will load after the IP geolocation lookup finishes.
-  </p>
-</section>
-  <div class="vpn-recommend">
-    <a href="https://mullvad.net" target="_blank" rel="noopener noreferrer">
-      <img src="https://mullvad.net/media/logo.svg" alt="Mullvad VPN">
-      <div class="vpn-text">
-        <strong>Improve your privacy</strong><br>
-        Consider using a privacy-focused VPN like Mullvad.
-      </div>
-    </a>
-  </div>
+    <div class="map-column">
+      <section class="map-card">
+        <h2>Map</h2>
+        <div id="map"></div>
+        <p class="ip-note" id="mapCaption">
+          Map will load after the IP geolocation lookup finishes.
+        </p>
+      </section>
 
-</section>
+      <div class="vpn-recommend">
+        <a href="https://mullvad.net" target="_blank" rel="noopener noreferrer">
+          <img src="/_pages/mullvad.png" alt="Mullvad VPN">
+          <div class="vpn-text">
+            <strong>Improve your privacy</strong><br>
+            Consider using a privacy-focused VPN like Mullvad.
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 
   <div class="tools-grid">
@@ -363,41 +404,41 @@ layout: page
   }
 
   function inferHosting(data = {}) {
-  const combined = [
-    data.org || "",
-    data.asn || "",
-    data.city || "",
-    data.region || "",
-    data.country_name || ""
-  ].join(" ").toLowerCase();
+    const combined = [
+      data.org || "",
+      data.asn || "",
+      data.city || "",
+      data.region || "",
+      data.country_name || ""
+    ].join(" ").toLowerCase();
 
-  const hostingKeywords = [
-    "amazon", "aws", "google cloud", "microsoft", "azure", "digitalocean",
-    "linode", "vultr", "hetzner", "ovh", "oracle cloud", "cloudflare",
-    "choopa", "contabo", "netcup", "hostwinds", "datacenter", "data center",
-    "hosting", "server", "colo", "leaseweb", "m247", "datacamp"
-  ];
+    const hostingKeywords = [
+      "amazon", "aws", "google cloud", "microsoft", "azure", "digitalocean",
+      "linode", "vultr", "hetzner", "ovh", "oracle cloud", "cloudflare",
+      "choopa", "contabo", "netcup", "hostwinds", "datacenter", "data center",
+      "hosting", "server", "colo", "leaseweb", "m247", "datacamp"
+    ];
 
-  return hostingKeywords.some(keyword => combined.includes(keyword));
-}
+    return hostingKeywords.some(keyword => combined.includes(keyword));
+  }
 
-function inferVpn(data = {}) {
-  const combined = [
-    data.org || "",
-    data.asn || "",
-    data.city || "",
-    data.region || "",
-    data.country_name || ""
-  ].join(" ").toLowerCase();
+  function inferVpn(data = {}) {
+    const combined = [
+      data.org || "",
+      data.asn || "",
+      data.city || "",
+      data.region || "",
+      data.country_name || ""
+    ].join(" ").toLowerCase();
 
-  const vpnKeywords = [
-    "nord", "mullvad", "proton", "surfshark", "expressvpn", "pia",
-    "private internet access", "cyberghost", "windscribe", "tunnelbear",
-    "vpn", "wireguard"
-  ];
+    const vpnKeywords = [
+      "nord", "mullvad", "proton", "surfshark", "expressvpn", "pia",
+      "private internet access", "cyberghost", "windscribe", "tunnelbear",
+      "vpn", "wireguard", "m247", "datacamp", "leaseweb", "ovh", "choopa"
+    ];
 
-  return vpnKeywords.some(keyword => combined.includes(keyword));
-}
+    return vpnKeywords.some(keyword => combined.includes(keyword));
+  }
 
   function renderRiskPanel({ riskLevel, vpn, hosting }) {
     const panel = document.getElementById("riskPanel");
@@ -418,15 +459,15 @@ function inferVpn(data = {}) {
   }
 
   function buildBasicRiskFromIpapi(data) {
-  const vpn = inferVpn(data);
-  const hosting = inferHosting(data);
+    const vpn = inferVpn(data);
+    const hosting = inferHosting(data);
 
-  let riskLevel = "Low";
-  if (hosting || vpn) riskLevel = "Medium";
-  if (hosting && vpn) riskLevel = "High";
+    let riskLevel = "Low";
+    if (hosting || vpn) riskLevel = "Medium";
+    if (hosting && vpn) riskLevel = "High";
 
-  renderRiskPanel({ riskLevel, vpn, hosting });
-}
+    renderRiskPanel({ riskLevel, vpn, hosting });
+  }
 
   function setInvestigationLinks(ip) {
     const actions = document.getElementById("ipActions");
