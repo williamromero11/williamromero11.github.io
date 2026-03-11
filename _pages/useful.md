@@ -257,13 +257,25 @@ layout: page
       </div>
     </section>
 
-    <section class="map-card">
-      <h2>Map</h2>
-      <div id="map"></div>
-      <p class="ip-note" id="mapCaption">
-        Map will load after the IP geolocation lookup finishes.
-      </p>
-    </section>
+    
+  <section class="map-card">
+  <h2>Map</h2>
+  <div id="map"></div>
+  <p class="ip-note" id="mapCaption">
+    Map will load after the IP geolocation lookup finishes.
+  </p>
+
+  <div class="vpn-recommend">
+    <a href="https://mullvad.net" target="_blank" rel="noopener noreferrer">
+      <img src="https://mullvad.net/media/logo.svg" alt="Mullvad VPN">
+      <div class="vpn-text">
+        <strong>Improve your privacy</strong><br>
+        Consider using a privacy-focused VPN like Mullvad.
+      </div>
+    </a>
+  </div>
+
+</section>
   </div>
 
   <div class="tools-grid">
