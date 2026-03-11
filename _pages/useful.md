@@ -172,6 +172,7 @@ layout: page
     height: 390px;
     border-radius: 12px;
     overflow: hidden;
+    background: #0b2621;
   }
 
   .ip-note {
@@ -461,9 +462,12 @@ layout: page
 ></script>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
   const statusEl = document.getElementById("ipStatus");
   const infoEl = document.getElementById("ipInfo");
   const mapCaptionEl = document.getElementById("mapCaption");
+
+  let mapInstance = null;
 
   function addRow(label, value) {
     const row = document.createElement("div");
@@ -554,7 +558,7 @@ layout: page
     panel.style.display = "block";
   }
 
-  function buildBasicRiskFromIpapi(data) {
+  function buildBasicRisk(data = {}) {
     const vpn = inferVpn(data);
     const hosting = inferHosting(data);
 
@@ -578,21 +582,92 @@ layout: page
     actions.style.display = "flex";
   }
 
-  async function loadIpInfo() {
+  function renderMap(lat, lon, popupHtml, captionText) {
+    if (typeof L === "undefined") {
+      mapCaptionEl.textContent = "Leaflet failed to load, so the map is unavailable.";
+      return;
+    }
+
+    if (mapInstance) {
+      mapInstance.remove();
+      mapInstance = null;
+    }
+
+    mapInstance = L.map("map").setView([lat, lon], 9);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors"
+    }).addTo(mapInstance);
+
+    L.marker([lat, lon]).addTo(mapInstance)
+      .bindPopup(popupHtml)
+      .openPopup();
+
+    mapCaptionEl.textContent = captionText;
+
+    setTimeout(() => {
+      mapInstance.invalidateSize();
+    }, 150);
+  }
+
+  async function fetchJson(url) {
+    const res = await fetch(url, { headers: { "Accept": "application/json" } });
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status} from ${url}`);
+    }
+    return res.json();
+  }
+
+  async function getIpData() {
     try {
-      const res = await fetch("https://ipapi.co/json/");
-      if (!res.ok) {
-        throw new Error("Failed to fetch IP information.");
+      const data = await fetchJson("https://ipapi.co/json/");
+      return {
+        ip: data.ip,
+        city: data.city,
+        region: data.region,
+        country_name: data.country_name,
+        country_code: data.country_code,
+        postal: data.postal,
+        timezone: data.timezone,
+        org: data.org,
+        asn: data.asn,
+        latitude: data.latitude,
+        longitude: data.longitude
+      };
+    } catch (firstError) {
+      console.warn("Primary IP lookup failed:", firstError);
+
+      const fallback = await fetchJson("https://ipwho.is/");
+      if (!fallback.success) {
+        throw new Error("Fallback IP lookup failed.");
       }
 
-      const data = await res.json();
+      return {
+        ip: fallback.ip,
+        city: fallback.city,
+        region: fallback.region,
+        country_name: fallback.country,
+        country_code: fallback.country_code,
+        postal: fallback.postal,
+        timezone: fallback.timezone && fallback.timezone.id ? fallback.timezone.id : "",
+        org: fallback.connection && fallback.connection.isp ? fallback.connection.isp : "",
+        asn: fallback.connection && fallback.connection.asn ? `AS${fallback.connection.asn}` : "",
+        latitude: fallback.latitude,
+        longitude: fallback.longitude
+      };
+    }
+  }
+
+  async function loadIpInfo() {
+    try {
+      const data = await getIpData();
 
       statusEl.style.display = "none";
       infoEl.style.display = "grid";
       infoEl.innerHTML = "";
 
       showCountryFlag(data.country_code, data.country_name);
-      buildBasicRiskFromIpapi(data);
+      buildBasicRisk(data);
 
       addRow("IP", data.ip);
       addRow("City", data.city);
@@ -611,28 +686,20 @@ layout: page
       const lon = Number(data.longitude);
 
       if (!Number.isNaN(lat) && !Number.isNaN(lon)) {
-        const map = L.map("map").setView([lat, lon], 9);
-
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-          attribution: "&copy; OpenStreetMap contributors"
-        }).addTo(map);
-
-        L.marker([lat, lon]).addTo(map)
-          .bindPopup(
-            `<strong>${data.city || "Unknown city"}</strong><br>${data.region || ""} ${data.country_name || ""}<br>IP: ${data.ip || "N/A"}`
-          )
-          .openPopup();
-
-        mapCaptionEl.textContent =
-          `Approximate location based on IP geolocation: ${data.city || "Unknown city"}, ${data.region || ""}, ${data.country_name || ""}.`;
+        renderMap(
+          lat,
+          lon,
+          `<strong>${data.city || "Unknown city"}</strong><br>${data.region || ""} ${data.country_name || ""}<br>IP: ${data.ip || "N/A"}`,
+          `Approximate location based on IP geolocation: ${data.city || "Unknown city"}, ${data.region || ""}, ${data.country_name || ""}.`
+        );
       } else {
         mapCaptionEl.textContent = "Latitude/longitude not available for this IP.";
       }
     } catch (err) {
+      console.error("IP/map load failed:", err);
       statusEl.className = "error";
       statusEl.textContent = "Could not load IP information right now.";
       mapCaptionEl.textContent = "Map unavailable.";
-      console.error(err);
     }
   }
 
@@ -657,6 +724,7 @@ layout: page
     });
   }
 
-  loadIpInfo();
   setupBreachChecker();
+  loadIpInfo();
+});
 </script>
