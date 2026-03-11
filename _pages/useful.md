@@ -13,16 +13,17 @@ layout: page
 />
 
 <style>
-  .ip-wrapper {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 0 20px;
+  .page-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 50px;
     color: #e6e6e6;
   }
 
-  .ip-title {
+  .section-title {
     text-align: center;
-    margin-bottom: 24px;
+    margin: 10px 0 28px;
+    color: #f5f5f5;
   }
 
   .ip-grid {
@@ -30,19 +31,26 @@ layout: page
     grid-template-columns: 380px 1fr;
     gap: 22px;
     align-items: start;
+    margin-bottom: 40px;
+  }
+
+  .ip-card,
+  .map-card,
+  .tool-box {
+    background: #001b18;
+    border: 2px solid #d69b18;
+    border-radius: 18px;
+    box-sizing: border-box;
   }
 
   .ip-card,
   .map-card {
-    background: #001b18;
-    border: 2px solid #d69b18;
-    border-radius: 18px;
     padding: 20px;
-    box-sizing: border-box;
   }
 
   .ip-card h2,
-  .map-card h2 {
+  .map-card h2,
+  .tool-box h3 {
     margin-top: 0;
     color: #f1b733;
   }
@@ -54,10 +62,10 @@ layout: page
 
   .ip-row {
     display: grid;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 110px 1fr;
     gap: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(214, 155, 24, 0.2);
+    border-bottom: 1px solid rgba(214, 155, 24, 0.18);
   }
 
   .ip-label {
@@ -71,7 +79,7 @@ layout: page
 
   #map {
     width: 100%;
-    height: 420px;
+    height: 390px;
     border-radius: 12px;
     overflow: hidden;
   }
@@ -79,7 +87,7 @@ layout: page
   .ip-note {
     margin-top: 12px;
     font-size: 14px;
-    color: #cfcfcf;
+    color: #d7d7d7;
   }
 
   .loading,
@@ -88,7 +96,40 @@ layout: page
   }
 
   .error {
-    color: #ff8f8f;
+    color: #ff9c9c;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 10px;
+  }
+
+  .tool-box {
+    padding: 24px 28px 28px;
+    min-height: 230px;
+  }
+
+  .tool-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #f0f0f0;
+    margin-bottom: 26px;
+  }
+
+  .tool-box a {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #d69b18;
+    color: #000;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+
+  .tool-box a:hover {
+    background: #f1b733;
   }
 
   @media (max-width: 900px) {
@@ -102,9 +143,10 @@ layout: page
   }
 </style>
 
-<div class="ip-wrapper">
-  <h1 class="ip-title">Your Public IP & Location</h1>
+<div class="page-wrap">
+  <h1 class="section-title">Cybersecurity &amp; Networking Tools</h1>
 
+  <!-- NEW IP / MAP SECTION -->
   <div class="ip-grid">
     <section class="ip-card">
       <h2>IP Details</h2>
@@ -123,6 +165,45 @@ layout: page
       </p>
     </section>
   </div>
+
+  <!-- YOUR ORIGINAL TOOL BOXES STAY HERE -->
+  <div class="tools-grid">
+    <div class="tool-box">
+      <h3>IPInfo</h3>
+      <p>Lookup IP address details such as ISP, ASN, geolocation, and ownership.</p>
+      <a href="https://ipinfo.io" target="_blank">Open Tool</a>
+    </div>
+
+    <div class="tool-box">
+      <h3>AbuseIPDB</h3>
+      <p>Check whether an IP address has been reported for malicious activity.</p>
+      <a href="https://www.abuseipdb.com" target="_blank">Open Tool</a>
+    </div>
+
+    <div class="tool-box">
+      <h3>VirusTotal</h3>
+      <p>Analyze suspicious files, hashes, domains, URLs, and IP addresses.</p>
+      <a href="https://www.virustotal.com" target="_blank">Open Tool</a>
+    </div>
+
+    <div class="tool-box">
+      <h3>Shodan</h3>
+      <p>Search for internet-connected devices, services, and exposed systems.</p>
+      <a href="https://www.shodan.io" target="_blank">Open Tool</a>
+    </div>
+
+    <div class="tool-box">
+      <h3>DNS Checker</h3>
+      <p>Verify DNS records and propagation across global DNS servers.</p>
+      <a href="https://dnschecker.org" target="_blank">Open Tool</a>
+    </div>
+
+    <div class="tool-box">
+      <h3>crt.sh</h3>
+      <p>Search certificate transparency logs for issued SSL/TLS certificates.</p>
+      <a href="https://crt.sh" target="_blank">Open Tool</a>
+    </div>
+  </div>
 </div>
 
 <script
@@ -135,9 +216,6 @@ layout: page
   const statusEl = document.getElementById("ipStatus");
   const infoEl = document.getElementById("ipInfo");
   const mapCaptionEl = document.getElementById("mapCaption");
-
-  let map;
-  let marker;
 
   function addRow(label, value) {
     const row = document.createElement("div");
@@ -182,16 +260,17 @@ layout: page
       const lon = Number(data.longitude);
 
       if (!Number.isNaN(lat) && !Number.isNaN(lon)) {
-        map = L.map("map").setView([lat, lon], 9);
+        const map = L.map("map").setView([lat, lon], 9);
 
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           attribution: "&copy; OpenStreetMap contributors"
         }).addTo(map);
 
-        marker = L.marker([lat, lon]).addTo(map);
-        marker.bindPopup(
-          `<strong>${data.city || "Unknown city"}</strong><br>${data.region || ""} ${data.country_name || ""}<br>IP: ${data.ip || "N/A"}`
-        ).openPopup();
+        L.marker([lat, lon]).addTo(map)
+          .bindPopup(
+            `<strong>${data.city || "Unknown city"}</strong><br>${data.region || ""} ${data.country_name || ""}<br>IP: ${data.ip || "N/A"}`
+          )
+          .openPopup();
 
         mapCaptionEl.textContent =
           `Approximate location based on IP geolocation: ${data.city || "Unknown city"}, ${data.region || ""}, ${data.country_name || ""}.`;
