@@ -42,7 +42,8 @@ layout: page
   .ip-card,
   .map-card,
   .tool-box,
-  .vpn-recommend {
+  .vpn-recommend,
+  .breach-check-card {
     background: #001b18;
     border: 2px solid #d69b18;
     border-radius: 18px;
@@ -50,13 +51,15 @@ layout: page
   }
 
   .ip-card,
-  .map-card {
+  .map-card,
+  .breach-check-card {
     padding: 20px;
   }
 
   .ip-card h2,
   .map-card h2,
-  .tool-box h3 {
+  .tool-box h3,
+  .breach-check-card h3 {
     margin-top: 0;
     color: #f1b733;
   }
@@ -214,6 +217,53 @@ layout: page
     font-size: 18px;
   }
 
+  .breach-check-card p {
+    color: #f0f0f0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .breach-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .breach-form input {
+    flex: 1 1 260px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(214, 155, 24, 0.35);
+    background: #0b2621;
+    color: #f5f5f5;
+    font-size: 14px;
+  }
+
+  .breach-form input::placeholder {
+    color: #cfcfcf;
+  }
+
+  .breach-form button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #d69b18;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .breach-form button:hover {
+    background: #f1b733;
+  }
+
+  .breach-note {
+    margin-top: 12px;
+    color: #d7d7d7;
+    font-size: 13px;
+  }
+
   .tools-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -299,77 +349,70 @@ layout: page
     </section>
 
     <div class="map-column">
+      <section class="map-card">
+        <h2>Map</h2>
+        <div id="map"></div>
+        <p class="ip-note" id="mapCaption">
+          Map will load after the IP geolocation lookup finishes.
+        </p>
+      </section>
 
-  <section class="map-card">
-    <h2>Map</h2>
-    <div id="map"></div>
-    <p class="ip-note" id="mapCaption">
-      Map will load after the IP geolocation lookup finishes.
-    </p>
-  </section>
-
-  <!-- Mullvad -->
-  <div class="vpn-recommend">
-    <a href="https://mullvad.net" target="_blank" rel="noopener noreferrer">
-      <img src="/_pages/mullvad.png" alt="Mullvad VPN">
-      <div class="vpn-text">
-        <strong>Mullvad VPN</strong><br>
-        Protect your identity online with a privacy-focused VPN.
+      <div class="vpn-recommend">
+        <a href="https://mullvad.net" target="_blank" rel="noopener noreferrer">
+          <img src="/_pages/mullvad.png" alt="Mullvad VPN">
+          <div class="vpn-text">
+            <strong>Mullvad VPN</strong><br>
+            Protect your identity online with a privacy-focused VPN.
+          </div>
+        </a>
       </div>
-    </a>
-  </div>
 
-  <!-- Tails -->
-  <div class="vpn-recommend">
-    <a href="https://tails.net" target="_blank" rel="noopener noreferrer">
-      <img src="/_pages/tails.png" alt="Tails OS">
-      <div class="vpn-text">
-        <strong>Tails OS</strong><br>
-        A portable operating system designed for anonymity and privacy.
+      <div class="vpn-recommend">
+        <a href="https://tails.net" target="_blank" rel="noopener noreferrer">
+          <img src="/_pages/tails.png" alt="Tails OS">
+          <div class="vpn-text">
+            <strong>Tails OS</strong><br>
+            A portable operating system designed for anonymity and privacy.
+          </div>
+        </a>
       </div>
-    </a>
-  </div>
 
-  <!-- Tor -->
-  <div class="vpn-recommend">
-    <a href="https://www.torproject.org/" target="_blank" rel="noopener noreferrer">
-      <img src="/_pages/tor.jfif" alt="Tor Browser">
-      <div class="vpn-text">
-        <strong>Tor Browser</strong><br>
-        Browse the internet anonymously using the Tor network.
+      <div class="vpn-recommend">
+        <a href="https://www.torproject.org/" target="_blank" rel="noopener noreferrer">
+          <img src="/_pages/tor.jfif" alt="Tor Browser">
+          <div class="vpn-text">
+            <strong>Tor Browser</strong><br>
+            Browse the internet anonymously using the Tor network.
+          </div>
+        </a>
       </div>
-    </a>
-  </div>
 
-  <!-- Proton -->
-  <div class="vpn-recommend">
-    <a href="https://proton.me/" target="_blank" rel="noopener noreferrer">
-      <img src="/_pages/proton.jfif" alt="Proton Privacy Tools">
-      <div class="vpn-text">
-        <strong>Proton Privacy Suite</strong><br>
-        Secure email, VPN, and cloud services focused on privacy.
+      <div class="vpn-recommend">
+        <a href="https://proton.me/" target="_blank" rel="noopener noreferrer">
+          <img src="/_pages/proton.jfif" alt="Proton Privacy Suite">
+          <div class="vpn-text">
+            <strong>Proton Privacy Suite</strong><br>
+            Secure email, VPN, and cloud services focused on privacy.
+          </div>
+        </a>
       </div>
-    </a>
-  </div>
-  
-<div class="breach-check-card">
-  <h3>Email Breach Checker</h3>
 
-  <p>
-    Check whether an email address has appeared in known data breaches.
-  </p>
+      <div class="breach-check-card">
+        <h3>Email Breach Checker</h3>
+        <p>
+          Check whether an email address has appeared in known data breaches.
+        </p>
 
-  <div class="breach-form">
-    <input type="email" id="breachEmail" placeholder="Enter email address">
-    <button type="button" id="breachBtn">Check Email</button>
-  </div>
+        <div class="breach-form">
+          <input type="email" id="breachEmail" placeholder="Enter email address">
+          <button type="button" id="breachBtn">Check Email</button>
+        </div>
 
-  <p class="breach-note">
-    Opens the official Have I Been Pwned site in a new tab.
-  </p>
-</div>
-
-</div>
+        <p class="breach-note">
+          Opens the official Have I Been Pwned breach database in a new tab.
+        </p>
+      </div>
+    </div>
   </div>
 
   <div class="tools-grid">
@@ -593,5 +636,27 @@ layout: page
     }
   }
 
+  function setupBreachChecker() {
+    const breachBtn = document.getElementById("breachBtn");
+    const breachEmail = document.getElementById("breachEmail");
+
+    if (!breachBtn || !breachEmail) return;
+
+    breachBtn.addEventListener("click", () => {
+      const email = breachEmail.value.trim();
+      if (!email) return;
+
+      const target = `https://haveibeenpwned.com/account/${encodeURIComponent(email)}`;
+      window.open(target, "_blank", "noopener,noreferrer");
+    });
+
+    breachEmail.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        breachBtn.click();
+      }
+    });
+  }
+
   loadIpInfo();
+  setupBreachChecker();
 </script>
