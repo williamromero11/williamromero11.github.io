@@ -351,8 +351,7 @@ layout: page
         <a id="shodanLink" href="#" target="_blank" rel="noopener noreferrer">Check on Shodan</a>
       </div>
     </section>
-    <div class="fun-card">
-    <img src="/_pages/lizard.gif" alt="Lizard animation">
+    <div class="fun-card lizard-card"></div>
     </div>
 
 </div>
