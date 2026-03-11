@@ -299,24 +299,60 @@ layout: page
     </section>
 
     <div class="map-column">
-      <section class="map-card">
-        <h2>Map</h2>
-        <div id="map"></div>
-        <p class="ip-note" id="mapCaption">
-          Map will load after the IP geolocation lookup finishes.
-        </p>
-      </section>
 
-      <div class="vpn-recommend">
-        <a href="https://mullvad.net" target="_blank" rel="noopener noreferrer">
-          <img src="/_pages/mullvad.png" alt="Mullvad VPN">
-          <div class="vpn-text">
-            <strong>Improve your privacy</strong><br>
-            Consider using a privacy-focused VPN like Mullvad.
-          </div>
-        </a>
+  <section class="map-card">
+    <h2>Map</h2>
+    <div id="map"></div>
+    <p class="ip-note" id="mapCaption">
+      Map will load after the IP geolocation lookup finishes.
+    </p>
+  </section>
+
+  <!-- Mullvad -->
+  <div class="vpn-recommend">
+    <a href="https://mullvad.net" target="_blank" rel="noopener noreferrer">
+      <img src="/_pages/mullvad.png" alt="Mullvad VPN">
+      <div class="vpn-text">
+        <strong>Mullvad VPN</strong><br>
+        Protect your identity online with a privacy-focused VPN.
       </div>
-    </div>
+    </a>
+  </div>
+
+  <!-- Tails -->
+  <div class="vpn-recommend">
+    <a href="https://tails.net" target="_blank" rel="noopener noreferrer">
+      <img src="/_pages/tails.png" alt="Tails OS">
+      <div class="vpn-text">
+        <strong>Tails OS</strong><br>
+        A portable operating system designed for anonymity and privacy.
+      </div>
+    </a>
+  </div>
+
+  <!-- Tor -->
+  <div class="vpn-recommend">
+    <a href="https://www.torproject.org/" target="_blank" rel="noopener noreferrer">
+      <img src="/_pages/tor.jfif" alt="Tor Browser">
+      <div class="vpn-text">
+        <strong>Tor Browser</strong><br>
+        Browse the internet anonymously using the Tor network.
+      </div>
+    </a>
+  </div>
+
+  <!-- Proton -->
+  <div class="vpn-recommend">
+    <a href="https://proton.me/" target="_blank" rel="noopener noreferrer">
+      <img src="/_pages/proton.jfif" alt="Proton Privacy Tools">
+      <div class="vpn-text">
+        <strong>Proton Privacy Suite</strong><br>
+        Secure email, VPN, and cloud services focused on privacy.
+      </div>
+    </a>
+  </div>
+
+</div>
   </div>
 
   <div class="tools-grid">
