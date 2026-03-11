@@ -74,3 +74,15 @@ background:#f1b733;
   margin: 6px 0 0;
   font-size: 14px;
 }
+const breachBtn = document.getElementById("breachBtn");
+const breachEmail = document.getElementById("breachEmail");
+
+if (breachBtn && breachEmail) {
+  breachBtn.addEventListener("click", () => {
+    const email = breachEmail.value.trim();
+    if (!email) return;
+
+    const target = `https://haveibeenpwned.com/account/${encodeURIComponent(email)}`;
+    window.open(target, "_blank");
+  });
+}
