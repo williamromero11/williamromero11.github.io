@@ -319,7 +319,10 @@ layout: page
   <h1 class="section-title">Cybersecurity &amp; Networking Tools</h1>
 
   <div class="ip-grid">
+
+  <div class="left-column">
     <section class="ip-card">
+      
       <h2>IP Details</h2>
 
       <div id="countryFlagRow" class="flag-row" style="display:none;">
@@ -348,6 +351,11 @@ layout: page
         <a id="shodanLink" href="#" target="_blank" rel="noopener noreferrer">Check on Shodan</a>
       </div>
     </section>
+    <div class="fun-card">
+    <img src="/_pages/lizard.gif" alt="Lizard animation">
+    </div>
+
+</div>
 
     <div class="map-column">
       <section class="map-card">
