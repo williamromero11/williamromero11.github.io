@@ -33,6 +33,7 @@ layout: page
     margin-bottom: 40px;
   }
 
+  .left-column,
   .map-column {
     display: flex;
     flex-direction: column;
@@ -43,7 +44,8 @@ layout: page
   .map-card,
   .tool-box,
   .vpn-recommend,
-  .breach-check-card {
+  .breach-check-card,
+  .fun-card {
     background: #001b18;
     border: 2px solid #d69b18;
     border-radius: 18px;
@@ -264,6 +266,24 @@ layout: page
     font-size: 13px;
   }
 
+  .fun-card {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 300px;
+  }
+
+  .fun-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+
   .tools-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -308,6 +328,10 @@ layout: page
       grid-template-columns: 1fr;
     }
 
+    .fun-card {
+      min-height: 220px;
+    }
+
     #map {
       height: 320px;
     }
@@ -318,47 +342,43 @@ layout: page
   <h1 class="section-title">Cybersecurity &amp; Networking Tools</h1>
 
   <div class="ip-grid">
+    <div class="left-column">
+      <section class="ip-card">
+        <h2>IP Details</h2>
 
-  <div class="left-column">
-
-    <section class="ip-card">
-      <h2>IP Details</h2>
-
-      <div id="countryFlagRow" class="flag-row" style="display:none;">
-        <span id="countryFlag" class="flag-emoji"></span>
-        <span id="countryFlagText"></span>
-      </div>
-
-      <div id="riskPanel" class="risk-panel" style="display:none;">
-        <div class="risk-badge-row">
-          <span id="riskBadge" class="risk-badge">Risk: Unknown</span>
-          <span id="vpnBadge" class="mini-badge">Possible VPN: Unknown</span>
-          <span id="hostingBadge" class="mini-badge">Possible Hosting: Unknown</span>
+        <div id="countryFlagRow" class="flag-row" style="display:none;">
+          <span id="countryFlag" class="flag-emoji"></span>
+          <span id="countryFlagText"></span>
         </div>
+
+        <div id="riskPanel" class="risk-panel" style="display:none;">
+          <div class="risk-badge-row">
+            <span id="riskBadge" class="risk-badge">Risk: Unknown</span>
+            <span id="vpnBadge" class="mini-badge">Possible VPN: Unknown</span>
+            <span id="hostingBadge" class="mini-badge">Possible Hosting: Unknown</span>
+          </div>
+        </div>
+
+        <div id="ipStatus" class="loading">Loading IP information...</div>
+        <div id="ipInfo" class="ip-list" style="display:none;"></div>
+
+        <p class="ip-note">
+          This is approximate IP-based geolocation, not precise GPS.
+        </p>
+
+        <div class="ip-actions" id="ipActions" style="display:none;">
+          <a id="abuseLink" href="#" target="_blank" rel="noopener noreferrer">Check on AbuseIPDB</a>
+          <a id="vtLink" href="#" target="_blank" rel="noopener noreferrer">Check on VirusTotal</a>
+          <a id="shodanLink" href="#" target="_blank" rel="noopener noreferrer">Check on Shodan</a>
+        </div>
+      </section>
+
+      <div class="fun-card">
+        <img src="/_pages/lizard.gif" alt="Security Lizard">
       </div>
+    </div>
 
-      <div id="ipStatus" class="loading">Loading IP information...</div>
-      <div id="ipInfo" class="ip-list" style="display:none;"></div>
-
-      <p class="ip-note">
-        This is approximate IP-based geolocation, not precise GPS.
-      </p>
-
-      <div class="ip-actions" id="ipActions" style="display:none;">
-        <a id="abuseLink" href="#" target="_blank" rel="noopener noreferrer">Check on AbuseIPDB</a>
-        <a id="vtLink" href="#" target="_blank" rel="noopener noreferrer">Check on VirusTotal</a>
-        <a id="shodanLink" href="#" target="_blank" rel="noopener noreferrer">Check on Shodan</a>
-      </div>
-    </section>
-
-    </section>
-
-
-
-</div>
-
-<div class="map-column">
-  
+    <div class="map-column">
       <section class="map-card">
         <h2>Map</h2>
         <div id="map"></div>
@@ -422,9 +442,6 @@ layout: page
           Opens the official Have I Been Pwned breach database in a new tab.
         </p>
       </div>
-      <div class="fun-card">
-  <img src="/_pages/lizard.gif" alt="Security Lizard">
-</div>
     </div>
   </div>
 
