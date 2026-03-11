@@ -3,11 +3,7 @@ permalink: /useful/
 title: "Useful"
 layout: page
 ---
----
-permalink: /ip-tool/
-title: "IP Info"
-layout: page
----
+
 
 <link
   rel="stylesheet"
