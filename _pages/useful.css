@@ -81,13 +81,6 @@
   display:flex;
   flex-direction:column;
   gap:20px;
-  width:100%;
-}
-
-.left-column{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
   height:100%;
 }
 
@@ -95,18 +88,20 @@
   background:#001b18;
   border:2px solid #d69b18;
   border-radius:18px;
-  flex:1;                 /* fills remaining vertical space */
+  flex:1;
+  min-height:420px;
   display:flex;
   align-items:center;
   justify-content:center;
   overflow:hidden;
+  padding:0;
 }
 
 .fun-card img{
   width:100%;
   height:100%;
-  object-fit:cover;       /* fills box nicely */
-  border-radius:16px;
+  object-fit:cover;
+  display:block;
 }
 </style>
 
