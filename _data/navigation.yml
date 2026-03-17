@@ -11,7 +11,7 @@ main:
 
   
   - title: "Resume"
-    url: "https://williamromero11.github.io/files/Resume.pdf"
+    url: "/files/Resume.pdf"
     
   - title: "PC Specs"
     url: "/specs/"    
