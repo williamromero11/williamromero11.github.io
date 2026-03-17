@@ -8,25 +8,25 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
-
+  - title: "Coding"
+    url: "/coding/"
   
   - title: "Resume"
     url: "https://williamromero11.github.io/files/Resume.pdf"
+
+  - title: "Useful" 
+    url: "/useful/"
     
   - title: "PC Specs"
     url: "/specs/"    
-
-  - title: "Coding"
-    url: "/coding/"    
-    
+  
   - title: "Ideas"
     url: "/ideas/"
 
   - title: "Pokemon"
     url: "/Pokemon/"
     
-  - title: "Useful" 
-    url: "/useful/"
+
 
   #- title: "Basic CSS" 
   # url: "/CSS/"
