@@ -11,7 +11,7 @@ main:
 
   
   - title: "Resume"
-    url: "/files/Resume%20PDF.pdf"
+    url: <a href="/files/Resume.pdf" target="_blank">Resume</a>
     
   - title: "PC Specs"
     url: "/specs/"    
