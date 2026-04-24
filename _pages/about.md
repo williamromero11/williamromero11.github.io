@@ -44,6 +44,10 @@ I try to apply these habits of careful analysis, attention to detail, and ethica
 - Native Spanish, Fluent English
 
 ## 👨‍💻 Security Labs & Competitions
+
+### [Three-Tier-Distributed-Web-Based-Application](https://github.com/williamromero11/Three-Tier-Distributed-Web-Based-Application/tree/main) | April 2026
+Designed and implemented a three tier distributed web application architecture separating presentation, application logic, and data layers to simulate an enterprise level system. Developed a dynamic frontend interface integrated with a backend application server that processes client requests and communicates with a relational database for persistent storage. Implemented secure data handling and structured communication between tiers using HTTP based requests and server side processing. Configured and deployed the application using Apache Tomcat and MySQL, ensuring proper connectivity, session management, and role based access control. This project strengthened my understanding of distributed systems, web application architecture, database integration, and full stack troubleshooting in a multi tier environment.
+
 ### [VLAN Segmentation & Inter-VLAN Routing](https://github.com/williamromero11/Packet-Tracer-VLAN) | March 2026
 
 Designed and implemented a segmented enterprise-style network using Cisco Packet Tracer to simulate VLAN-based network isolation and controlled communication between departments. Configured multiple VLANs on a Cisco switch and implemented router-on-a-stick architecture using IEEE 802.1Q trunking and router subinterfaces to enable inter-VLAN routing across multiple /28 subnets. The project included configuring switch access ports, trunk links, and router interfaces using the Cisco CLI, as well as verifying network behavior through ICMP connectivity testing and interface diagnostics. This project strengthened my understanding of network segmentation, Layer 2 and Layer 3 interaction, subnetting, and troubleshooting VLAN routing in enterprise network environments.
@@ -60,7 +64,7 @@ Completed a hands on lab focused on identity and access management in a multi se
 ### [HACK@UCF Cyber Challenge CTF](https://hackucf.org/ctf) | February 2025  
 Competed in a scenario based Capture the Flag event focused on enterprise breach investigation and incident response. Tasks included network reconnaissance, service enumeration, and basic forensic analysis to identify compromised systems and recover data. The event emphasized structured investigation, rapid threat assessment, and working effectively under pressure.
 
-### [Three-Tier-Distributed-Web-Based-Application](https://github.com/williamromero11/Three-Tier-Distributed-Web-Based-Application/tree/main) | February 2025
+
 
 
 
