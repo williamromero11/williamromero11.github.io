@@ -11,7 +11,7 @@ administration, network troubleshooting, identity and access management, and ent
 environments. Skilled in VPN, VoIP, DNS, and infrastructure support using PowerShell, ServiceNow, and Linux-based systems.
 
 ## About Me
-I am a 24 year old IT professional originally from Venezuela and currently living in Orlando, Florida. I have been interested in technology from a young age, particularly how systems interact and how they can be protected from misuse or attack. This interest naturally led me to building custom PCs, where I focus on reliability, performance, and security in each build.
+I am a 25 year old IT professional originally from Venezuela and currently living in Orlando, Florida. I have been interested in technology from a young age, particularly how systems interact and how they can be protected from misuse or attack. This interest naturally led me to building custom PCs, where I focus on reliability, performance, and security in each build.
 
 Outside of academics, I enjoy strategy driven games such as Elden Ring, The Witcher 3, and Baldur’s Gate 3. These games reinforce skills that translate well to cybersecurity, including persistence, critical thinking, and problem solving under pressure. I am also an avid reader of epic fantasy, especially A Song of Ice and Fire by George R. R. Martin. The complexity of its world building and interconnected systems mirrors how I approach technical environments and security challenges.
 
@@ -19,7 +19,7 @@ I try to apply these habits of careful analysis, attention to detail, and ethica
 
 ### 🎓 Education Journey
 - **University:** University of Central Florida (UCF) - Graduate B.S. in Information Technology
-- M.S. Cybersecurity & Privacy Technical Track (accepted) — University of Central Florida | M.S. Cybersecurity Information Security Track (accepted) — Georgia Tech for Spring 2027
+- M.S. Cybersecurity & Privacy Technical Track (accepted) — University of Central Florida & M.S. Cybersecurity Information Security Track (accepted) — Georgia Tech  (Spring 2027)
 - **Specialization:** Networks and Cybersecurity
 - **Future Plans:** I plan to pursue a Master’s degree in Cybersecurity after completing my undergraduate studies.
 - **Certifications:** [![CompTIA Security+](https://img.shields.io/badge/CompTIA-Security%2B-red)](https://www.credly.com/users/william-romero.9412f593/badges#credly) | [![AWS Cloud Security Foundations](https://img.shields.io/badge/AWS-Cloud%20Foundations-blue)](https://www.credly.com/users/william-romero.9412f593/badges#credly) | [![TestOut IT Fundamentals Pro](https://img.shields.io/badge/TestOut-IT%20Fundamentals%20Pro-yellow)](https://certification.testout.com/managecert?certificateID=6-1C6-VPU5M2) | [![AWS Cloud Foundations](https://img.shields.io/badge/AWS-Cloud%20Foundations-blue)](https://www.credly.com/users/william-romero.9412f593/badges#credly) |  
